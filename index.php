@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +16,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body> 
+    
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/funciones.js"></script>
@@ -27,8 +26,8 @@
          plugins que utilices) -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootbox.min.js"></script>
- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     
        <!-- Custom CSS -->
     <style>
@@ -37,8 +36,12 @@
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
     </style>
+  </head>
+
+  <body> 
     
-    <!-- Navigation -->
+    <?php include 'src/head.php';?>
+    <!-- Navigation -->    
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -53,12 +56,12 @@
                 
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"style="margin-right: 0px;">
                 <ul class="nav navbar-nav pull-right">
                     <li>
                         <div>                    
                             <h6>
-                                <a href="#" style="color: #c0c0c0;"> No estas registrado?</a>
+                                <a href="src/solicitudAltaDeUsuario.php" style="color: #c0c0c0;"> No estas registrado?</a>
                             </h6>
                             <h6>
                                 <a href="#" style="color: #c0c0c0;"> Olvidaste tu contraseña?</a>
@@ -90,14 +93,14 @@
         </div>
         <!-- /.container -->
     </nav>
+    
+        <!-- Formulario de busqueda  -->
     <div style=" padding: 0 200px;">
-        
-        
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-6 col-md-4">
-                    <a style=" color: #000; font-style: italic">
-                        BESTNID
+                    <a style=" color: #000; font-style:italic; font-size: 20px; ">
+                        <strong> BESTNID </strong>
                     </a>
                     <a href="#"> <img src="Img/logo.png" > </a>
                 </div>
@@ -143,14 +146,16 @@
                 </div>
             </div>
         </div>
-        
+    </div>
+    
+    <div style=" padding: 0 200px;">
         
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-6 col-md-4">
                     
                     <div class="list-group">
-                        <a href="#" class="list-group-item "></span>CATEGORIAS</a>
+                        <a href="#" class="list-group-item "></span><strong>CATEGORIAS</strong></a>
                         <a href="#" class="list-group-item"><span class="badge">5</span>Cras justo odio</a>
                         <a href="#" class="list-group-item"><span class="badge">35</span>Dapibus ac facilisis in</a>
                         <a href="#" class="list-group-item"><span class="badge">25</span>Morbi leo risus</a>
@@ -281,8 +286,6 @@
                     </div>
             </div>
         </div>
-        
-           
     </diV>
     
     
