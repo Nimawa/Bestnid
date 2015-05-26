@@ -56,11 +56,34 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav pull-right">
                     <li>
-                        <a href="#"> Contacto <span class="glyphicon glyphicon-envelope"></span></a>
+                        <div>                    
+                            <h6>
+                                <a href="#" style="color: #c0c0c0;"> No estas registrado?</a>
+                            </h6>
+                            <h6>
+                                <a href="#" style="color: #c0c0c0;"> Olvidaste tu contraseña?</a>
+                            </h6>                            
+                        </div>
+                    </li>    
+                    <li> 
+                        <div class="col-xs-12">
+                            <input type="mail" class="form-control input-sm" id="user" name="user" placeholder="E-mail" style=" margin-top: 10px;">
+                        </div>        
                     </li>
                     <li>
-                        <a href="#" onclick=" inicioSesion(); ">Iniciar Sesion <span class="glyphicon glyphicon-log-in"></span></a>
+                        <input type="text" class="form-control input-sm" id="pass" name="pass" placeholder="Contraseña" style=" margin-top: 10px;" >
                     </li>
+                    <li>
+                    <a href="#">Iniciar Sesion <span class="glyphicon glyphicon-log-in"></span></a>
+                    </li>
+                    <li>
+                        <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
+                    </li>
+                    <li>
+                        <a href="#"> Contacto <span class="glyphicon glyphicon-envelope"></span></a>
+                    </li>
+                    
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -83,7 +106,7 @@
                     <form class="form-inline" role="form">
                         <div class="form-group">
                             <label for="campoBusqueda">Busqueda:</label>
-                            <input type="text" class="form-control" id="campoBusqueda" name="campoBusqueda" placeholder=" Ingrese su busqueda...">
+                            <input type="text" class="form-control" id="campoBusqueda" name="campoBusqueda" placeholder=" Ingrese su busqueda..." style="margin-bottom: 5px;">
                             
                             <button type="button" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-search"></span>
@@ -92,8 +115,14 @@
                             Filtros: 
                             <div class="checkbox">
                                 <label>
-                                  <input type="checkbox" value="">
-                                  Categoria
+                                    <select class="form-control input-sm">
+                                        <option>Electronica</option>
+                                        <option>Muebles</option>
+                                        <option>Bazar</option>
+                                        <option>Audio y video</option>
+                                        <option>Autos</option>
+                                    </select>
+
                                 </label>
                             </div>
                             <div class="checkbox">
@@ -141,7 +170,7 @@
                         <ul class="media-list">
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images1.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images1.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -150,7 +179,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images2.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images2.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -159,7 +188,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images3.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images3.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -168,7 +197,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images4.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images4.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -177,7 +206,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images5.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images5.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -186,7 +215,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images6.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images6.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -195,7 +224,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images7.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images7.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -204,7 +233,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images8.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images8.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -213,7 +242,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images9.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images9.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -222,7 +251,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images10.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images10.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -231,7 +260,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images11.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images11.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
@@ -240,7 +269,7 @@
                           </li>
                           <li class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images12.jpg" alt="...">
+                                <img class="media-object" src="fotosmuestra/images12.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
                             </a>
                             <div class="media-body">
                               <h4 class="media-heading">Título del contenido</h4>
