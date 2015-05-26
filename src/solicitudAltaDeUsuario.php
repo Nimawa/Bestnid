@@ -76,11 +76,11 @@
                         <div class="form-group">
                             <label for="piso" class="col-lg-2 control-label">Piso:  </label>
                             <div class="col-lg-2">
-                                <input type="number" class="form-control" id="piso" required placeholder="Ej. A" data-error=" Ingrese un dato Valido!">
+                                <input type="number" class="form-control" id="piso" placeholder="Ej. A" >
                             </div>
                             <label for="depto" class="col-lg-2 control-label">Depto.:  </label>
                             <div class="col-lg-2">
-                              <input type="text" class="form-control" id="depto" required placeholder="Ej. 1" data-error=" Ingrese un dato Valido!">
+                              <input type="text" class="form-control" id="depto" placeholder="Ej. 1" >
                             </div>
                         </div>
                         <div class="form-group">
