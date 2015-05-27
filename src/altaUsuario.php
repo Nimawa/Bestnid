@@ -1,4 +1,5 @@
-<?php
+
+<?php   
 $nombre=$_REQUEST['nombre'];
 $apellido=$_REQUEST['apellido'];
 $dni=$_REQUEST['dni'];
@@ -18,4 +19,7 @@ $conexion=conectar();
 mysql_query("	INSERT INTO usuario (mail,dni,nombre,apellido,telefono,calle,nro,piso,depto,ciudad,pcia,pass)
              	VALUES ('$email','$dni','$nombre','$apellido','$telefono','$calle','$nro','$piso','$depto','$ciudad','$pcia','$pass')",$conexion) or die("Problemas en el select:".mysql_error());
 
+header("location: ../index.php?u=1 ");
 ?>
+
+

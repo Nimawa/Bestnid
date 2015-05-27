@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,6 +27,8 @@
     <script src="js/bootbox.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/validator.min.js"></script>
     
        <!-- Custom CSS -->
     <style>
@@ -35,7 +36,7 @@
         padding-top: 70px;
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
-    </style>
+    </style> 
   </head>
 
   <body> 
@@ -46,7 +47,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" >
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -55,29 +56,31 @@
                 <p class="navbar-text">Plataforma de Subastas Online</p>
                 
             </div>
+          <form method="post"  action="login.php">  
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"style="margin-right: 0px;">
                 <ul class="nav navbar-nav pull-right">
                     <li>
-                        <div>                    
+                        <div class="col-xs-12">                    
                             <h6>
                                 <a href="src/solicitudAltaDeUsuario.php" style="color: #c0c0c0;"> No estas registrado?</a>
                             </h6>
                             <h6>
-                                <a href="#" style="color: #c0c0c0;"> Olvidaste tu contraseña?</a>
+                                <a href="#" style="color: #c0c0c0;" > Olvidaste tu contraseña?</a>
                             </h6>                            
                         </div>
                     </li>    
-                    <li> 
+                    <li>                         
+                          <input type="mail" class="form-control input-sm" id="user" name="user" required placeholder="E-mail" style=" margin-top: 10px;">
+                          
+                    </li>
+                    <li>
                         <div class="col-xs-12">
-                            <input type="mail" class="form-control input-sm" id="user" name="user" placeholder="E-mail" style=" margin-top: 10px;">
-                        </div>        
+                          <input type="text" class="form-control input-sm" id="pass" name="pass" required placeholder="Contraseña" style=" margin-top: 10px;"  >
+                        </div> 
                     </li>
                     <li>
-                        <input type="text" class="form-control input-sm" id="pass" name="pass" placeholder="Contraseña" style=" margin-top: 10px;" >
-                    </li>
-                    <li>
-                    <a href="#">Iniciar Sesion <span class="glyphicon glyphicon-log-in"></span></a>
+                    <input type="submit" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="Iniciar Sesion">
                     </li>
                     <li>
                         <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
@@ -90,6 +93,7 @@
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
+          </form>  
         </div>
         <!-- /.container -->
     </nav>
@@ -109,11 +113,10 @@
                     <form class="form-inline" role="form">
                         <div class="form-group">
                             <label for="campoBusqueda">Busqueda:</label>
-                            <input type="text" class="form-control" id="campoBusqueda" name="campoBusqueda" placeholder=" Ingrese su busqueda..." style="margin-bottom: 5px;">
+                            <input type="text" class="form-control" id="campoBusqueda" name="campoBusqueda" placeholder=" Ingrese su busqueda..." style="margin-bottom: 3px;">
                             
                             <button type="button" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-search"></span>
-                                
                             </button><br>
                             Filtros: 
                             <div class="checkbox">
@@ -287,7 +290,20 @@
             </div>
         </div>
     </diV>
-    
+
+
+    <!-- Si retorna Codigo=1, se regresa del alta de usuario, por lo tanto informa de ello-->
+    <?php
+
+        if ($_REQUEST['u']==1) {
+          ?>  
+          <script language="javascript">
+          bootbox.alert("Su cuenta de usuario ha sido creada exitosamente, Inicie Sesion con su E-mail y contraseña.",null);
+          </script>
+        <?php 
+        }
+
+    ?>
     
     
    
