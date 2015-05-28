@@ -31,7 +31,7 @@
                     </li>
                     <li>
                         <div class="col-xs-12">
-                          <input type="text" class="form-control input-sm" id="pass" name="pass" required placeholder="Contraseña" style=" margin-top: 10px;"  >
+                          <input type="password" class="form-control input-sm" id="pass" name="pass" required placeholder="Contraseña" style=" margin-top: 10px;"  >
                         </div> 
                     </li>
                     <li>
