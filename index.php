@@ -41,7 +41,6 @@
 
   <body> 
     
-    <?php include 'src/head.php';?>
     <!-- Navigation -->    
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -56,7 +55,7 @@
                 <p class="navbar-text">Plataforma de Subastas Online</p>
                 
             </div>
-          <form method="post"  action="login.php">  
+          <form method="post"  action="src/login.php">  
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"style="margin-right: 0px;">
                 <ul class="nav navbar-nav pull-right">
@@ -72,11 +71,10 @@
                     </li>    
                     <li>                         
                           <input type="mail" class="form-control input-sm" id="user" name="user" required placeholder="E-mail" style=" margin-top: 10px;">
-                          
                     </li>
                     <li>
                         <div class="col-xs-12">
-                          <input type="text" class="form-control input-sm" id="pass" name="pass" required placeholder="Contraseña" style=" margin-top: 10px;"  >
+                          <input type="password" class="form-control input-sm" id="pass" name="pass" required placeholder="Contraseña" style=" margin-top: 10px;"  >
                         </div> 
                     </li>
                     <li>
@@ -301,6 +299,12 @@
           bootbox.alert("Su cuenta de usuario ha sido creada exitosamente, Inicie Sesion con su E-mail y contraseña.",null);
           </script>
         <?php 
+        }else if ($_REQUEST['u']==2) {
+          ?> <!-- Si retorna Codigo=2, el mail esta utilizado por otro usuario--> 
+          <script language="javascript">
+          bootbox.alert("El email ingresado se encuentra registrado! Ingrese nuevamente sus datos",null);
+          </script>
+        <?php
         }
 
     ?>

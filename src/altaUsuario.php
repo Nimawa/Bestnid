@@ -16,6 +16,11 @@ $pass=$_REQUEST['pass2'];
 require 'conexion.php';
 $conexion=conectar();
 
+$verificaEmail=mysql_query(" SELECT count(id) from usuario where mail='$email' ",$conexion) or die("Problemas en el select:".mysql_error());
+if ($verificaEmail) {
+	header("location: ../index.php?u=2 ");
+}
+
 mysql_query("	INSERT INTO usuario (mail,dni,nombre,apellido,telefono,calle,nro,piso,depto,ciudad,pcia,pass)
              	VALUES ('$email','$dni','$nombre','$apellido','$telefono','$calle','$nro','$piso','$depto','$ciudad','$pcia','$pass')",$conexion) or die("Problemas en el select:".mysql_error());
 

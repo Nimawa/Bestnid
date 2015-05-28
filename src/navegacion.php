@@ -19,7 +19,7 @@
                     <li>
                         <div class="col-xs-12">                    
                             <h6>
-                                <a href="src/solicitudAltaDeUsuario.php" style="color: #c0c0c0;"> No estas registrado?</a>
+                                <a href="solicitudAltaDeUsuario.php" style="color: #c0c0c0;"> No estas registrado?</a>
                             </h6>
                             <h6>
                                 <a href="#" style="color: #c0c0c0;" > Olvidaste tu contraseña?</a>
