@@ -4,7 +4,8 @@
  {
       require 'sql/getFoto.php';
       while($r=mysql_fetch_array($v1))
-   {   if( $r ['baja']<>true)
+   {   $aux=$r ['baja'];
+      if(( $r == false )or ($r =='false'))
      {  
         echo 'Titulo: '.$r['titulo']. "<br>";
 		echo 'Descripcion: '.$r['descripcion']. "<br>";
