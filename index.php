@@ -112,6 +112,9 @@
                             <input type="submit" class="btn btn-danger btn-sm" style=" margin-top: 10px; margin-right: 80px" value="Cerrar Sesion">
                             </li>
                             <li>
+                              <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 80px" value="PUBLICAR" onclick="window.location.href='src/altaPublicacion.php'">
+                            </li>
+                            <li>
                                 <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
                             </li>
                             <li>
@@ -175,12 +178,7 @@
                                   Descripcion
                                 </label>
                             </div>
-                            <div >
-                                <label>
-                                  <a href="src/altaPublicacion.php">alta publicacion</a>
-                                </label>
-                            </div>
-                            
+                                                     
                         </div>
                     </form>    
                 </div>

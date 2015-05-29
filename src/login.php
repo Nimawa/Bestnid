@@ -1,6 +1,6 @@
 
 <?php
-
+include 'head.php';
 session_start();
 require 'conexion.php';
 $conexion=conectar();
@@ -13,8 +13,12 @@ if(($user_ok = mysql_fetch_array($usuarios)) and ($user_ok['pass']==$_REQUEST['p
     $_SESSION['id'] = $user_ok["id"]; 
     $_SESSION['nombre'] = $user_ok["nombre"];
     $_SESSION['apellido'] = $user_ok["apellido"]; 
-    $_SESSION['estado'] = true; 
-    header("location: ../index.php?u=4 ");
+    $_SESSION['estado'] = true;
+    ?>  
+            <script language="javascript">
+                window.history.back();
+            </script> <?php 
+
 
 }else{
         header("location: ../index.php?u=3 ");

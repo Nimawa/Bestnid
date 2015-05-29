@@ -6,10 +6,13 @@
                 <a style="color: #c0c0c0;" > BIENVENIDO</a>
             </li>    
             <li>                         
-                  <a href="#"> <?php echo $_SESSION['nombre'], $_SESSION['apellido']; ?></span></a>
+                  <a href="#"> <?php echo $_SESSION['nombre']," ", $_SESSION['apellido']; ?></span></a>
             </li>
             <li>
             <input type="submit" class="btn btn-danger btn-sm" style=" margin-top: 10px; margin-right: 80px" value="Cerrar Sesion">
+            </li>
+            <li>
+            <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 80px" value="PUBLICAR" onclick="window.location.href='altaPublicacion.php'">
             </li>
             <li>
                 <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
@@ -23,3 +26,5 @@
     </div>
     <!-- /.navbar-collapse -->
 </form>
+
+                        
