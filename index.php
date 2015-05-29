@@ -29,8 +29,7 @@
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/validator.js"></script>
     <script src="js/validator.min.js"></script>
-
-
+    
        <!-- Custom CSS -->
     <style>
     body {
@@ -223,32 +222,6 @@
                     <div  class="col-xs-12 col-sm-6 col-md-8">
                         
                         <ul class="media-list">
-                          <?php
-                            require 'src/conexion.php';                            
-                            $aux= conectar();
-                            $reg=mysql_query(" Select * from publicacion ",$aux)or die("problema de select".mysql_error());
-                            require 'src/sql/getFoto.php';
-                            while($r=mysql_fetch_array($reg)){   
-                              if( $r ['baja']<>true){  
-                              ?>
-                              <li class="media">
-                              <a class="pull-left" href="#">
-                                  <?php getFoto($r['id'], $aux);?>
-                              </a>
-                              <div class="media-body">
-                                <h4 class="media-heading"><?php echo $r['titulo'] ?></h4>
-                                  <?php echo $r['descripcion'] ?> <br>
-                                  <?php echo $r['fecha_inicio'] ?> <br>
-                                  <?php echo $r['fecha_fin'] ?> 
-
-                              </li>
-                              <?php
-
-                              }
-                            }
-                            mysql_close($aux);
-                          ?>
-
                           <li class="media">
                             <a class="pull-left" href="#">
                                 <img class="media-object" src="fotosmuestra/images1.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
@@ -258,7 +231,105 @@
                               Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                             </div>
                           </li>
-                         
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images2.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images3.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images4.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images5.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images6.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images7.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images8.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images9.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images10.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images11.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
+                          <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="fotosmuestra/images12.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
+                            </a>
+                            <div class="media-body">
+                              <h4 class="media-heading">Título del contenido</h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            </div>
+                          </li>
                         </ul>
                         
                     </div>
