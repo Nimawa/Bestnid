@@ -46,29 +46,27 @@
                         </div>
                         <div class="form-group">
                             <label for="categoria" class="col-lg-2 control-label">Categoría: * </label>
-                            <div class="col-lg-4">
-                                <select name="categoria" > 
-								<?php
-								$con = mysqli_connect("localhost","root","","bestnid") 
-								or die("Error " . mysqli_error($con)); 
-								if (mysqli_connect_errno()) {
- 				 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  								}
-								$registros=mysqli_query($con, "SELECT * FROM categoria ") or
-								die("Problemas en el select:".mysqli_error($con));
-								while ($reg=mysqli_fetch_array($registros)){
-									?>		
-									<option selected value= "<?php echo $reg['id']?>" ><?php echo $reg['nombre'];?></option>		
-									<?php		
-								}
-									?>		
-								</select> 
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="fotos" class="col-lg-2 control-label">Fotos: * </label>
-                            <div class="col-lg-4">
-                              <dl>  
+                <div class="col-lg-4">
+                  <select name="categoria" > 
+  								<?php
+    								require 'conexion.php';
+                    $conexion=conectar();
+
+    								$registros=mysql_query("SELECT * FROM categoria " ,$conexion) or
+    								die("Problemas en el select:".mysql_error($conexion));
+    								while ($reg=mysql_fetch_array($registros)){
+    									?>		
+    									<option selected value= "<?php echo $reg['id']?>" ><?php echo $reg['nombre'];?></option>		
+    									<?php		
+    								}
+  								?>		
+  								</select> 
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="fotos" class="col-lg-2 control-label">Fotos: * </label>
+                    <div class="col-lg-4">
+                      <dl>  
 								<!-- Esta div contendrá todos los campos file que creemos -->
  								<dd><div id="adjuntos" >
        							<!-- Hay que prestar atención a esto, el nombre de este campo debe siempre terminar en []
