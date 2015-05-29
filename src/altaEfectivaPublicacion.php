@@ -9,11 +9,12 @@ $fec_act=date("Y-m-d");
 $id_usuario=1;
 $id_categoria=$_REQUEST['categoria'];
 	
-				
-	mysqli_query($con, "INSERT INTO publicacion(titulo, descripcion, fecha_inicio, fecha_fin, id_usuario, id_categoria) 
-	VALUES ('$tit','$des','$fec_act','$fec','$id_usuario','$id_categoria')")
+	require 'conexion.php';
+$conexion=conectar();		
+	mysql_query("INSERT INTO publicacion(titulo, descripcion, fecha_inicio, fecha_fin, id_usuario, id_categoria) 
+	VALUES ('$tit','$des','$fec_act','$fec','$id_usuario','$id_categoria')", $conexion)
 	or die("Problemas en el select:".mysql_error());
-	$idnuevo = mysqli_insert_id($con);
+	$idnuevo = mysql_insert_id($conexion);
 
  if ( isset ($_FILES["archivos"]) ) {
  	$tot = count($_FILES["archivos"]["name"]);

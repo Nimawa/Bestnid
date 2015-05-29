@@ -36,7 +36,7 @@
               <div class="form-group">
                  	<label for="descripcion" class="col-lg-2 control-label">Descripción: *</label>
                  	<div class="col-lg-4">
-                		<input type="text" class="form-control" id="descripcion" name="descripción" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!">
+                		<input type="text" class="form-control" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!">
                  	<div class="help-block with-errors"></div>   
            	  	</div>
               </div>
