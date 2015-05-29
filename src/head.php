@@ -27,6 +27,7 @@
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="../js/validator.js"></script>
     <script src="../js/validator.min.js"></script>
+    <script src="../js/fotos.js"></script>
     
        <!-- Custom CSS -->
     <style>
