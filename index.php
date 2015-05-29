@@ -135,9 +135,7 @@
 	<?php
 	   //include 'src/busqueda.php';
 	?>	
-
-
-<div style=" padding: 0 200px;">
+   <div style=" padding: 0 200px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-6 col-md-4">
@@ -148,30 +146,31 @@
                 </div>
 
                 <div  class="col-xs-12 col-sm-6 col-md-8">
-                    <form class="form-inline" role="form" action="src/filtrador.php" method="post">
+				<form action="src/filtrador.php" method="post">
+                    <form class="form-inline" role="form">
                         <div class="form-group">
                             <label for="campoBusqueda">Busqueda:</label>
                             <input type="text" class="form-control" id="campoBusqueda" name="campoBusqueda" placeholder=" Ingrese su busqueda..." style="margin-bottom: 3px;">
                             
-                            <button type="submit" class="btn btn-danger">
+                           <button type="submit" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button><br>
                             Filtros: 
                             <div class="checkbox">
                                 <label>
-                                    <select class="form-control input-sm" name="idCategoria" >
-                                      <?php
-                                          require 'src/conexion.php';
-                                          require 'src/sql/getCategoria.php';
-                                          $conexion= conectar();
-                                          getCategoria($conexion);
-                                          mysql_close($conexion);
-                                      ?>
+                                    <select class="form-control input-sm" name="idCategoria">
+                                           <?php
+									      require 'src/conexion.php';
+									      require 'src/sql/getCategoria.php';
+									      $con= conectar();
+									      getCategoria($con);
+									      mysql_close($con);
+									  ?>
                                     </select>
 
                                 </label>
                             </div>
-                            <div class="radio">
+                           <div class="radio">
                                 <label>
                                    <input type="radio" name="radio1" value="titulo" > 
                                   Titulo
@@ -183,7 +182,7 @@
                                   Descripcion
                                 </label>
                             </div>
-                            <div class="radio">             
+							<div class="radio">
                                 <label>
                                    <input type="radio" name="radio1" value="ambas" checked="true" > 
                                   Titulo/Descricion
@@ -191,7 +190,8 @@
                             </div>
                             
                         </div>
-                    </form>    
+                    </form>  
+				</form> 	  
                 </div>
             </div>
         </div>
