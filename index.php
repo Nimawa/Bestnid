@@ -175,6 +175,11 @@
                                   Descripcion
                                 </label>
                             </div>
+                            <div >
+                                <label>
+                                  <a href="src/altaPublicacion.php">alta publicacion</a>
+                                </label>
+                            </div>
                             
                         </div>
                     </form>    
