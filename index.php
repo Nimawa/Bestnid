@@ -341,6 +341,14 @@
         <?php
         }
 
+        if ($_REQUEST['u']==3) {
+          ?>  
+          <script language="javascript">
+          bootbox.alert("La contraseña ingresada es incorrecta.",null);
+          </script>
+        <?php 
+        }
+
     ?>
     
     
