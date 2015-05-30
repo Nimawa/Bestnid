@@ -121,15 +121,9 @@
                             <li>
                                 <a href="#"> Contacto <span class="glyphicon glyphicon-envelope"></span></a>
                             </li>
-                            
-                            
                         </ul>
-<<<<<<< HEAD
-                      </div>
-                     <a href="src/altaPublicacion.php">alta publicacion</a>
-=======
                     </div>
->>>>>>> e6508eff8eda15f1e27462f47bf2f90099cba219
+
                     <!-- /.navbar-collapse -->
                 </form>
                 <?php

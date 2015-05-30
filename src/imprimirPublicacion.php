@@ -9,7 +9,9 @@
           <ul class="media-list">
             <li class="media">
               <a class="pull-left" href="#" >
-                  <img class="media-object" ><?php getFoto($r['id'], $v2); ?> </img>
+                  <div style=" border: 3px #333; float: left; height: 12em; margin: .2em 1em 1em 0; overflow: hidden;width: 12em;" >
+                    <img class="media-object"  ><?php getFoto($r['id'], $v2); ?> </img>
+                  </div>
               </a>
               <div class="media-body">
                 <h4 class="media-heading"><?php echo $r['titulo']; ?> </h4>
