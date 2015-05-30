@@ -119,6 +119,7 @@
                             </li>
                         </ul>
                       </div>
+                     <a href="src/altaPublicacion.php">alta publicacion</a>
                     <!-- /.navbar-collapse -->
                 </form>
                 <?php

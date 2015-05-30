@@ -42,6 +42,7 @@ addCampo = function () {
    container = document.getElementById('adjuntos');
    container.appendChild(nDiv);
 }
+
 //con esta función eliminamos el campo cuyo link de eliminación sea presionado
 elimCamp = function (evt){
    evt = evento(evt);
