@@ -9,35 +9,31 @@
                     </a>
                     <a href="#"> <img src="../Img/logo.png" > </a>
                 </div>
-                  
+
                 <div  class="col-xs-12 col-sm-6 col-md-8">
-				<form action="filtrador.php" method="post">  
-                    <form class="form-inline" role="form">
+                    <form class="form-inline" role="form" action="filtrador.php" method="post">
                         <div class="form-group">
                             <label for="campoBusqueda">Busqueda:</label>
-                            <input type="text" class="form-control" id="campoBusqueda" name="campoBusqueda" placeholder=" Ingrese su busqueda..." style="margin-bottom: 5px;">
+                            <input type="text" class="form-control" id="campoBusqueda" name="campoBusqueda" placeholder=" Ingrese su busqueda..." style="margin-bottom: 3px;">
                             
                             <button type="submit" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-search"></span>
-                                
                             </button><br>
-							
                             Filtros: 
                             <div class="checkbox">
                                 <label>
                                     <select class="form-control input-sm" name="idCategoria">
-                                        <?php
-									  require 'conexion.php';
-									  require 'sql/getCategoria.php';
-									  $con= conectar();
-									  getCategoria($con);
-									  mysql_close($con);
-									  ?>
+                                      <?php
+                                        require 'conexion.php';
+                                        require 'sql/getCategoria.php';
+                                        $conexion= conectar();
+                                        getCategoria($conexion);
+                                      ?>
                                     </select>
 
                                 </label>
                             </div>
-                           <div class="radio">
+                            <div class="radio">
                                 <label>
                                    <input type="radio" name="radio1" value="titulo" > 
                                   Titulo
@@ -49,20 +45,17 @@
                                   Descripcion
                                 </label>
                             </div>
-							<div class="radio">
+                            <div class="radio">
                                 <label>
                                    <input type="radio" name="radio1" value="ambas" checked="true" > 
                                   Titulo/Descricion
                                 </label>
                             </div>
-                         </form>
-						 
-	            </form>    
+                            
                         </div>
-                      
-					 
+                    </form>    
                 </div>
             </div>
         </div>
-		    </div>
+    </div>
 			
