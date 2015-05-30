@@ -241,7 +241,7 @@
 
     <!-- Si retorna Codigo=1, se regresa del alta de usuario, por lo tanto informa de ello-->
     <?php
-        if ($_REQUEST['u']==1) {
+        if (isset($_REQUEST['u'])){
           if ($_REQUEST['u']==1) {
             ?>  
             <script language="javascript">
