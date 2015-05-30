@@ -1,6 +1,9 @@
 <?php
 
-
+ /*if ( $_FILES["archivos"] == null) {
+ 	echo "vacio";
+	return false;
+}*/
 
 $tit=$_REQUEST['titulo'];
 $des=$_REQUEST['descripcion'];
@@ -16,7 +19,6 @@ $conexion=conectar();
 	or die("Problemas en el select:".mysql_error());
 	$idnuevo = mysql_insert_id($conexion);
 
- if ( isset ($_FILES["archivos"]) ) {
  	$tot = count($_FILES["archivos"]["name"]);
 	$permitidos = array("image/jpg", "image/jpeg","image/png");
     for ($i = 0; $i < $tot; $i++){
@@ -34,7 +36,7 @@ $conexion=conectar();
 		fclose($itmp);
 		//escapando los caracteres
 		$imagen = mysql_real_escape_string($imagen);
-		mysqli_query($con, "INSERT INTO foto(id_publicacion, foto, tipo_foto) VALUES ('$idnuevo', '$imagen', '$ext')");
+		mysql_query("INSERT INTO foto(id_publicacion, foto, tipo_foto) VALUES ('$idnuevo', '$imagen', '$ext')",$conexion);
 
 	//	$tip=$_REQUEST['ext'];
 		}else{
@@ -42,12 +44,11 @@ $conexion=conectar();
 			return false;
 		}
 	}
-}else{
-	echo "vacio";
-	return false;
-}
+/*}else{
+	
+}*/
 
 
 	
-	mysqli_close($con);
+	mysql_close($conexion);
 ?> 
