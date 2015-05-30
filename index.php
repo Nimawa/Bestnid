@@ -99,17 +99,21 @@
 
               }else{
                   ?>
-                  <form method="post"  action="src/logout.php">  
+                  <form method="post"  action="logout.php">  
+                    <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"style="margin-right: 0px;">
                         <ul class="nav navbar-nav pull-right">
                             <li>
                                 <a style="color: #c0c0c0;" > BIENVENIDO</a>
                             </li>    
                             <li>                         
-                                  <a href="#"> <?php echo $_SESSION['nombre'], $_SESSION['apellido']; ?></span></a>
+                                  <a href="#"> <?php echo $_SESSION['nombre']," ", $_SESSION['apellido']; ?></span></a>
                             </li>
                             <li>
                             <input type="submit" class="btn btn-danger btn-sm" style=" margin-top: 10px; margin-right: 80px" value="Cerrar Sesion">
+                            </li>
+                            <li>
+                            <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 80px" value="PUBLICAR" onclick="window.location.href='src/altaPublicacion.php'">
                             </li>
                             <li>
                                 <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
@@ -117,9 +121,15 @@
                             <li>
                                 <a href="#"> Contacto <span class="glyphicon glyphicon-envelope"></span></a>
                             </li>
+                            
+                            
                         </ul>
+<<<<<<< HEAD
                       </div>
                      <a href="src/altaPublicacion.php">alta publicacion</a>
+=======
+                    </div>
+>>>>>>> e6508eff8eda15f1e27462f47bf2f90099cba219
                     <!-- /.navbar-collapse -->
                 </form>
                 <?php
@@ -166,7 +176,6 @@
                                         require 'src/sql/getCategoria.php';
                                         $conexion= conectar();
                                         getCategoria($conexion);
-                                        mysql_close($conexion);
                                       ?>
                                     </select>
 
@@ -221,117 +230,13 @@
                 </div>
 
                     <div  class="col-xs-12 col-sm-6 col-md-8">
-                        
-                        <ul class="media-list">
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images1.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images2.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images3.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images4.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images5.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images6.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images7.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images8.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images9.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images10.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images11.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                          <li class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="fotosmuestra/images12.jpg" alt="..." style="max-height: 168px; max-width: 168px;">
-                            </a>
-                            <div class="media-body">
-                              <h4 class="media-heading">Título del contenido</h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                            </div>
-                          </li>
-                        </ul>
+                        <?php
+                          $reg=mysql_query(" Select * from publicacion ",$conexion)or die("problema de select".mysql_error());
+                          require 'src/imprimirPublicacion.php';
+                          imprimirPublicacion($reg,$conexion);
+                          mysql_close($conexion);
+                        ?>
+           
                         
                     </div>
             </div>
@@ -341,29 +246,29 @@
 
     <!-- Si retorna Codigo=1, se regresa del alta de usuario, por lo tanto informa de ello-->
     <?php
+        if (isset($_REQUEST['u'])){
+          if ($_REQUEST['u']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("Su cuenta de usuario ha sido creada exitosamente, Inicie Sesion con su E-mail y contraseña.",null);
+            </script>
+          <?php 
+          }else if ($_REQUEST['u']==2) {
+            ?> <!-- Si retorna Codigo=2, el mail esta utilizado por otro usuario--> 
+            <script language="javascript">
+            bootbox.alert("El email ingresado se encuentra registrado! Ingrese nuevamente sus datos",null);
+            </script>
+          <?php
+          }
 
-        if ($_REQUEST['u']==1) {
-          ?>  
-          <script language="javascript">
-          bootbox.alert("Su cuenta de usuario ha sido creada exitosamente, Inicie Sesion con su E-mail y contraseña.",null);
-          </script>
-        <?php 
-        }else if ($_REQUEST['u']==2) {
-          ?> <!-- Si retorna Codigo=2, el mail esta utilizado por otro usuario--> 
-          <script language="javascript">
-          bootbox.alert("El email ingresado se encuentra registrado! Ingrese nuevamente sus datos",null);
-          </script>
-        <?php
+          if ($_REQUEST['u']==3) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("La contraseña ingresada es incorrecta.",null);
+            </script>
+          <?php 
+          }
         }
-
-        if ($_REQUEST['u']==3) {
-          ?>  
-          <script language="javascript">
-          bootbox.alert("La contraseña ingresada es incorrecta.",null);
-          </script>
-        <?php 
-        }
-
     ?>
     
     

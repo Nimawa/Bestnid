@@ -13,7 +13,7 @@
                 </div>
 	<div  class="col-xs-12 col-sm-6 col-md-8">
    <?php
-      require 'conexion.php';
+    require 'conexion.php';
 	  
 	  $aux= conectar();
 	  $reg=mysql_query(" Select *
