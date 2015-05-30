@@ -5,9 +5,11 @@ function getFoto($v1, $v2)
 		         WHERE id_publicacion = $v1"
 					       ,$v2)or
       die("problema de select".mysql_error());
-        $res=mysql_fetch_array($sth);
-		
+       if( $res=mysql_fetch_array($sth))
+		{
        echo '<img src="data:image/jpeg;base64,'.base64_encode( $res['foto'] ).'"/>'."<br>";
+
+       }
 }
 
 ?>
