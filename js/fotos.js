@@ -55,3 +55,12 @@ rObj = function (evt) {
    return evt.srcElement ?  evt.srcElement : evt.target;
 }
 
+function fotos () {
+  alert("hola");
+   for ($i = 0; $i < archivos.length ; $i++){
+      if (in_array($_FILES['archivos']['type'][$i], $permitidos) || $_FILES['archivos']['size'][$i] <= 2097152){     
+         alert('El archivo no es jpe, jpeg, png o es mayor a 2048 kb');
+         return false;
+         }
+   }
+}

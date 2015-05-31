@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html>
+<!--<head><script type="text/javascript">function fotos () {
+  alert("hola");
+   for ($i = 0; $i < archivos.length ; $i++){
+      if (in_array($_FILES['archivos']['type'][$i], $permitidos) || $_FILES['archivos']['size'][$i] <= 2097152){     
+         alert('El archivo no es jpe, jpeg, png o es mayor a 2048 kb');
+         return false;
+         }
+   }
+}
+</script></head>-->
 <?php include 'head.php';?>
 <body>
 <?php include 'navegacion.php';?>
@@ -24,7 +34,7 @@
                     
           </div>
           <div class="col-xs-6 col-md-8">
-            <form action="altaEfectivaPublicacion.php" method="post" data-toggle="validator" class="form-horizontal"  id="alta" enctype="multipart/form-data" >
+            <form action="altaEfectivaPublicacion.php" method="post"  data-toggle="validator" class="form-horizontal"  id="alta" enctype="multipart/form-data" >
               Aclaracion: Los campos con (*) son obligatorios <br><br>
               <div class="form-group">
                   <label for="titulo" class="col-lg-2 control-label">Título: *</label>
@@ -87,7 +97,7 @@
               <div class="form-group" >
                 <div class="col-lg-10">
                   <button type="button" class="btn btn-default" style=" margin-left: 100px;">Cancelar</button>
-                  <input type="submit" class="btn btn-danger" style=" margin-left: 20px;" value="Aceptar">
+                  <input type="submit"  class="btn btn-danger" style=" margin-left: 20px;" value="Aceptar">
                 </div>
               </div>
                        

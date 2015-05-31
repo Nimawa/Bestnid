@@ -4,25 +4,30 @@
  	echo "vacio";
 	return false;
 }*/	
+	include 'head.php';
+	session_start();
+	require 'conexion.php';
+	$conexion=conectar();
 
 	$tot = count($_FILES["archivos"]["name"]);
 	$permitidos = array("image/jpg", "image/jpeg","image/png");
 	for ($i = 0; $i < $tot; $i++){
-		if (in_array($_FILES['archivos']['type'][$i], $permitidos) || $_FILES['archivos']['size'][$i] <= 2097152){		
+		if (!in_array($_FILES['archivos']['type'][$i], $permitidos) || $_FILES['archivos']['size'][$i] >= 2097152){		
 			echo "<script language='JavaScript'>alert('El archivo no es jpe, jpeg, png o es mayor a 2048 kb');</script>";
+			echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
 			return false;
 			}
 	}
+
 
 $tit=$_REQUEST['titulo'];
 $des=$_REQUEST['descripcion'];
 $fec=$_REQUEST['fecha'];
 $fec_act=date("Y-m-d");
-$id_usuario=1;
+$id_usuario=$_SESSION["id"]; 
 $id_categoria=$_REQUEST['categoria'];
 	
-	require 'conexion.php';
-	$conexion=conectar();		
+
 	mysql_query("INSERT INTO publicacion(titulo, descripcion, fecha_inicio, fecha_fin, id_usuario, id_categoria) 
 	VALUES ('$tit','$des','$fec_act','$fec','$id_usuario','$id_categoria')", $conexion)
 	or die("Problemas en el select:".mysql_error());
