@@ -20,7 +20,7 @@
           </div>
         </div>
         <?php
-
+        require 'acomodarFecha.php';
         require 'conexion.php';
         $conexion=conectar();
 
@@ -34,7 +34,7 @@
                     
           </div>
           <div class="col-xs-6 col-md-8">
-            <form action="altaEfectivaPublicacion.php" method="post"  data-toggle="validator" class="form-horizontal"  id="alta" enctype="multipart/form-data" >
+            <form action="ix.php" method="post"  data-toggle="validator" class="form-horizontal"  id="alta" enctype="multipart/form-data" >
               Aclaracion: Los campos con (*) son obligatorios <br><br>
               <div class="form-group">
                   <label for="titulo" class="col-lg-2 control-label">Título: *</label>
@@ -72,9 +72,18 @@
                  or die("Problemas en el select:".mysql_error($conexion));
                 while ($re=mysql_fetch_array($regis)) {
                  if ($re['id_publicacion'] == $reg1['id'] ) {
-                 ?><div style=" border: 3px #333; float: left; height: 12em; margin: .2em 1em 1em 0; overflow: hidden;width: 12em;" >
-                 <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode( $re['foto'] ).'"/>'."<br>";?>
-                  </div><?php
+                 ?>
+                   <div>
+                   <a class="pull-left" href="#" >
+                    <div style=" display: inline-block; border: 3px #333; float: left; height: 12em; margin: .2em 1em 1em 0; overflow: hidden;width: 12em;" >
+                      <?php  echo '<img  class="media-object" src="data:image/jpeg;base64,'.base64_encode( $re['foto'] ).'"/>'."<br>";?>
+                    </div>
+                    <div style="display: block">
+                      <input type="submit" value="<?php echo $re['id']?>" id="eliminar" name="<?php echo $re['id']?>"  ONCLICK="window.location = '/bestnid/src/borrarFoto.php';"/>
+                    </div>
+                   </a>
+                   </div>
+                     <?php
                 }
                 }?>
               </div>
@@ -101,8 +110,14 @@
   							  </dl>
                 </div>
               </div>
+               <div class="form-group">             
+                <label for="piso" class="col-lg-2 control-label">Fecha fin de publicación:</label> 
+                <div class="col-lg-2"><br><br>
+                 <?php echo acomodarFecha($reg1['fecha_fin']);?>
+                </div>
+               </div>
                <div class="form-group">
-                <label for="piso" class="col-lg-2 control-label">Días de publicación: *</label>
+                <label for="piso" class="col-lg-2 control-label">Cambiar fecha publicación: *</label>
                 <div class="col-lg-2">
                   <input type="number" class="form-control" id="fecha" name="fecha" min="1" max="30"  required="required">
                 </div>
