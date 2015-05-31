@@ -81,6 +81,8 @@
                                 <input type="text" class="form-control" id="piso" name="piso" placeholder="Ej. A" pattern="[0-9]+" data-error="Complete correctamente este campo">
                                 <div class="help-block with-errors"></div> 
                             </div>
+                        </div>
+                        <div class="form-group">
                             <label for="depto" class="col-lg-2 control-label">Depto.:  </label>
                             <div class="col-lg-2">
                               <input type="text" class="form-control" id="depto" name="depto" placeholder="Ej. 1" pattern="\b\w{1}\b" data-error="Complete correctamente este campo" >
