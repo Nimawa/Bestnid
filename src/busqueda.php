@@ -7,7 +7,7 @@
                     <a style=" color: #000; font-style:italic; font-size: 20px; ">
                         <strong> BESTNID </strong>
                     </a>
-                    <a href="#"> <img src="../Img/logo.png" > </a>
+                    <a href="../index.php"> <img src="../Img/logo.png" > </a>
                 </div>
 
                 <div  class="col-xs-12 col-sm-6 col-md-8">

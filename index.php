@@ -209,16 +209,13 @@
                     
                     <div class="list-group">
                         <a href="#" class="list-group-item "></span><strong>CATEGORIAS</strong></a>
-                        <a href="#" class="list-group-item"><span class="badge">5</span>Cras justo odio</a>
-                        <a href="#" class="list-group-item"><span class="badge">35</span>Dapibus ac facilisis in</a>
-                        <a href="#" class="list-group-item"><span class="badge">25</span>Morbi leo risus</a>
-                        <a href="#" class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item"><span class="badge">19</span>Vestibulum at eros</a>
-                        <a href="#" class="list-group-item"><span class="badge">15</span>Cras justo odio</a>
-                        <a href="#" class="list-group-item"><span class="badge">14</span>Dapibus ac facilisis in</a>
-                        <a href="#" class="list-group-item"><span class="badge">56</span>Morbi leo risus</a>
-                        <a href="#" class="list-group-item"><span class="badge">14</span>Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item"><span class="badge">3</span>Vestibulum at eros</a>
+                        <?php
+                              $cat=mysql_query(" SELECT cat.nombre, cat.id, count( pub.id ) as cantidad FROM categoria AS cat JOIN publicacion AS pub WHERE cat.id = pub.id_categoria GROUP BY cat.nombre",$conexion)or die("problema de select".mysql_error());
+                              while($categoria=mysql_fetch_array($cat)){
+                                ?>
+                                <a href="#" class="list-group-item"><span class="badge"><?php echo $categoria['cantidad']; ?> </span><?php echo $categoria['nombre']; ?> </a><?php        
+                              } 
+                        ?>       
                     </div>
                     
                 </div>
