@@ -99,7 +99,7 @@
 
               }else{
                   ?>
-                  <form method="post"  action="logout.php">  
+                  <form method="post"  action="src/logout.php">  
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"style="margin-right: 0px;">
                         <ul class="nav navbar-nav pull-right">
