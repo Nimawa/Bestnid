@@ -37,47 +37,48 @@
                         <div class="form-group">
                             <label for="nombre" class="col-lg-2 control-label">Nombre: *</label>
                             <div class="col-lg-4">
-                              <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombre" data-error=" Ingrese un dato Valido!">
+                              <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombre" data-error="Complete este campo" >
                               <div class="help-block with-errors"></div>   
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="apellido" class="col-lg-2 control-label">Apellido: *</label>
                             <div class="col-lg-4">
-                              <input type="text" class="form-control" id="apellido" name="apellido" required placeholder="Apellido" data-error=" Ingrese un dato Valido!">
+                              <input type="text" class="form-control" id="apellido" name="apellido" required placeholder="Apellido" data-error="Complete este campo">
                               <div class="help-block with-errors"></div>   
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="dni" class="col-lg-2 control-label">DNI: * </label>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" id="dni" name="dni" required placeholder="Ej. 12456879" data-error=" Ingrese un dato Valido!">
+                                <input type="text" class="form-control" id="dni" name="dni" required placeholder="Ej. 12456879" data-error="Complete este campo">
                                 <div class="help-block with-errors"></div> 
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="telefono" class="col-lg-2 control-label">Telefono: * </label>
                             <div class="col-lg-4">
-                              <input type="text" class="form-control" id="telefono" name="telefono" required placeholder="Ej. 221 - 154568789" data-error=" Ingrese un dato Valido!">
+                              <input type="text" class="form-control" id="telefono" name="telefono" required placeholder="Ej. 221 - 154568789" data-error="Complete este campo">
                               <div class="help-block with-errors"></div> 
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="calle" class="col-lg-2 control-label">Calle: * </label>
                             <div class="col-lg-3">
-                              <input type="text" class="form-control" id="calle" name="calle" required placeholder="Calle" data-error=" Ingrese un dato Valido!" >
+                              <input type="text" class="form-control" id="calle" name="calle" required placeholder="Calle" data-error="Complete este campo" >
+                              <div class="help-block with-errors"></div>
                             </div>
                             
                             <label for="nro" class="col-lg-2 control-label">Nro: * </label>
                             <div class="col-lg-2">
-                                <input type="text" class="form-control" id="nro" name="nro" required placeholder="Ej. 1234" data-error=" Ingrese un dato Valido!">
+                                <input type="text" class="form-control" id="nro" name="nro" required placeholder="Ej. 1234" data-error="Complete este campo">
                                 <div class="help-block with-errors"></div> 
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="piso" class="col-lg-2 control-label">Piso:  </label>
                             <div class="col-lg-2">
-                                <input type="number" class="form-control" id="piso" name="piso" placeholder="Ej. A" >
+                                <input type="text" class="form-control" id="piso" name="piso" placeholder="Ej. A" >
                             </div>
                             <label for="depto" class="col-lg-2 control-label">Depto.:  </label>
                             <div class="col-lg-2">
@@ -87,14 +88,14 @@
                         <div class="form-group">
                             <label for="ciudad" class="col-lg-2 control-label">Ciudad: * </label>
                             <div class="col-lg-4">
-                              <input type="text" class="form-control" id="ciudad" name="ciudad" required placeholder="Ciudad" data-error=" Ingrese un dato Valido!">
+                              <input type="text" class="form-control" id="ciudad" name="ciudad" required placeholder="Ciudad" data-error="Complete este campo">
                               <div class="help-block with-errors"></div> 
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="pcia" class="col-lg-2 control-label">Pcia: * </label>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" id="pcia" name="pcia" required placeholder="Provincia" data-error=" Ingrese un dato Valido!">
+                                <input type="text" class="form-control" id="pcia" name="pcia" required placeholder="Provincia" data-error="Complete este campo">
                                 <div class="help-block with-errors"></div> 
                             </div>
                         </div>
