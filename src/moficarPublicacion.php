@@ -15,10 +15,21 @@
 
           <div  class="col-xs-12 col-sm-6 col-md-8">
             <h3>
-                <strong> Alta de Publicación </strong>
+                <strong> Modificar Publicación </strong>
             </h3>
           </div>
         </div>
+        <?php
+
+        session_start();
+        require 'conexion.php';
+        $conexion=conectar();
+
+        $registros1=mysql_query("SELECT * FROM publicacion AS publi INNER JOIN categoria AS cat ON publi.id_categoria = cat.id INNER JOIN foto AS fot ON publi.id = fot.id_publicacion WHERE publi.id=1", $conexion) 
+         or die("Problemas en el select:".mysql_error($conexion));
+        $reg1=mysql_fetch_array($registros1);
+    ?>
+
         <div class="row">
           <div class="col-xs-6 col-md-4">
                     
@@ -29,7 +40,7 @@
               <div class="form-group">
                   <label for="titulo" class="col-lg-2 control-label">Título: *</label>
                   <div class="col-lg-4">
-                    <input type="text" class="form-control" id="titulo" name="titulo" required placeholder="Título" data-error=" Ingrese un dato Valido!">
+                    <input type="text" class="form-control" id="titulo" name="titulo" required placeholder="Título" data-error=" Ingrese un dato Valido!" value="<?php echo $reg1['titulo'];?>">
                     <div class="help-block with-errors"></div>   
               	</div>
               </div>

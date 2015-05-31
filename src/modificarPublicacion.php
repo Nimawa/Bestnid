@@ -15,10 +15,20 @@
 
           <div  class="col-xs-12 col-sm-6 col-md-8">
             <h3>
-                <strong> Alta de Publicación </strong>
+                <strong> Modificar Publicación </strong>
             </h3>
           </div>
         </div>
+        <?php
+
+        require 'conexion.php';
+        $conexion=conectar();
+
+        $registros1=mysql_query("SELECT * FROM publicacion AS publi INNER JOIN categoria AS cat ON publi.id_categoria = cat.id INNER JOIN foto AS fot ON publi.id = fot.id_publicacion WHERE publi.id=1", $conexion) 
+         or die("Problemas en el select:".mysql_error($conexion));
+        $reg1=mysql_fetch_array($registros1);
+    ?>
+
         <div class="row">
           <div class="col-xs-6 col-md-4">
                     
@@ -29,14 +39,14 @@
               <div class="form-group">
                   <label for="titulo" class="col-lg-2 control-label">Título: *</label>
                   <div class="col-lg-4">
-                    <input type="text" class="form-control" id="titulo" name="titulo" required placeholder="Título" data-error=" Ingrese un dato Valido!">
+                    <input type="text" class="form-control" id="titulo" name="titulo" required placeholder="Título" data-error=" Ingrese un dato Valido!" value="<?php echo $reg1['titulo'];?>">
                     <div class="help-block with-errors"></div>   
               	</div>
               </div>
               <div class="form-group">
                   <label for="descripcion" class="col-lg-2 control-label">Descripción: *</label>
                  	<div class="col-lg-4">
-                		<textarea  type="text" class="form-control" rows= "4" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!"></textarea>
+                		<textarea  type="text" class="form-control" rows= "4" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!">"<?php echo $reg1['descripcion'];?>"</textarea>
                  	<div class="help-block with-errors"></div>   
            	  	</div>
               </div>
@@ -44,20 +54,33 @@
                 <label for="categoria" class="col-lg-2 control-label">Categoría: * </label>
                 <div class="col-lg-4">
                   <select name="categoria" > 
-  								  <?php
-      								require 'conexion.php';
-                      $conexion=conectar();
-    								  $registros=mysql_query("SELECT * FROM categoria " ,$conexion) or die("Problemas en el select:".mysql_error($conexion));
-    								  
-                      while ($reg=mysql_fetch_array($registros)){
-    									?>		
-    									<option selected value= "<?php echo $reg['id']?>" ><?php echo $reg['nombre'];?></option>		
-    									<?php		
-    								  }?>
-
+  								        <?php
+    						    		  $registros=mysql_query("SELECT * FROM categoria " ,$conexion) 
+                  or die("Problemas en el select:".mysql_error($conexion));
+                  while ($reg=mysql_fetch_array($registros)){
+        				       
+                  ?><option selected value= "<?php echo $reg['id']?>" ><?php echo $reg['nombre'];?></option><?php
+      
+    								      }?>
+                  <option selected value= "<?php echo $reg1['id']?>" ><?php echo $reg1['nombre'];?></option>
                   </select> 
                 </div>
               </div>
+              <div class="form-group">
+                <?php
+                $regis=mysql_query("SELECT * FROM foto", $conexion)
+                 or die("Problemas en el select:".mysql_error($conexion));
+                while ($re=mysql_fetch_array($regis)) {
+                 if ($re['id_publicacion'] == $reg1['id'] ) {
+                 ?><div style=" border: 3px #333; float: left; height: 12em; margin: .2em 1em 1em 0; overflow: hidden;width: 12em;" >
+                 <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode( $re['foto'] ).'"/>'."<br>";?>
+                  </div><?php
+                }
+                }?>
+              </div>
+
+
+
               <div class="form-group">
                 <label for="fotos" class="col-lg-2 control-label">Fotos: * </label>
                 <div class="col-lg-8">
