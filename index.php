@@ -113,7 +113,7 @@
                             <input type="submit" class="btn btn-danger btn-sm" style=" margin-top: 10px; margin-right: 80px" value="Cerrar Sesion">
                             </li>
                             <li>
-                            <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 80px" value="PUBLICAR" onclick="window.location.href='src/altaPublicacion.php'">
+                            <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; " value="PUBLICAR" onclick="window.location.href='src/altaPublicacion.php'">
                             </li>
                             <li>
                             <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 80px" value="MODIFICAR" onclick="window.location.href='src/modificarPublicacion.php'">
