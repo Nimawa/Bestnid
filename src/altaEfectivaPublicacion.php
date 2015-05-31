@@ -19,13 +19,13 @@
 			}
 	}
 
-
 $tit=$_REQUEST['titulo'];
 $des=$_REQUEST['descripcion'];
-$fec=$_REQUEST['fecha'];
+$num=$_REQUEST['fecha'];
 $fec_act=date("Y-m-d");
 $id_usuario=$_SESSION["id"]; 
 $id_categoria=$_REQUEST['categoria'];
+$fec= date("Y-m-d", strtotime("$fec_act + $num days"));  
 	
 
 	mysql_query("INSERT INTO publicacion(titulo, descripcion, fecha_inicio, fecha_fin, id_usuario, id_categoria) 

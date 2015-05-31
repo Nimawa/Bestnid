@@ -44,9 +44,9 @@
               	</div>
               </div>
               <div class="form-group">
-                 	<label for="descripcion" class="col-lg-2 control-label">Descripción: *</label>
+                  <label for="descripcion" class="col-lg-2 control-label">Descripción: *</label>
                  	<div class="col-lg-4">
-                		<input type="text" class="form-control" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!">
+                		<textarea  type="text" class="form-control" rows= "4" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!"></textarea>
                  	<div class="help-block with-errors"></div>   
            	  	</div>
               </div>
@@ -88,15 +88,15 @@
   							  </dl>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="fecha" class="col-lg-2 control-label">Fecha: * </label>
-                <div class="col-lg-4">
-                  <input type="date" name="fecha" >
+               <div class="form-group">
+                <label for="piso" class="col-lg-2 control-label">Días de publicación: *</label>
+                <div class="col-lg-2">
+                  <input type="number" class="form-control" id="fecha" name="fecha" min="1" max="30"  required="required">
                 </div>
               </div>
               <div class="form-group" >
                 <div class="col-lg-10">
-                  <button type="button" class="btn btn-default" style=" margin-left: 100px;">Cancelar</button>
+                  <button type="button" class="btn btn-default" style=" margin-left: 100px;" onClick="window.location = '/bestnid/index.php';" >Cancelar</button>
                   <input type="submit"  class="btn btn-danger" style=" margin-left: 20px;" value="Aceptar">
                 </div>
               </div>
