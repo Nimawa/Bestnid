@@ -59,10 +59,12 @@
     						    		  $registros=mysql_query("SELECT * FROM categoria " ,$conexion) 
                   or die("Problemas en el select:".mysql_error($conexion));
                   while ($reg=mysql_fetch_array($registros)){
-        				       
-                  ?><option selected value= "<?php echo $reg['id']?>" ><?php echo $reg['nombre'];?></option><?php
-      
-    								      }?>
+        				      if ($reg['id']==$reg1['id_categoria']){
+                        ?><option selected value= "<?php echo $reg['id']?>" ><?php echo $reg['nombre'];?></option><?php
+                        }else{
+                         ?><option value= "<?php echo $reg['id']?>" ><?php echo $reg['nombre'];?></option><?php
+                        }           
+                  } ?>    
                   </select> 
                 </div>
               </div>
@@ -117,9 +119,9 @@
                 </div>
                </div>
                <div class="form-group">
-                <label for="piso" class="col-lg-2 control-label">Cambiar fecha publicación: *</label>
-                <div class="col-lg-2">
-                  <input type="number" class="form-control" id="fecha" name="fecha" min="1" max="30"  required="required">
+                <label for="piso" class="col-lg-2 control-label">Cambiar fecha finalización: *</label>
+                <div class="col-lg-4">
+                  <input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo date("Y-m-d")?>"  max="<?php echo date("Y-m-d", strtotime("+ 30 days"))?>">
                 </div>
               </div>
               <div class="form-group" >

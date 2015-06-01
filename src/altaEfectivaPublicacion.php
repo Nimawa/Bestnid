@@ -25,7 +25,7 @@ $num=$_REQUEST['fecha'];
 $fec_act=date("Y-m-d");
 $id_usuario=$_SESSION["id"]; 
 $id_categoria=$_REQUEST['categoria'];
-$fec= date("Y-m-d", strtotime("$fec_act + $num days"));  
+$fec= $_REQUEST['fecha'];  
 	
 
 	mysql_query("INSERT INTO publicacion(titulo, descripcion, fecha_inicio, fecha_fin, id_usuario, id_categoria) 
