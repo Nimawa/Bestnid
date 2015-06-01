@@ -119,6 +119,9 @@
                             <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 80px" value="MODIFICAR" onclick="window.location.href='src/modificarPublicacion.php'">
                             </li>
                             <li>
+                              <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 80px" value="borrar" onclick="window.location.href='src/borrarPublicacion.php'">
+                            </li>
+                            <li>
                                 <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
                             </li>
                             <li>

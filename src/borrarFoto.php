@@ -1,7 +1,6 @@
 <?php
 
 
-	
 	require 'conexion.php';
 	$conexion=conectar();
 	$ida=$_REQUEST['ida'];
@@ -31,7 +30,7 @@
 			return false;
 		}
 	}
-	if ($vacio!=0) {
+	if ($vacio!=0) {								// controla que se una imagen
 		$permitidos = array("image/jpg", "image/jpeg","image/png");
 		for ($i = 0; $i < $tot; $i++){
 			if (!in_array($_FILES['archivos']['type'][$i], $permitidos) || $_FILES['archivos']['size'][$i] >= 2097152){		
@@ -61,7 +60,7 @@
 	
 
     
-	
+		if (!empty($_POST["arre"])) {
 		$foto=$_POST["arre"];
 		$registros=mysql_query("SELECT id FROM foto", $conexion) or
 		die("Problemas en el select:".mysql_error($conexion));
@@ -71,6 +70,7 @@
 				die("Problemas en el select:".mysql_error($conexion));
 			}
 		}
+	}
 	
 	
 $tit=$_REQUEST['titulo'];
@@ -87,9 +87,14 @@ $fec= date("Y-m-d", strtotime("$fec_act + $num days"));
 
 
 	mysql_close($conexion);
-	header("location: /bestnid/index.php");
+	?> <script language="javascript">
+	alert("La publicacion se ha modificado satisfactoriamente!,");
+	window.location='/bestnid/index.php';
+	</script>  <?php
 }else{
-	echo "<script language='JavaScript'>alert('No se puede modificar ya tiene ofertas hechas');</script>";
-	echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
+	?> <script language="javascript">
+	alert("La publicacion No se puede modificar porque hay ofertas realizadas!,");
+	window.location='/bestnid/index.php';
+	</script>  <?php
 }
 ?> 

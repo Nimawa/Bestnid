@@ -20,6 +20,7 @@
           </div>
         </div>
         <?php
+      
         require 'acomodarFecha.php';
         require 'conexion.php';
         $conexion=conectar();

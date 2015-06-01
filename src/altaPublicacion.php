@@ -45,6 +45,7 @@
                 <div class="col-lg-4">
                   <select name="categoria" > 
   								  <?php
+                  
       								require 'conexion.php';
                       $conexion=conectar();
     								  $registros=mysql_query("SELECT * FROM categoria " ,$conexion) or die("Problemas en el select:".mysql_error($conexion));
