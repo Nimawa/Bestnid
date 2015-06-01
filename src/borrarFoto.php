@@ -4,7 +4,7 @@
 	
 	require 'conexion.php';
 	$conexion=conectar();
-	$var="<script>document.getElementById('eliminar').value</script>";
+	$var=$_REQUEST['eliminar'];
 	echo ($var);
 	/*
 
