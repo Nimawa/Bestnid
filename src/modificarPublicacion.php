@@ -62,7 +62,6 @@
                   ?><option selected value= "<?php echo $reg['id']?>" ><?php echo $reg['nombre'];?></option><?php
       
     								      }?>
-                  <option selected value= "<?php echo $reg1['id']?>" ><?php echo $reg1['nombre'];?></option>
                   </select> 
                 </div>
               </div>
@@ -71,7 +70,7 @@
                 $regis=mysql_query("SELECT * FROM foto", $conexion)
                  or die("Problemas en el select:".mysql_error($conexion));
                 while ($re=mysql_fetch_array($regis)) {
-                 if ($re['id_publicacion'] == $reg1['id'] ) {
+                 if ($re['id_publicacion'] == 1 ) {
                  ?>
                    <div>
                    <a class="pull-left" href="#" >

@@ -4,15 +4,14 @@
 	
 	require 'conexion.php';
 	$conexion=conectar();
-$ida=$_REQUEST['ida'];
-
-	//var_dump($_FILES["archivos"]);
-
-
-	//$tot= $_FILES["archivos"]["name"][0];
-	//echo ($tot);
+	$ida=$_REQUEST['ida'];
+	$ofe=mysql_query("SELECT * FROM oferta WHERE id_publicacion=$ida", $conexion) or
+				die("Problemas en el select:".mysql_error($conexion));
+	$comp=mysql_fetch_array($ofe);
+	if ($comp==0) {								//comprueba no se hayan hecho ofertas
+	
 	$tot=count($_FILES["archivos"]["name"]);
-	for ($i=$tot; $i > 0 ; $i--) { 				//controlo si arreglo de fotos tiene fotos
+	for ($i=$tot; $i > 0 ; $i--) { 				//controla si arreglo de fotos tiene fotos
 		$pet=$_FILES["archivos"]["name"][$i-1];
 		if (!$pet==null) {
 			$vacio=1;
@@ -26,7 +25,7 @@ $ida=$_REQUEST['ida'];
 	$res=mysql_num_rows($num);
 	if (!empty($_POST["arre"])) {
 		$fot=count($_POST["arre"]);
-		if($fot==$res && $vacio==0){
+		if($fot==$res && $vacio==0){ 				// controla que no se borren todas las fotos
 			echo "<script language='JavaScript'>alert('Debe subir al menos una foto');</script>";
 			echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
 			return false;
@@ -73,30 +72,7 @@ $ida=$_REQUEST['ida'];
 			}
 		}
 	
-
-/*
-
-	if (empty($_POST["arre"]) && $vacio==0 ) {
-		echo "<script language='JavaScript'>alert('Debe subir al menos una foto');</script>";
-		echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
-		return false;
-	}else 
-		}
-	}
-	$permitidos = array("image/jpg", "image/jpeg","image/png");
-	for ($i = 0; $i < $tot; $i++){
-		if (!in_array($_FILES['archivos']['type'][$i], $permitidos) || $_FILES['archivos']['size'][$i] >= 2097152){		
-			echo "<script language='JavaScript'>alert('El archivo no es jpe, jpeg, png o es mayor a 2048 kb');</script>";
-			echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
-			return false;
-			}
-	}
-}
-	*/
 	
-
-	
-$ida=$_REQUEST['ida'];	
 $tit=$_REQUEST['titulo'];
 $des=$_REQUEST['descripcion'];
 $num=$_REQUEST['fecha'];
@@ -112,5 +88,8 @@ $fec= date("Y-m-d", strtotime("$fec_act + $num days"));
 
 	mysql_close($conexion);
 	header("location: /bestnid/index.php");
-
+}else{
+	echo "<script language='JavaScript'>alert('No se puede modificar ya tiene ofertas hechas');</script>";
+	echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
+}
 ?> 
