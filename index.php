@@ -110,16 +110,16 @@
                                   <a href="#"> <?php echo $_SESSION['nombre']," ", $_SESSION['apellido']; ?></span></a>
                             </li>
                             <li>
-                            <input type="submit" class="btn btn-danger btn-sm" style=" margin-top: 10px; margin-right: 80px" value="Cerrar Sesion">
+                            <input type="submit" class="btn btn-danger btn-sm" style=" margin-top: 10px; margin-right: 40px" value="Cerrar Sesion">
                             </li>
                             <li>
                             <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; " value="PUBLICAR" onclick="window.location.href='src/altaPublicacion.php'">
                             </li>
                             <li>
-                            <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 80px" value="MODIFICAR" onclick="window.location.href='src/modificarPublicacion.php'">
+                            <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="window.location.href='src/modificarPublicacion.php'">
                             </li>
                             <li>
-                              <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 80px" value="borrar" onclick="window.location.href='src/borrarPublicacion.php'">
+                              <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 40px" value="BORRAR" onclick="window.location.href='src/borrarPublicacion.php'">
                             </li>
                             <li>
                                 <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
