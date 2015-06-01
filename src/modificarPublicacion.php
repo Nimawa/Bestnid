@@ -34,7 +34,7 @@
                     
           </div>
           <div class="col-xs-6 col-md-8">
-            <form action="ix.php" method="post"  data-toggle="validator" class="form-horizontal"  id="alta" enctype="multipart/form-data" >
+            <form action="borrarFoto.php" method="post"  data-toggle="validator" name="form" class="form-horizontal"  id="alta" enctype="multipart/form-data" >
               Aclaracion: Los campos con (*) son obligatorios <br><br>
               <div class="form-group">
                   <label for="titulo" class="col-lg-2 control-label">Título: *</label>
@@ -79,7 +79,7 @@
                       <?php  echo '<img  class="media-object" src="data:image/jpeg;base64,'.base64_encode( $re['foto'] ).'"/>'."<br>";?>
                     </div>
                     <div style="display: block">
-                      <input type="submit" value="<?php echo $re['id']?>" id="eliminar" name="<?php echo $re['id']?>"  ONCLICK="window.location = '/bestnid/src/borrarFoto.php';"/>
+                      <input type="checkbox"  name="arre[]" value="<?php echo $re['id']?>" />
                     </div>
                    </a>
                    </div>
@@ -100,7 +100,7 @@
            							<!-- Hay que prestar atención a esto, el nombre de este campo debe siempre terminar en []
           							como un vector, y ademas debe coincidir con el nombre que se da a los campos nuevos 
           							en el script -->
-         								<input type="file" name="archivos[]"  data-error=" Ingrese un dato Valido!"><br />
+         								<input type="file" name="archivos[]"><br />
          								<div class="help-block with-errors"></div>  
       								</div>
                     </dd>
@@ -128,7 +128,8 @@
                   <input type="submit"  class="btn btn-danger" style=" margin-left: 20px;" value="Aceptar">
                 </div>
               </div>
-                       
+              <input type="hidden" name="ida" id="ida" value="1">    
+  
                        
             </form>    
             </div>
