@@ -10,7 +10,7 @@
 	        <div class="container-fluid">
 	        	<div class="row">
 					<div class="col-xs-6 col-md-4">
-	                    
+	                    <?php include 'listadoCategorias.php';?>
 	                </div>
 			
 					<div  class="col-xs-12 col-sm-6 col-md-8">
