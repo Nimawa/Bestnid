@@ -5,6 +5,12 @@ evento = function (evt) { //esta funcion nos devuelve el tipo de evento disparad
    return (!evt) ? event : evt;
 }
 
+function eliminarAgregar () {
+   var nom=document.getElementById('file2');
+   if (nom=="file2") {
+      alert("hola");
+    }
+}
 //Aqui se hace lamagia... jejeje, esta funcion crea dinamicamente los nuevos campos file
 addCampo = function () { 
 //Creamos un nuevo div para que contenga el nuevo campo

@@ -40,14 +40,14 @@
               Aclaracion: Los campos con (*) son obligatorios <br><br>
               <div class="form-group">
                   <label for="titulo" class="col-lg-3 control-label">Título: *</label>
-                  <div class="col-lg-4">
+                  <div class="col-lg-7">
                     <input type="text" class="form-control" id="titulo" name="titulo" required placeholder="Título" data-error=" Ingrese un dato Valido!" value="<?php echo $reg1['titulo'];?>">
                     <div class="help-block with-errors"></div>   
               	</div>
               </div>
               <div class="form-group">
                   <label for="descripcion" class="col-lg-3 control-label">Descripción: *</label>
-                 	<div class="col-lg-4">
+                 	<div class="col-lg-7">
                 		<textarea  type="text" class="form-control" rows= "4" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!">"<?php echo $reg1['descripcion'];?>"</textarea>
                  	<div class="help-block with-errors"></div>   
            	  	</div>

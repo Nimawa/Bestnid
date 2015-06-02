@@ -74,7 +74,7 @@
       								</div>
                     </dd>
       								<dt>
-                        <a href="#" onClick="addCampo()">Seleccionar otra foto</a>
+                        <a href="#" id="dina" onClick="addCampo();eliminarAgregar();">Seleccionar otra foto</a>
                       </dt>
   							  </dl>
                 </div>
