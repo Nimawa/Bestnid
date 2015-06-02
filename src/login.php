@@ -15,11 +15,11 @@ if(($user_ok = mysql_fetch_array($usuarios)) and ($user_ok['pass']==$_REQUEST['p
     $_SESSION['apellido'] = $user_ok["apellido"]; 
     $_SESSION['estado'] = true;
       
-         header("location: ../index.php");
+         header("location: index.php");
 
 
 }else{
-        header("location: ../index.php?u=3 ");
+        header("location: index.php?u=3 ");
         $_SESSION['estado'] =false; 
     }
 

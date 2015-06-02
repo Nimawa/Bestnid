@@ -19,13 +19,13 @@ $conexion=conectar();
 $verificaEmail=mysql_query(" SELECT count(id) as cantidad from usuario where mail='$email' ",$conexion) or die("Problemas en el select:".mysql_error());
 $cantEmail=mysql_fetch_array($verificaEmail);
 if($cantEmail['cantidad']==1){
-	header("location: ../index.php?u=2 ");
+	header("location: index.php?u=2 ");
 }
 
 mysql_query("	INSERT INTO usuario (mail,dni,nombre,apellido,telefono,calle,nro,piso,depto,ciudad,pcia,pass)
              	VALUES ('$email','$dni','$nombre','$apellido','$telefono','$calle','$nro','$piso','$depto','$ciudad','$pcia','$pass')",$conexion) or die("Problemas en el select:".mysql_error());
 
-header("location: ../index.php?u=1 ");
+header("location: index.php?u=1 ");
 ?>
 
 
