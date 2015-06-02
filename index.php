@@ -227,37 +227,37 @@
                 </div>
 
                     <div  class="col-xs-12 col-sm-6 col-md-8">
-                        <?php
-                          $reg=mysql_query(" Select * from publicacion ",$conexion)or die("problema de select".mysql_error());
-                          require 'src/imprimirPublicacion.php';
-                          imprimirPublicacion($reg,$conexion);
-                          mysql_close($conexion);
-                        ?>
-                           <form action="src/ordenador.php" method="post">
-                             Ordenar Por:
-                             <select name="ordenar">
-                               <option value="porCategoria"> por Categoria </option>
-                               <option value="porFechaInicio">por Fecha Inicio</option>
-                               <option value="porFechaFin"> por Fecha Fin</option>
-                               <option value="porTitulo">  por Titulo</option>
-                               <option value="porDescripcion">por Descripcion</option>
-                              </select>
-                              <input type="submit" value="confirmar">
-                              <div class="radio">
-                                <label>
-                                   <input type="radio" name="radio2" value="creciente" checked="true" > 
-                                  Creciente
-                                </label>
-                              </div>
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" name="radio2" value="decreciente" > 
-                                  Decreciente
-                                  </label>
-                              </div>
-                             </form> 
-           
-                        
+                      <form  class="form-inline" role="form" action="src/ordenador.php" method="post">
+                          <input class="btn-sm btn-danger" type="submit" value="Ordenar">
+                          <select class="form-control input-sm" name="ordenar">
+                             <option value="porCategoria"> por Categoria </option>
+                             <option value="porFechaInicio">por Fecha Inicio</option>
+                             <option value="porFechaFin"> por Fecha Fin</option>
+                             <option value="porTitulo">  por Titulo</option>
+                             <option value="porDescripcion">por Descripcion</option>
+                          </select>
+                          
+                          <div class="radio">
+                              <label>
+                                 <input type="radio" name="radio2" value="creciente" checked="true" > 
+                                Creciente
+                              </label>
+                          </div>
+                          <div class="radio">
+                              <label>
+                                 <input type="radio" name="radio2" value="decreciente" > 
+                                Decreciente
+                              </label>
+                          </div>
+                      </form> <br> 
+
+                      <?php
+                        $reg=mysql_query(" Select * from publicacion ",$conexion)or die("problema de select".mysql_error());
+                        require 'src/imprimirPublicacion.php';
+                        imprimirPublicacion($reg,$conexion);
+                        mysql_close($conexion);
+                      ?>
+                      
                     </div>
             </div>
         </div>
