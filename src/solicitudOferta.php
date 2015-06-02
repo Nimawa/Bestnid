@@ -32,6 +32,17 @@
                     
                 </div>
                 <div class="col-xs-6 col-md-8">
+                    <?php
+                        $idpublicacion=3;
+                        require 'conexion.php';
+                        require 'imprimirPublicacion.php';
+                        $aux= conectar();
+                        $reg=mysql_query(" Select * from publicacion where id=$idpublicacion ",$aux)or die("problema de select".mysql_error());
+                        imprimirPublicacion($reg,$aux);
+                        mysql_close($aux);
+                    ?>
+
+
                     <form action="altaOferta.php" method="post" data-toggle="validator" class="form-horizontal"  id="formularioAltaUsuario" >
                         Aclaracion: Los campos con (*) son obligatorios <br><br>
                         <div class="form-group">
