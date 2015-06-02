@@ -9,8 +9,24 @@
 	require 'conexion.php';
 	$conexion=conectar();
 
-	$tot = count($_FILES["archivos"]["name"]);
+
+	$tot=count($_FILES["archivos"]["name"]);
+	for ($i=$tot; $i > 0 ; $i--) { 				//controla si arreglo de fotos tiene fotos
+		$pet=$_FILES["archivos"]["name"][$i-1];
+		if (!$pet==null) {
+			$vacio=1;
+			break;
+		}else{
+			$vacio=0;
+		}
+	}
+
 	$permitidos = array("image/jpg", "image/jpeg","image/png");
+	if($vacio==0){ 				// controla que no se borren todas las fotos
+			echo "<script language='JavaScript'>alert('Debe subir al menos una foto');</script>";
+			echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
+			return false;
+		}
 	for ($i = 0; $i < $tot; $i++){
 		if (!in_array($_FILES['archivos']['type'][$i], $permitidos) || $_FILES['archivos']['size'][$i] >= 2097152){		
 			echo "<script language='JavaScript'>alert('El archivo no es jpe, jpeg, png o es mayor a 2048 kb');</script>";

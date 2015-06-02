@@ -39,21 +39,21 @@
             <form action="borrarFoto.php" method="post"  data-toggle="validator" name="form" class="form-horizontal"  id="alta" enctype="multipart/form-data" >
               Aclaracion: Los campos con (*) son obligatorios <br><br>
               <div class="form-group">
-                  <label for="titulo" class="col-lg-2 control-label">Título: *</label>
+                  <label for="titulo" class="col-lg-3 control-label">Título: *</label>
                   <div class="col-lg-4">
                     <input type="text" class="form-control" id="titulo" name="titulo" required placeholder="Título" data-error=" Ingrese un dato Valido!" value="<?php echo $reg1['titulo'];?>">
                     <div class="help-block with-errors"></div>   
               	</div>
               </div>
               <div class="form-group">
-                  <label for="descripcion" class="col-lg-2 control-label">Descripción: *</label>
+                  <label for="descripcion" class="col-lg-3 control-label">Descripción: *</label>
                  	<div class="col-lg-4">
                 		<textarea  type="text" class="form-control" rows= "4" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!">"<?php echo $reg1['descripcion'];?>"</textarea>
                  	<div class="help-block with-errors"></div>   
            	  	</div>
               </div>
               <div class="form-group">
-                <label for="categoria" class="col-lg-2 control-label">Categoría: * </label>
+                <label for="categoria" class="col-lg-3 control-label">Categoría: * </label>
                 <div class="col-lg-4">
                   <select name="categoria" > 
   								        <?php
@@ -82,7 +82,7 @@
                       <?php  echo '<img  class="media-object" src="data:image/jpeg;base64,'.base64_encode( $re['foto'] ).'"/>'."<br>";?>
                     </div>
                     <div style="display: block">
-                      <input type="checkbox"  name="arre[]" value="<?php echo $re['id']?>" />
+                      <input type="checkbox"  name="arre[]" value="<?php echo $re['id']?>"><label>Eliminar</label>
                     </div>
                    </a>
                    </div>
@@ -114,13 +114,13 @@
                 </div>
               </div>
                <div class="form-group">             
-                <label for="piso" class="col-lg-2 control-label">Fecha fin de publicación:</label> 
-                <div class="col-lg-2"><br><br>
+                <label for="piso" class="col-lg-5 control-label">Fecha fin de publicación:</label> 
+                <div class="col-lg-2">
                  <?php echo acomodarFecha($reg1['fecha_fin']);?>
                 </div>
                </div>
                <div class="form-group">
-                <label for="piso" class="col-lg-2 control-label">Cambiar fecha finalización: *</label>
+                <label for="piso" class="col-lg-5 control-label">Cambiar fecha finalización: *</label>
                 <div class="col-lg-4">
                   <input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo date("Y-m-d")?>"  max="<?php echo date("Y-m-d", strtotime("+ 30 days"))?>">
                 </div>
@@ -131,7 +131,7 @@
                   <input type="submit"  class="btn btn-danger" style=" margin-left: 20px;" value="Aceptar">
                 </div>
               </div>
-              <input type="hidden" name="ida" id="ida" value="1">    
+              <input type="hidden" name="ida" id="ida" value="<?php echo ($idpublicacion)?>">    
   
                        
             </form>    
