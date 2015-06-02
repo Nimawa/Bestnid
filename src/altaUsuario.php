@@ -16,8 +16,9 @@ $pass=$_REQUEST['pass2'];
 require 'conexion.php';
 $conexion=conectar();
 
-$verificaEmail=mysql_query(" SELECT count(id) from usuario where mail='$email' ",$conexion) or die("Problemas en el select:".mysql_error());
-if ($verificaEmail) {
+$verificaEmail=mysql_query(" SELECT count(id) as cantidad from usuario where mail='$email' ",$conexion) or die("Problemas en el select:".mysql_error());
+$cantEmail=mysql_fetch_array($verificaEmail);
+if($cantEmail['cantidad']==1){
 	header("location: ../index.php?u=2 ");
 }
 

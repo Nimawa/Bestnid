@@ -37,28 +37,28 @@
                         <div class="form-group">
                             <label for="nombre" class="col-lg-2 control-label">Nombre: *</label>
                             <div class="col-lg-4">
-                              <input  class="form-control" id="nombre" name="nombre" required placeholder="Nombre" pattern="[a-zA-Z ]+" data-error="Complete correctamente este campo" >
+                              <input  class="form-control" id="nombre" name="nombre" required placeholder="Nombre" pattern="[a-zA-Z]+" data-error="Complete correctamente este campo">
                               <div class="help-block with-errors"></div>   
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="apellido" class="col-lg-2 control-label">Apellido: *</label>
                             <div class="col-lg-4">
-                              <input type="text" class="form-control" id="apellido" name="apellido" required placeholder="Apellido" pattern="[a-zA-Z ]+" data-error="Complete correctamente este campo" >
+                              <input type="text" class="form-control" id="apellido" name="apellido" required placeholder="Apellido" pattern="[a-zA-Z]+" data-error="Complete correctamente este campo" >
                               <div class="help-block with-errors"></div>   
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="dni" class="col-lg-2 control-label">DNI: * </label>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" id="dni" name="dni" required placeholder="Ej. 12456879"  pattern="[0-9]+" data-error="Complete correctamente este campo" >
+                                <input type="text" class="form-control" id="dni" name="dni" required placeholder="Ej. 12456879"  pattern="[0-9]+" data-minlength="7" data-error="Complete correctamente este campo" >
                                 <div class="help-block with-errors"></div> 
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="telefono" class="col-lg-2 control-label">Telefono: * </label>
                             <div class="col-lg-4">
-                              <input type="text" class="form-control" id="telefono" name="telefono" required placeholder="Ej. 221 154568789" pattern="[0-9 ]+" data-error="Complete correctamente este campo" >
+                              <input type="text" class="form-control" id="telefono" name="telefono" required placeholder="Ej. 221 154568789" pattern="[0-9 ]+" data-minlength="12" data-error="Complete correctamente este campo" >
                               <div class="help-block with-errors"></div> 
                             </div>
                         </div>
@@ -68,9 +68,10 @@
                               <input type="text" class="form-control" id="calle" name="calle" required placeholder="Calle" data-error="Complete este campo" >
                               <div class="help-block with-errors"></div>
                             </div>
-                            
+                        </div>
+                        <div class="form-group">   
                             <label for="nro" class="col-lg-2 control-label">Nro: * </label>
-                            <div class="col-lg-2">
+                            <div class="col-lg-3">
                                 <input type="text" class="form-control" id="nro" name="nro" required placeholder="Ej. 1234" pattern="[0-9]+" data-error="Complete correctamente este campo">
                                 <div class="help-block with-errors"></div> 
                             </div>
@@ -107,29 +108,31 @@
                         <div class="form-group">
                             <label for="email" class="col-lg-4 control-label">Email: * </label>
                             <div class="col-lg-4">
-                                <input  class="form-control" id="email" name="email" required placeholder="ejemplo@mail.com" pattern="[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+" data-error=" Ingrese una direccion de correo electronico Valida!">
+                                <input  class="form-control" id="email" name="email" required placeholder="ejemplo@mail.com" pattern="[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+" data-error=" Ingrese una direccion de correo electronico Valida!" >
                                 <div class="help-block with-errors"></div> 
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="pass1" class="col-lg-4 control-label">Contraseña: * </label>
                             <div class="col-lg-4">
-                                <input type="password" class="form-control" id="pass1" name="pass1" placeholder="" required>
+                                <input type="password" class="form-control" id="pass1" name="pass1" placeholder="" required onfocus="verificarCorreo()">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="pass2" class="col-lg-4 control-label">Repetir Contraseña: * </label>
                             <div class="col-lg-4">
-                                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="" required data-match="#pass1" data-error=" Las contraseñas no coinciden!">
+                                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="" required data-match="#pass1" data-error=" Las contraseñas no coinciden!" >
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
+
                         <div class="form-group" >
                             <div class="col-lg-10">
                               <button type="button" class="btn btn-default" style=" margin-left: 100px;" onclick="window.history.back()">Cancelar</button>
                               <input type="submit" class="btn btn-danger" style=" margin-left: 20px;" value="Aceptar">
                             </div>
                         </div>
+
                        
                        
                     </form>    
