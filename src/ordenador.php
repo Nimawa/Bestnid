@@ -120,7 +120,8 @@ $var= $_SESSION['$a'];
 		   }
    }
        
-  imprimirPublicacion($reg,$aux); 
+  imprimirPublicacion($reg,$aux);
+  include 'ordenarPublicaciones.php';
 ?>
 </div>
 <body>

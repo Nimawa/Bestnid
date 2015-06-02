@@ -233,6 +233,29 @@
                           imprimirPublicacion($reg,$conexion);
                           mysql_close($conexion);
                         ?>
+                           <form action="src/ordenador.php" method="post">
+                             Ordenar Por:
+                             <select name="ordenar">
+                               <option value="porCategoria"> por Categoria </option>
+                               <option value="porFechaInicio">por Fecha Inicio</option>
+                               <option value="porFechaFin"> por Fecha Fin</option>
+                               <option value="porTitulo">  por Titulo</option>
+                               <option value="porDescripcion">por Descripcion</option>
+                              </select>
+                              <input type="submit" value="confirmar">
+                              <div class="radio">
+                                <label>
+                                   <input type="radio" name="radio2" value="creciente" checked="true" > 
+                                  Creciente
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <label>
+                                  <input type="radio" name="radio2" value="decreciente" > 
+                                  Decreciente
+                                  </label>
+                              </div>
+                             </form> 
            
                         
                     </div>
