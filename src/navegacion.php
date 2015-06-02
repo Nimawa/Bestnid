@@ -12,7 +12,7 @@
                 <p class="navbar-text">Plataforma de Subastas Online</p>
                 
             </div>
-        <?php session_start();
+            <?php session_start();
             if(!isset($_SESSION['estado']) || $_SESSION['estado'] != true){
                 include 'formDeslogueado.php';
             }else{

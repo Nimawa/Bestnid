@@ -256,6 +256,7 @@
                         require 'src/imprimirPublicacion.php';
                         imprimirPublicacion($reg,$conexion);
                         mysql_close($conexion);
+                        $_SESSION['$a']=(" Select * from publicacion a ");
                       ?>
                       
                     </div>

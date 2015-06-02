@@ -23,7 +23,7 @@
 										require 'sql/funcionesDeBusqueda.php';
 										require 'imprimirPublicacion.php';
 										$conexion=conectar();
-										$reg=mysql_query(" Select * From publicacion",$conexion)or die("problema de select".mysql_error());                      $aux= " Select * From publicacion a";
+										$reg=mysql_query(" Select * From publicacion",$conexion)or die("problema de select".mysql_error()); $aux= " Select * From publicacion a";
 									     $tabla1=filtrarPorCategoria($_REQUEST['idCategoria']);
 										 $tabla2= filtrarPorDescripcion($_REQUEST['campoBusqueda']);  
 									     $tabla3= filtrarPorTitulo($_REQUEST['campoBusqueda']);
