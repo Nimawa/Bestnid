@@ -23,7 +23,7 @@
 
                 <div  class="col-xs-12 col-sm-6 col-md-8">
                     <h3>
-                        <strong>  Solicitud de Alta de Usuario </strong>
+                        <strong style="">  Solicitud de Alta de Usuario </strong>
                     </h3>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                             <label for="email" class="col-lg-4 control-label">Email: * </label>
                             <div class="col-lg-4">
                                 <input  class="form-control" id="email" name="email" required placeholder="ejemplo@mail.com" pattern="[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+" data-error=" Ingrese una direccion de correo electronico Valida!" >
-                                <div class="help-block with-errors"></div> 
+                                <div id="respuesta" class="help-block with-errors"></div> 
                             </div>
                         </div>
                         <div class="form-group">

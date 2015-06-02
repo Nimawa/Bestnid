@@ -116,12 +116,6 @@
                             <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; " value="PUBLICAR" onclick="window.location.href='src/altaPublicacion.php'">
                             </li>
                             <li>
-                            <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="window.location.href='src/modificarPublicacion.php'">
-                            </li>
-                            <li>
-                              <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 40px" value="BORRAR" onclick="window.location.href='src/borrarPublicacion.php'">
-                            </li>
-                            <li>
                                 <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
                             </li>
                             <li>
@@ -290,6 +284,16 @@
           <?php 
           }
         }
+      if (isset($_REQUEST['o'])){
+          if ($_REQUEST['o']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("La oferta se ha realizado correctamente..",null);
+            </script>
+          <?php 
+          }
+        }    
+        
     ?>
     
     

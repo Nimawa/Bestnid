@@ -43,7 +43,7 @@
                     ?>
 
 
-                    <form action="altaOferta.php" method="post" data-toggle="validator" class="form-horizontal"  id="formularioAltaUsuario" >
+                    <form action="altaOferta.php" method="post" data-toggle="validator" class="form-horizontal"  id="formularioAltaOferta" >
                         Aclaracion: Los campos con (*) son obligatorios <br><br>
                         <div class="form-group">
                             <label for="monto" class="col-lg-2 control-label">Monto: * $</label>
@@ -59,6 +59,7 @@
                               <div class="help-block with-errors"></div>   
                             </div>
                         </div>
+                        <input type="hidden" id="idPublicacion" name="idPublicacion" value=" <?php echo $idpublicacion; ?> "><br>
                         <div class="form-group" >
                             <div class="col-lg-10">
                               <button type="button" class="btn btn-default" style=" margin-left: 100px;" onclick="window.history.back()">Cancelar</button>

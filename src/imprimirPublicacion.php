@@ -19,14 +19,21 @@
                 <h4 class="media-heading" style="margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" ><?php echo $r['titulo']; ?> </h4>
                 <?php echo $r['descripcion']; ?> 
               </div>
-              <?php echo 'Fecha de inicio: '.acomodarFecha($r['fecha_inicio']). "<br>"; ?> 
-              <?php echo 'Fecha de fin: '.acomodarFecha($r['fecha_fin'])."<br>"; ?> 
-      			  Categoria:
-      			  <?php $a= $r['id_categoria'];
-      			   $reg=mysql_query(" Select nombre from categoria where id= $a ",$v2)or die("problema de select".mysql_error());
+                <?php echo 'Fecha de inicio: '.acomodarFecha($r['fecha_inicio']). "<br>"; ?> 
+                <?php echo 'Fecha de fin: '.acomodarFecha($r['fecha_fin'])."<br>"; ?> 
+      			    Categoria: <?php $a= $r['id_categoria'];
+      			    $reg=mysql_query(" Select nombre from categoria where id= $a ",$v2)or die("problema de select".mysql_error());
       			       if($x=mysql_fetch_array($reg))
       				        echo $x['nombre'];  
       			  ?>
+              
+               <a class="pull-right" >
+                <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="window.location.href='src/modificarPublicacion.php'">
+                <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onclick="window.location.href='src/borrarPublicacion.php'">
+                <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onclick="window.location.href='src/borrarPublicacion.php'">
+              </a>
+                
+                            
             </li><hr>
           </ul>
          
