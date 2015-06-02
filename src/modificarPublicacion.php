@@ -24,8 +24,9 @@
         require 'acomodarFecha.php';
         require 'conexion.php';
         $conexion=conectar();
+        $idpublicacion=$_REQUEST['idPublicacion'];
 
-        $registros1=mysql_query("SELECT * FROM publicacion AS publi INNER JOIN categoria AS cat ON publi.id_categoria = cat.id INNER JOIN foto AS fot ON publi.id = fot.id_publicacion WHERE publi.id=1", $conexion) 
+        $registros1=mysql_query("SELECT * FROM publicacion AS publi INNER JOIN categoria AS cat ON publi.id_categoria = cat.id INNER JOIN foto AS fot ON publi.id = fot.id_publicacion WHERE publi.id=$idpublicacion", $conexion) 
          or die("Problemas en el select:".mysql_error($conexion));
         $reg1=mysql_fetch_array($registros1);
     ?>
@@ -73,7 +74,7 @@
                 $regis=mysql_query("SELECT * FROM foto", $conexion)
                  or die("Problemas en el select:".mysql_error($conexion));
                 while ($re=mysql_fetch_array($regis)) {
-                 if ($re['id_publicacion'] == 1 ) {
+                 if ($re['id_publicacion'] == $idpublicacion) {
                  ?>
                    <div>
                    <a class="pull-left" href="#" >

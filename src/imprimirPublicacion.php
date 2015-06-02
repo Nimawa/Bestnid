@@ -16,7 +16,7 @@
                   </div>
               </a>
               <div class="media-body">
-                <h4 class="media-heading" style="margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" ><?php echo $r['titulo']; ?> </h4>
+                <h4 class="media-heading" style="margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" ><?php echo $r['titulo'];?> </h4>
                 <?php echo $r['descripcion']; ?> 
               </div>
                 <?php echo 'Fecha de inicio: '.acomodarFecha($r['fecha_inicio']). "<br>"; ?> 
@@ -28,9 +28,9 @@
       			  ?>
               
                <a class="pull-right" >
-                <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="window.location.href='src/modificarPublicacion.php'">
-                <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onclick="window.location.href='src/borrarPublicacion.php'">
-                <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onclick="window.location.href='src/borrarPublicacion.php'">
+                <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="window.location.href='modificarPublicacion.php?idPublicacion=<?php echo $r['id'];?>'">
+                <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onclick="window.location.href='borrarPublicacion.php?idPublicacion=<?php echo $r['id'];?>'">
+                <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onclick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $r['id'];?>'">
               </a>
                 
                             

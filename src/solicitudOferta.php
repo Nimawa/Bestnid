@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-xs-6 col-md-8">
                     <?php
-                        $idpublicacion=3;
+                        $idpublicacion=$_REQUEST['idPublicacion'];
                         require 'conexion.php';
                         require 'imprimirPublicacion.php';
                         $aux= conectar();

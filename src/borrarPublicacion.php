@@ -1,10 +1,10 @@
 <?php
 
 require 'conexion.php';
-
+$idpublicacion=$_REQUEST['idPublicacion'];
 $conexion=conectar();
 //$ida=$_REQUEST['ida'];
-$ofe=mysql_query("SELECT * FROM oferta WHERE id_publicacion=1", $conexion) or
+$ofe=mysql_query("SELECT * FROM oferta WHERE id_publicacion=$idpublicacion", $conexion) or
 die("Problemas en el select:".mysql_error($conexion));
 $comp=mysql_fetch_array($ofe);
 	if ($comp==0) {			
