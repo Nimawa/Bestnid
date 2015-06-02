@@ -80,9 +80,9 @@
                 </div>
               </div>
                <div class="form-group">
-                <label for="piso" class="col-lg-2 control-label">Fecha de finalización: *</label>
+                <label for="piso" class="col-lg-2 control-label">Fecha de finalización: (entre 15 y 30 días)*</label>
                 <div class="col-lg-4">
-                  <input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo date("Y-m-d")?>"  max="<?php echo date("Y-m-d", strtotime("+ 30 days"))?>">
+                  <input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo date("Y-m-d", strtotime("+ 15 days"))?>" min="<?php echo date("Y-m-d", strtotime("+ 15 days"))?>" max="<?php echo date("Y-m-d", strtotime("+ 30 days"))?>">
                 </div>
               </div>
               <div class="form-group" >
