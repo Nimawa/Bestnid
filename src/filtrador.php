@@ -23,11 +23,11 @@
 						require 'sql/funcionesDeBusqueda.php';
 						require 'imprimirPublicacion.php';
 						$conexion=conectar();
-						$reg=mysql_query(" Select * From publicacion",$conexion)or die("problema de select".mysql_error());
+						$reg=mysql_query(" Select * From publicacion",$conexion)or die("problema de select".mysql_error());                      $aux= " Select * From publicacion";
 					     $tabla1=filtrarPorCategoria($_REQUEST['idCategoria']);
 						 $tabla2= filtrarPorDescripcion($_REQUEST['campoBusqueda']);  
 					     $tabla3= filtrarPorTitulo($_REQUEST['campoBusqueda']);
-						 if( ($_REQUEST['idCategoria']<>'0')and( $_REQUEST['campoBusqueda']<>null))
+						  if( ($_REQUEST['idCategoria']<>'0')and( $_REQUEST['campoBusqueda']<>null))
 						    {               
 								if ($_REQUEST['radio1']== 'ambas')  
 								   
@@ -47,6 +47,22 @@
 													  ($tabla3) c
 													   on (c.id = a.id))
 													  ",$conexion)or die("problema de select".mysql_error());
+													  $aux=" (Select * From publicacion a 
+								                     inner join 
+												     ( $tabla1) b 
+													  on (a.id = b.id) 
+													  inner join
+													  ($tabla2) c
+													   on (c.id = a.id))
+													   UNION
+													   (Select * From publicacion a 
+								                     inner join 
+												     ( $tabla1) b 
+													  on (a.id = b.id) 
+													  inner join
+													  ($tabla3) c
+													   on (c.id = a.id))
+													  ";
 								}else
 								   if ($_REQUEST['radio1']=='titulo') 
 						       {              $reg=mysql_query(" Select * From publicacion a 
@@ -57,6 +73,15 @@
 													  ($tabla3) c
 													   on (c.id = a.id)
 													  ",$conexion)or die("problema de select".mysql_error());
+													$aux= " Select * From publicacion a 
+								                     inner 	 join 
+												     ( $tabla1) b 
+													  on (a.id = b.id) 
+													  inner join
+													  ($tabla3) c
+													   on (c.id = a.id)
+													  "; 
+													  
 													  }
 						   else
 						           if ($_REQUEST['radio1']=='descripcion') 
@@ -68,6 +93,14 @@
 													  ($tabla2) c
 													   on (c.id = a.id)
 													  ",$conexion)or die("problema de select".mysql_error());
+													  $aux= " Select * From publicacion a 
+								                     inner 	 join 
+												     ( $tabla1) b 
+													  on (a.id = b.id) 
+													  inner join
+													  ($tabla2) c
+													   on (c.id = a.id)
+													  ";
 								}
 							
 								 
@@ -81,9 +114,14 @@
 												     ( $tabla1) b 
 													  on (a.id = b.id) 
 													 ",$conexion)or die("problema de select".mysql_error());
-								  
+								                      $aux= " Select * From publicacion a 
+								                     inner 	 join 
+												     ( $tabla1) b 
+													  on (a.id = b.id) 
+													 ";
 								  
 								  }
+								  else
 							     if( ($_REQUEST['idCategoria']=='0')and( $_REQUEST['campoBusqueda']<>null))
 								 {
 								     if ($_REQUEST['radio1']=='titulo') 
@@ -92,6 +130,11 @@
 													  ($tabla3) c
 													   on (c.id = a.id)
 													  ",$conexion)or die("problema de select".mysql_error());
+													  $aux= " Select * From publicacion a 
+								                       inner join
+													  ($tabla3) c
+													   on (c.id = a.id)
+													  ";
 													  }
 								      else
 						           if ($_REQUEST['radio1']=='descripcion') 
@@ -101,6 +144,12 @@
 													  ($tabla2) c
 													   on (c.id = a.id)
 													  ",$conexion)or die("problema de select".mysql_error());
+													  $aux= " Select * From publicacion a 
+								                      
+													  inner join
+													  ($tabla2) c
+													   on (c.id = a.id)
+													  ";
 								}
 								else
 								   if ($_REQUEST['radio1']== 'ambas')  
@@ -115,11 +164,21 @@
 													  ($tabla3) c
 													   on (c.id = a.id))
 													  ",$conexion)or die("problema de select".mysql_error());
+													  $aux= " (Select * From publicacion a 
+								                      inner join
+													  ($tabla2) c
+													   on (c.id = a.id))
+													   UNION
+													   (Select * From publicacion a 
+								                     inner join
+													  ($tabla3) c
+													   on (c.id = a.id))
+													  ";
 								 }
 						}
 							
 							
-							
+						$_SESSION['$a']=$aux;	
 						imprimirPublicacion($reg, $conexion);
 						mysql_close($conexion);
 					 ?>
