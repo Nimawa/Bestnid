@@ -115,13 +115,13 @@
                         <div class="form-group">
                             <label for="pass1" class="col-lg-4 control-label">Contraseña: * </label>
                             <div class="col-lg-4">
-                                <input type="password" class="form-control" id="pass1" name="pass1" placeholder="" required onfocus="verificarCorreo()">
+                                <input type="password" class="form-control" id="pass1" name="pass1" placeholder="" required onfocus="verificarCorreo()" data-maxlength="30">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="pass2" class="col-lg-4 control-label">Repetir Contraseña: * </label>
                             <div class="col-lg-4">
-                                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="" required data-match="#pass1" data-error=" Las contraseñas no coinciden!" >
+                                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="" required data-match="#pass1" data-error=" Las contraseñas no coinciden!" data-maxlength="30">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
