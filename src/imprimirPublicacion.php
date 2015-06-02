@@ -11,7 +11,7 @@
           <ul class="media-list" >
             <li class="media" >
               <a class="pull-left" href="#" >
-                  <div style=" border: 3px #333; float: left; height: 10em; margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" >
+                  <div class="thumbnail" style=" border: 3px #333; float: left; height: 10em; margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" >
                     <img class="media-object"  ><?php getFoto($r['id'], $v2); ?> </img>
                   </div>
               </a>
