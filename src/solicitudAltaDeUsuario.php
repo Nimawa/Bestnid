@@ -79,14 +79,14 @@
                         <div class="form-group">
                             <label for="piso" class="col-lg-2 control-label">Piso:  </label>
                             <div class="col-lg-2">
-                                <input type="text" class="form-control" id="piso" name="piso" placeholder="Ej. A" pattern="[0-9]+" data-error="Complete correctamente este campo">
+                                <input type="text" class="form-control" id="piso" name="piso" placeholder="Ej. 2" pattern="[0-9]+" data-error="Complete correctamente este campo">
                                 <div class="help-block with-errors"></div> 
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="depto" class="col-lg-2 control-label">Depto.:  </label>
                             <div class="col-lg-2">
-                              <input type="text" class="form-control" id="depto" name="depto" placeholder="Ej. 1" pattern="\b\w{1}\b" data-error="Complete correctamente este campo" >
+                              <input type="text" class="form-control" id="depto" name="depto" placeholder="Ej. A" pattern="\b\w{2}\b" data-error="Complete correctamente este campo" >
                               <div class="help-block with-errors"></div> 
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                         <div class="form-group">
                             <label for="pcia" class="col-lg-2 control-label">Pcia: * </label>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" id="pcia" name="pcia" required placeholder="Provincia" data-error="Complete este campo">
+                                <input type="text" class="form-control" id="pcia" name="pcia" required placeholder="Provincia" pattern="[a-zA-Z ]+" data-error="Complete este campo">
                                 <div class="help-block with-errors"></div> 
                             </div>
                         </div>
@@ -115,13 +115,13 @@
                         <div class="form-group">
                             <label for="pass1" class="col-lg-4 control-label">Contraseña: * </label>
                             <div class="col-lg-4">
-                                <input type="password" class="form-control" id="pass1" name="pass1" placeholder="" required onfocus="verificarCorreo()" data-maxlength="30">
+                                <input type="password" class="form-control" id="pass1" name="pass1"  placeholder="Maximo 30 Caracteres" required onfocus="verificarCorreo()" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="pass2" class="col-lg-4 control-label">Repetir Contraseña: * </label>
                             <div class="col-lg-4">
-                                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="" required data-match="#pass1" data-error=" Las contraseñas no coinciden!" data-maxlength="30">
+                                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Maximo 30 Caracteres" required data-match="#pass1" data-error=" Las contraseñas no coinciden!">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
