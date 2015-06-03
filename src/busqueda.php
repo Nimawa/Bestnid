@@ -2,7 +2,7 @@
 	
     <div style=" padding: 0 200px;">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row" style="border-bottom-style: ridge; border-bottom-width: 4px;">
                 <div class="col-xs-6 col-md-4">
                     <a style=" color: #000; font-style:italic; font-size: 20px; ">
                         <strong> BESTNID </strong>
@@ -12,7 +12,7 @@
 
                 <div  class="col-xs-12 col-sm-6 col-md-8">
                     <form class="form-inline" role="form" action="filtrador.php" method="post">
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label for="campoBusqueda">Busqueda:</label>
                             <input type="text" class="form-control" id="campoBusqueda" name="campoBusqueda" placeholder=" Ingrese su busqueda..." style="margin-bottom: 3px;">
                             
@@ -55,7 +55,7 @@
                         </div>
                     </form>    
                 </div>
-            </div>
+            </div><br>
         </div>
     </div>
 			
