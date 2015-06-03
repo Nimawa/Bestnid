@@ -210,6 +210,7 @@
                     <div class="list-group">
                         <a href="#" class="list-group-item "></span><strong>CATEGORIAS</strong></a>
                         <?php
+
                               $cat=mysql_query(" SELECT cat.nombre, cat.id, count( pub.id ) as cantidad FROM categoria AS cat JOIN publicacion AS pub WHERE cat.id = pub.id_categoria GROUP BY cat.nombre",$conexion)or die("problema de select".mysql_error());
                               while($categoria=mysql_fetch_array($cat)){
                                 ?>
