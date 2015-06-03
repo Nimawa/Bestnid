@@ -1,13 +1,11 @@
 <?php
 
-/* if ( count($_FILES["archivos"] )==0) {
- 	echo "vacio";
-	return false;
-}*/	
+	
 	include 'head.php';
 	session_start();
 	require 'conexion.php';
 	$conexion=conectar();
+
 
 
 	$tot=count($_FILES["archivos"]["name"]);
@@ -27,12 +25,17 @@
 			echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
 			return false;
 		}
+	$tot=count($_FILES["archivos"]["name"]);	
 	for ($i = 0; $i < $tot; $i++){
+		/*$pet=$_FILES["archivos"]["name"][$i];
+		if (!$pet==null) {*/
+			
 		if (!in_array($_FILES['archivos']['type'][$i], $permitidos) || $_FILES['archivos']['size'][$i] >= 2097152){		
 			echo "<script language='JavaScript'>alert('El archivo no es jpe, jpeg, png o es mayor a 2048 kb');</script>";
 			echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
 			return false;
 			}
+		/*}*/
 	}
 
 $tit=$_REQUEST['titulo'];

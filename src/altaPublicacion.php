@@ -65,7 +65,7 @@
                   <dl>  
     								<!-- Esta div contendrá todos los campos file que creemos -->
      								<dd>
-                      <div id="adjuntos" >
+                      <div id="adjuntos"  >
            							<!-- Hay que prestar atención a esto, el nombre de este campo debe siempre terminar en []
           							como un vector, y ademas debe coincidir con el nombre que se da a los campos nuevos 
           							en el script -->

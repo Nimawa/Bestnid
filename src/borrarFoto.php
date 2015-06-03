@@ -30,7 +30,7 @@
 			return false;
 		}
 	}
-	if ($vacio!=0) {								// controla que se una imagen
+	if ($vacio!=0) {							// controla que se una imagen
 		$permitidos = array("image/jpg", "image/jpeg","image/png");
 		for ($i = 0; $i < $tot; $i++){
 			if (!in_array($_FILES['archivos']['type'][$i], $permitidos) || $_FILES['archivos']['size'][$i] >= 2097152){		
