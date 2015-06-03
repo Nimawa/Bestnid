@@ -40,21 +40,21 @@
               Aclaracion: Los campos con (*) son obligatorios <br><br>
               <div class="form-group">
                   <label for="titulo" class="col-lg-3 control-label">Título: *</label>
-                  <div class="col-lg-7">
+                  <div class="col-lg-8">
                     <input type="text" class="form-control" id="titulo" name="titulo" required placeholder="Título" data-error=" Ingrese un dato Valido!" value="<?php echo $reg1['titulo'];?>">
                     <div class="help-block with-errors"></div>   
               	</div>
               </div>
               <div class="form-group">
                   <label for="descripcion" class="col-lg-3 control-label">Descripción: *</label>
-                 	<div class="col-lg-7">
-                		<textarea  type="text" class="form-control" rows= "4" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!">"<?php echo $reg1['descripcion'];?>"</textarea>
+                 	<div class="col-lg-8">
+                		<textarea  type="text" class="form-control" rows= "4" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!"><?php echo $reg1['descripcion'];?></textarea>
                  	<div class="help-block with-errors"></div>   
            	  	</div>
               </div>
               <div class="form-group">
                 <label for="categoria" class="col-lg-3 control-label">Categoría: * </label>
-                <div class="col-lg-4">
+                <div class="col-lg-7">
                   <select name="categoria" > 
   								        <?php
     						    		  $registros=mysql_query("SELECT * FROM categoria " ,$conexion) 
@@ -94,7 +94,7 @@
 
 
               <div class="form-group">
-                <label for="fotos" class="col-lg-2 control-label">Fotos: (max. 4) * </label>
+                <label for="fotos" class="col-lg-6 control-label">Fotos: (max. 4) * </label>
                 <div class="col-lg-8">
                   <dl>  
     								<!-- Esta div contendrá todos los campos file que creemos -->
@@ -114,13 +114,13 @@
                 </div>
               </div>
                <div class="form-group">             
-                <label for="piso" class="col-lg-5 control-label">Fecha fin de publicación:</label> 
+                <label for="piso" class="col-lg-6 control-label">Fecha fin de publicación:</label> 
                 <div class="col-lg-2">
                  <?php echo acomodarFecha($reg1['fecha_fin']);?>
                 </div>
                </div>
                <div class="form-group">
-                <label for="piso" class="col-lg-5 control-label">Cambiar fecha finalización: (entre 15 y 30 días)*</label>
+                <label for="piso" class="col-lg-6 control-label">Cambiar fecha finalización: (entre 15 y 30 días)*</label>
                 <div class="col-lg-4">
                   <input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo date("Y-m-d", strtotime("+ 15 days"))?>" min="<?php echo date("Y-m-d", strtotime("+ 15 days"))?>"  max="<?php echo date("Y-m-d", strtotime("+ 30 days"))?>">
                 </div>

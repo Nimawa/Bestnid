@@ -27,21 +27,21 @@
             <form action="altaEfectivaPublicacion.php" method="post"  data-toggle="validator" class="form-horizontal"  id="alta" enctype="multipart/form-data" >
               Aclaracion: Los campos con (*) son obligatorios <br><br>
               <div class="form-group">
-                  <label for="titulo" class="col-lg-2 control-label">Título: *</label>
+                  <label for="titulo" class="col-lg-3 control-label">Título: *</label>
                   <div class="col-lg-8">
                     <input type="text" class="form-control" id="titulo" name="titulo" required placeholder="Título" data-error=" Ingrese un dato Valido!">
                     <div class="help-block with-errors"></div>   
               	</div>
               </div>
               <div class="form-group">
-                  <label for="descripcion" class="col-lg-2 control-label">Descripción: *</label>
+                  <label for="descripcion" class="col-lg-3 control-label">Descripción: *</label>
                  	<div class="col-lg-8">
                 		<textarea  type="text" class="form-control" rows= "4" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!"></textarea>
                  	<div class="help-block with-errors"></div>   
            	  	</div>
               </div>
               <div class="form-group">
-                <label for="categoria" class="col-lg-2 control-label">Categoría: * </label>
+                <label for="categoria" class="col-lg-3 control-label">Categoría: * </label>
                 <div class="col-lg-4">
                   <select name="categoria" > 
   								  <?php
@@ -60,7 +60,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="fotos" class="col-lg-2 control-label">Fotos: (max. 4)* </label>
+                <label for="fotos" class="col-lg-3 control-label">Fotos: (max. 4)* </label>
                 <div class="col-lg-8">
                   <dl>  
     								<!-- Esta div contendrá todos los campos file que creemos -->
@@ -80,7 +80,7 @@
                 </div>
               </div>
                <div class="form-group">
-                <label for="piso" class="col-lg-2 control-label">Fecha de finalización: (entre 15 y 30 días)*</label>
+                <label for="piso" class="col-lg-3 control-label">Fecha de finalización: (entre 15 y 30 días)*</label>
                 <div class="col-lg-4">
                   <input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo date("Y-m-d", strtotime("+ 15 days"))?>" min="<?php echo date("Y-m-d", strtotime("+ 15 days"))?>" max="<?php echo date("Y-m-d", strtotime("+ 30 days"))?>">
                 </div>

@@ -39,21 +39,21 @@
               Aclaracion: Los campos con (*) son obligatorios <br><br>
               <div class="form-group">
                   <label for="titulo" class="col-lg-2 control-label">Título: *</label>
-                  <div class="col-lg-4">
+                  <div class="col-lg-8">
                     <input type="text" class="form-control" id="titulo" name="titulo" required placeholder="Título" data-error=" Ingrese un dato Valido!" value="<?php echo $reg1['titulo'];?>">
                     <div class="help-block with-errors"></div>   
               	</div>
               </div>
               <div class="form-group">
                   <label for="descripcion" class="col-lg-2 control-label">Descripción: *</label>
-                 	<div class="col-lg-4">
+                 	<div class="col-lg-8">
                 		<textarea  type="text" class="form-control" rows= "4" id="descripcion" name="descripcion" required placeholder="Descripcion" data-error=" Ingrese un dato Valido!"></textarea>
                  	<div class="help-block with-errors"></div>   
            	  	</div>
               </div>
-              <div class="form-group">
+              <div class="form-group"  >
                 <label for="categoria" class="col-lg-2 control-label">Categoría: * </label>
-                <div class="col-lg-4">
+                <div class="col-lg-8">
                   <select name="categoria" > 
   								  <?php
       								require 'conexion.php';
@@ -71,7 +71,7 @@
               </div>
               <div class="form-group">
                 <label for="fotos" class="col-lg-2 control-label">Fotos: * </label>
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                   <dl>  
     								<!-- Esta div contendrá todos los campos file que creemos -->
      								<dd>

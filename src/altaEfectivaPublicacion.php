@@ -2,7 +2,6 @@
 
 	
 	include 'head.php';
-	session_start();
 	require 'conexion.php';
 	$conexion=conectar();
 
