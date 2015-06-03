@@ -41,6 +41,14 @@ function verificarCorreo() {
 	};
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	ajax.send("email="+email.value);
+}
+
+function borrarPublicacion(idpublicacion) {
+	bootbox.confirm("Esta seguro que desea borrar la publicacion?", function(result) {
+		if(result==true){
+   		window.location='../src/borrarPublicacion.php?idPublicacion='+idpublicacion;
+   		}	
+	}); 
 
 
 }

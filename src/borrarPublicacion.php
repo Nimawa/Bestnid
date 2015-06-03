@@ -10,13 +10,11 @@ $comp=mysql_fetch_array($ofe);
 		mysql_query("UPDATE publicacion SET baja='true' WHERE id=$idpublicacion", $conexion)
 	or die("Problemas en el select:".mysql_error($conexion));
 	?> <script language="javascript">
-	window.location='/bestnid/index.php';
-	alert("La publicacion se ha borrado satisfactoriamente!");
+	window.location='index.php?p=1';
 	</script>  <?php
 	}else{
 	?> <script language="javascript">
-	alert("La publicacion No se puede borrar porque hay ofertas realizadas!");
-	window.location='/bestnid/index.php';
+	window.location='index.php?p=2';
 	</script>  <?php
 	}
 mysql_close($conexion);

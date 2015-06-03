@@ -67,7 +67,24 @@
               </script>
             <?php 
             }
-          }    
+        } 
+
+        if (isset($_REQUEST['p'])){
+          if ($_REQUEST['p']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("La publicacion se ha borrado con exito!",null);
+            </script>
+          <?php 
+          }else if ($_REQUEST['p']==2) {
+            ?> <!-- Si retorna Codigo=2, el mail esta utilizado por otro usuario--> 
+            <script language="javascript">
+            bootbox.alert("La publicacion No se puede borrar porque hay ofertas realizadas!",null);
+            </script>
+          <?php
+          }
+        
+        }   
         
     ?>
     
