@@ -83,6 +83,13 @@
             </script>
           <?php
           }
+          if ($_REQUEST['p']==3) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("La publicacion se dio de alta con exito!",null);
+            </script>
+          <?php 
+          }
         
         }   
         

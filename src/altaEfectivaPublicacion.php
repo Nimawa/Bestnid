@@ -67,6 +67,6 @@ $fec= $_REQUEST['fecha'];
 		mysql_query("INSERT INTO foto(id_publicacion, foto, tipo_foto) VALUES ('$idnuevo', '$imagen', '$ext')",$conexion);
 	}
 	mysql_close($conexion);
-	header("location: /bestnid/index.php");
+	header("location: index.php?p=3");
 
 ?> 
