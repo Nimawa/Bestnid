@@ -69,12 +69,12 @@
            							<!-- Hay que prestar atención a esto, el nombre de este campo debe siempre terminar en []
           							como un vector, y ademas debe coincidir con el nombre que se da a los campos nuevos 
           							en el script -->
-         								<input type="file" name="archivos[]"  data-error=" Ingrese un dato Valido!"><br />
-         								<div class="help-block with-errors"></div>  
+         								<input type="file" name="archivos[]">
+         						
       								</div>
                     </dd>
       								<dt>
-                        <a href="#" id="dina" onClick="addCampo();eliminarAgregar();">Seleccionar otra foto</a>
+                        <a href="#" onClick="addCampo();">Seleccionar otra foto</a>
                       </dt>
   							  </dl>
                 </div>
