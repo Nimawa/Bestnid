@@ -86,7 +86,7 @@
                         <div class="form-group">
                             <label for="depto" class="col-lg-2 control-label">Depto.:  </label>
                             <div class="col-lg-2">
-                              <input type="text" class="form-control" id="depto" name="depto" placeholder="Ej. A" pattern="\b\w{2}\b" data-error="Complete correctamente este campo" >
+                              <input type="text" class="form-control" id="depto" name="depto" placeholder="Ej. A" pattern="\b\w{1,2}\b" data-error="Complete correctamente este campo" >
                               <div class="help-block with-errors"></div> 
                             </div>
                         </div>
