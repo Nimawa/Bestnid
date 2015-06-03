@@ -78,7 +78,7 @@
                  ?>
                    <div>
                    <a class="pull-left" href="#" >
-                    <div style=" display: inline-block; border: 3px #333; float: left; height: 12em; margin: .2em 1em 1em 0; overflow: hidden;width: 12em;" >
+                    <div class="thumbnail" style=" display: inline-block; border: 3px #333; float: left; height: 12em; margin: .2em 1em 1em 0; overflow: hidden;width: 12em;" >
                       <?php  echo '<img  class="media-object" src="data:image/jpeg;base64,'.base64_encode( $re['foto'] ).'"/>'."<br>";?>
                     </div>
                     <div style="display: block">
@@ -94,7 +94,7 @@
 
 
               <div class="form-group">
-                <label for="fotos" class="col-lg-2 control-label">Fotos: * </label>
+                <label for="fotos" class="col-lg-2 control-label">Fotos: (max. 4) * </label>
                 <div class="col-lg-8">
                   <dl>  
     								<!-- Esta div contendrá todos los campos file que creemos -->

@@ -60,7 +60,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="fotos" class="col-lg-2 control-label">Fotos: * </label>
+                <label for="fotos" class="col-lg-2 control-label">Fotos: (max. 4)* </label>
                 <div class="col-lg-8">
                   <dl>  
     								<!-- Esta div contendrá todos los campos file que creemos -->

@@ -5,14 +5,20 @@ evento = function (evt) { //esta funcion nos devuelve el tipo de evento disparad
    return (!evt) ? event : evt;
 }
 
-function eliminarAgregar () {
-   var nom=document.getElementById('file2');
-   if (nom=="file2") {
-      alert("hola");
-    }
-}
+var counter = 1;
+var limit = 4;
 //Aqui se hace lamagia... jejeje, esta funcion crea dinamicamente los nuevos campos file
 addCampo = function () { 
+
+    if (counter == limit)  
+   {
+        alert("No puede cargar más fotos");
+        return false;
+    }
+    else 
+   {
+   counter++;
+    }
 //Creamos un nuevo div para que contenga el nuevo campo
    nDiv = document.createElement('div');
 //con esto se establece la clase de la div
@@ -55,6 +61,8 @@ elimCamp = function (evt){
    nCampo = rObj(evt);
    div = document.getElementById(nCampo.name);
    div.parentNode.removeChild(div);
+   counter--;
+
 }
 //con esta función recuperamos una instancia del objeto que disparo el evento
 rObj = function (evt) { 
