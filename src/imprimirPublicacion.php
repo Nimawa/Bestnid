@@ -35,7 +35,7 @@
               if(isset($_SESSION['id']) && ($_SESSION['id']==$r['id_usuario'])){
                 ?>
                 <a class="pull-right" >
-                  <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="window.location.href='modificarPublicacion.php?idPublicacion=<?php echo $r['id'];?>'" <? if($comp=="0"){echo 'enabled';} else{ echo 'disabled'; }?> 
+                  <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="window.location.href='modificarPublicacion.php?idPublicacion=<?php echo $r['id'];?>'" <? if($comp=="0"){echo 'enabled';} else{ echo 'disabled'; }?>> 
                   <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onclick="window.location.href='borrarPublicacion.php?idPublicacion=<?php echo $r['id'];?>'">
                 </a>
                 <?php
