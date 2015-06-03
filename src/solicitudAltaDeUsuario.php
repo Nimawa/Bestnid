@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <label for="telefono" class="col-lg-2 control-label">Telefono: * </label>
                             <div class="col-lg-4">
-                              <input type="text" class="form-control" id="telefono" name="telefono" required placeholder="Ej. 221 154568789" pattern="[0-9 ]+" data-minlength="12" data-error="Complete correctamente este campo" >
+                              <input type="text" class="form-control" id="telefono" name="telefono" required placeholder="Ej. 221 154568789" pattern="[0-9]{7,12}" data-error="Complete correctamente este campo" >
                               <div class="help-block with-errors"></div> 
                             </div>
                         </div>

@@ -12,6 +12,6 @@
                 echo '<option value="'.$r['id'].'" selected>'.$r['nombre'].'</option>';
 		
    }
-   echo '<option value="0" selected></option>';
+   echo '<option value="0" selected>Todas las categorias</option>';
 }
 ?>
