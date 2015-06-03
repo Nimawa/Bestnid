@@ -2,12 +2,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+    <?php 
+    include 'head.php';
+    require 'validarSesion.php';?>
   <body> 
     
-    <?php include 'head.php';?>
-    <?php include 'navegacion.php';?>
 
+    <?php include 'navegacion.php';?>
+    
     
       
       

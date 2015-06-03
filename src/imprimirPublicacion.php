@@ -30,13 +30,26 @@
               $reg=mysql_query(" Select * from oferta where id_publicacion='$id_publicacion'  ",$v2)
               or die("problema de select".mysql_error());
               $comp=mysql_fetch_array($reg);
-              ?>
               
-               <a class="pull-right" >
-                <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="window.location.href='modificarPublicacion.php?idPublicacion=<?php echo $r['id'];?>'" <? if($comp=="0"){echo 'enabled';} else{ echo 'disabled'; }?>> 
-                <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onclick="window.location.href='borrarPublicacion.php?idPublicacion=<?php echo $r['id'];?>'">
-                <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onclick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $r['id'];?>'">
-              </a>
+
+              if(isset($_SESSION['id']) && ($_SESSION['id']==$r['id_usuario'])){
+                ?>
+                <a class="pull-right" >
+                  <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="window.location.href='modificarPublicacion.php?idPublicacion=<?php echo $r['id'];?>'" <? if($comp=="0"){echo 'enabled';} else{ echo 'disabled'; }?> 
+                  <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onclick="window.location.href='borrarPublicacion.php?idPublicacion=<?php echo $r['id'];?>'">
+                </a>
+                <?php
+              }else{
+                ?>
+                  <a class="pull-right" >  
+                    <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onclick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $r['id'];?>'">
+                  </a>  
+                <?php
+              }?>
+              
+               
+              
+             
                 
                             
             </li><hr>

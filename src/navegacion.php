@@ -12,11 +12,11 @@
                 <p class="navbar-text">Plataforma de Subastas Online</p>
                 
             </div>
-            <?php session_start();
-            if(!isset($_SESSION['estado']) || $_SESSION['estado'] != true){
-                include 'formDeslogueado.php';
+            <?php 
+            if(!isset($_SESSION['estado']) or $_SESSION['estado'] != true){
+                include 'formDeslogueado.php'; 
             }else{
-                include 'formLogueado.php';
+                include 'formLogueado.php'; 
             }              
         ?>
         </div>
