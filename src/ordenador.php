@@ -26,13 +26,17 @@
 						     {    
 							     if($_REQUEST['radio2']=='creciente')
 							      {$reg=mysql_query(" $var 
-								                     order by a.id_categoria DESC
+								                     inner join categoria c
+													 on (a.id_categoria= c.id)
+								                     order by c.nombre ASC
 											       ",$aux)or
 						           die("problema de select".mysql_error());
 								   }else
 								   {
 								   $reg=mysql_query(" $var 
-								                     order by a.id_categoria ASC
+								                     inner join categoria c
+													 on (a.id_categoria= c.id)
+								                     order by c.nombre DESC
 											       ",$aux)or
 						           die("problema de select".mysql_error());
 								   
