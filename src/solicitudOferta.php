@@ -38,11 +38,40 @@
                         $idpublicacion=$_REQUEST['idPublicacion'];
                         require 'conexion.php';
                         require 'imprimirPublicacion.php';
+                        require 'acomodarFecha.php';
+                        require 'sql/getFoto.php';
                         $aux= conectar();
                         $reg=mysql_query(" Select * from publicacion where id=$idpublicacion ",$aux)or die("problema de select".mysql_error());
-                        imprimirPublicacion($reg,$aux);
-                        mysql_close($aux);
+                        $r=mysql_fetch_array($reg);
+  
+
                     ?>
+
+                    <ul class="media-list" >
+                        <li class="media" >
+                          <a class="pull-left" href="#" >
+                              <div class="thumbnail" style=" border: 3px #333; float: left; height: 10em; margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" >
+                                <img class="media-object"  ><?php getFoto($r['id'], $aux); ?> </img>
+                              </div>
+                          </a>
+                          <div class="media-body">
+                            <h4 class="media-heading" style="margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" ><?php echo $r['titulo'];?> </h4>
+                            <?php echo $r['descripcion']; ?> 
+                          </div>
+                            <?php echo 'Fecha de inicio: '.acomodarFecha($r['fecha_inicio']). "<br>"; ?> 
+                            <?php echo 'Fecha de fin: '.acomodarFecha($r['fecha_fin'])."<br>"; ?> 
+                                Categoria: <?php $a= $r['id_categoria'];
+                                $reg=mysql_query(" Select nombre from categoria where id= $a ",$aux)or die("problema de select".mysql_error());
+                                   if($x=mysql_fetch_array($reg)){
+                                        echo $x['nombre'];  
+                               }
+                              $id_publicacion=$r['id'];             //controla si hay ofertas, habilita y desabilita el boton
+                              $reg=mysql_query(" Select * from oferta where id_publicacion='$id_publicacion'  ",$aux)
+                              or die("problema de select".mysql_error());
+                              $comp=mysql_fetch_array($reg);
+                              ?>
+                        </li><hr>
+                    </ul>
 
 
                     <form action="altaOferta.php" method="post" data-toggle="validator" class="form-horizontal"  id="formularioAltaOferta" >
