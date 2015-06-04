@@ -29,6 +29,8 @@
         $registros1=mysql_query("SELECT * FROM publicacion AS publi INNER JOIN categoria AS cat ON publi.id_categoria = cat.id INNER JOIN foto AS fot ON publi.id = fot.id_publicacion WHERE publi.id=$idpublicacion", $conexion) 
          or die("Problemas en el select:".mysql_error($conexion));
         $reg1=mysql_fetch_array($registros1);
+
+      
     ?>
 
         <div class="row">

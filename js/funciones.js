@@ -43,13 +43,23 @@ function verificarCorreo() {
 	ajax.send("email="+email.value);
 }
 
+function modificarPublicacion() {
+	alert("hola");
+	if (idpublicacion == 0) {
+		alert("La publicación tiene ofertas no se puede modificar");
+	}else{
+		alert("hola");
+	}		
+}
+
+
 function borrarPublicacion(idpublicacion) {
 	bootbox.confirm("Esta seguro que desea borrar la publicacion?", function(result) {
 		if(result==true){
    		window.location='../src/borrarPublicacion.php?idPublicacion='+idpublicacion;
    		}	
 	}); 
-
-
 }
+
+
 
