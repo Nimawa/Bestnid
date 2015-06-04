@@ -75,13 +75,13 @@
 	
 $tit=$_REQUEST['titulo'];
 $des=$_REQUEST['descripcion'];
-$num=$_REQUEST['fecha'];
+//$num=$_REQUEST['fecha'];
 $fec_act=date("Y-m-d");
 //$id_usuario=$_SESSION["id"]; 
 $id_cat=$_REQUEST['categoria'];
-$fec= $_REQUEST['fecha'];  ;  
+//$fec= $_REQUEST['fecha'];  ;  
 				
-	mysql_query("UPDATE publicacion SET titulo='$tit', descripcion='$des', id_categoria='$id_cat',fecha_inicio='$fec_act', fecha_fin='$fec' WHERE id=$ida", $conexion)
+	mysql_query("UPDATE publicacion SET titulo='$tit', descripcion='$des', id_categoria='$id_cat' WHERE id=$ida", $conexion)
 	or die("Problemas en el select:".mysql_error($conexion));
 
 

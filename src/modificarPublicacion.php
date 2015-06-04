@@ -114,15 +114,15 @@
                 </div>
               </div>
                <div class="form-group">             
-                <label for="piso" class="col-lg-6 control-label">Fecha fin de publicación:</label> 
+                <label for="piso" class="col-lg-6 control-label">Fecha inicio de publicación:</label> 
                 <div class="col-lg-2">
-                 <?php echo acomodarFecha($reg1['fecha_fin']);?>
+                 <?php echo acomodarFecha($reg1['fecha_inicio']);?>
                 </div>
                </div>
                <div class="form-group">
-                <label for="piso" class="col-lg-6 control-label">Cambiar fecha finalización: (entre 15 y 30 días)*</label>
-                <div class="col-lg-4">
-                  <input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo date("Y-m-d", strtotime("+ 15 days"))?>" min="<?php echo date("Y-m-d", strtotime("+ 15 days"))?>"  max="<?php echo date("Y-m-d", strtotime("+ 30 days"))?>">
+                  <label for="piso" class="col-lg-6 control-label">Fecha fin de publicación:</label> 
+                <div class="col-lg-2">
+                  <?php echo acomodarFecha($reg1['fecha_fin']);?>
                 </div>
               </div>
               <div class="form-group" >
