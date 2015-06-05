@@ -44,8 +44,6 @@ function verificarCorreo() {
 }
 
 function modificarPublicacion(valor,idpublicacion) {
-	var id=valor;
-	alert(idpublicacion);
 	if (valor != "0") {
 		bootbox.alert("La publicación tiene ofertas no se puede modificar",null);
 	}else{
