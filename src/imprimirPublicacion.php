@@ -16,16 +16,18 @@
                   </div>
               </a>
               <div class="media-body">
-                <h4 class="media-heading" style="margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" ><?php echo $r['titulo'];?> </h4>
-                <?php echo $r['descripcion']; ?> 
-              </div>
+                <h4 class="media-heading"  ><?php echo $r['titulo'];?> </h4>
+                <?php echo $r['descripcion']. "<br>"; ?> 
                 <?php echo 'Fecha de inicio: '.acomodarFecha($r['fecha_inicio']). "<br>"; ?> 
                 <?php echo 'Fecha de fin: '.acomodarFecha($r['fecha_fin'])."<br>"; ?> 
-      			    Categoria: <?php $a= $r['id_categoria'];
-      			    $reg=mysql_query(" Select nombre from categoria where id= $a ",$v2)or die("problema de select".mysql_error());
-      			       if($x=mysql_fetch_array($reg)){
-      				        echo $x['nombre'];  
+                Categoria: <?php $a= $r['id_categoria'];
+                $reg=mysql_query(" Select nombre from categoria where id= $a ",$v2)or die("problema de select".mysql_error());
+                   if($x=mysql_fetch_array($reg)){
+                      echo $x['nombre'];  
                    }
+                    ?> 
+              </div>
+              <?php  
               $id_publicacion=$r['id'];             //controla si hay ofertas, habilita y desabilita el boton
               $reg=mysql_query(" Select * from oferta where id_publicacion='$id_publicacion'  ",$v2)
               or die("problema de select".mysql_error());
