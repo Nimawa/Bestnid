@@ -30,14 +30,16 @@
 			return false;
 		}
 	}
-	/*if (empty($_POST["arre"])) {
+	if (empty($_POST["arre"])) {	//controla que no se suban mas de cuatro fotos
 		$foto=0;
+	}else{
+		$foto=count($_POST["arre"]);
 	}
-		if (($foto + $res + $tot) > 4){
-			echo "<script language='JavaScript'>alert('No puede cargar mas de 4 fotos');</script>";
-			echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
-			return false;
-		}*/
+	if (($res + $tot) - $foto > 4){
+		echo "<script language='JavaScript'>alert('No puede cargar mas de 4 fotos');</script>";
+		echo "<SCRIPT LANGUAGE=javascript> window.history.go(-1)</SCRIPT>";
+		return false;
+	}
 	
 	if ($vacio!=0) {							// controla que se una imagen
 		$permitidos = array("image/jpg", "image/jpeg","image/png");
