@@ -29,13 +29,18 @@
               $id_publicacion=$r['id'];             //controla si hay ofertas, habilita y desabilita el boton
               $reg=mysql_query(" Select * from oferta where id_publicacion='$id_publicacion'  ",$v2)
               or die("problema de select".mysql_error());
-              $comp=mysql_fetch_array($reg);
+             $comp=mysql_fetch_array($reg);
+             if ($comp==0) {  //tuve que hacer esto si no me tiraba error en js
+                $comp=0;
+              }else{
+                $comp=1;
+              }
               
 
               if(isset($_SESSION['id']) && ($_SESSION['id']==$r['id_usuario'])){
                 ?>
                 <a class="pull-right" >
-                  <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="modificarPublicacion(<?php echo $comp ?>);"> 
+                  <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="modificarPublicacion(<?php echo $comp; ?>, <?php echo $r['id'];?>);"> 
                   <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onclick="borrarPublicacion(<?php echo $r['id'];?>)">
                 </a>
                 <?php
