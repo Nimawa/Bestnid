@@ -25,16 +25,16 @@
 						         
 						     {    
 							     if($_REQUEST['radio2']=='creciente')
-							      {$reg=mysql_query(" $var 
-								                     inner join categoria c
+							      {$reg=mysql_query(" select * from categoria c
+								                     inner join ($var) a
 													 on (a.id_categoria= c.id)
 								                     order by c.nombre ASC
 											       ",$aux)or
 						           die("problema de select".mysql_error());
 								   }else
 								   {
-								   $reg=mysql_query(" $var 
-								                     inner join categoria c
+								   $reg=mysql_query(" select * from categoria c
+								                     inner join ($var) a
 													 on (a.id_categoria= c.id)
 								                     order by c.nombre DESC
 											       ",$aux)or
