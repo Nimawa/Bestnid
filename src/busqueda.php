@@ -22,20 +22,7 @@
                             <button type="submit" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button><br>
-                            Filtros: 
-                            <div class="checkbox">
-                                <label>
-                                    <select class="form-control input-sm" name="idCategoria">
-                                      <?php
-                                        require 'conexion.php';
-                                        require 'sql/getCategoria.php';
-                                        $conexion= conectar();
-                                        getCategoria($conexion);
-                                      ?>
-                                    </select>
-
-                                </label>
-                            </div>
+                            <input type="hidden" name="categoria" value="0">
                             <div class="radio">
                                 <label>
                                    <input type="radio" name="radio1" value="titulo" > 
