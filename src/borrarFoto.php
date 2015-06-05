@@ -100,12 +100,12 @@ $id_cat=$_REQUEST['categoria'];
 	mysql_close($conexion);
 	?> <script language="javascript">
 	alert("La publicacion se ha modificado satisfactoriamente!,");
-	window.location='/bestnid/index.php';
+	window.location='index.php';
 	</script>  <?php
 }else{
 	?> <script language="javascript">
 	alert("La publicacion No se puede modificar porque hay ofertas realizadas!,");
-	window.location='/bestnid/index.php';
+	window.location='index.php';
 	</script>  <?php
 }
 ?> 
