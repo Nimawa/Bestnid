@@ -145,7 +145,7 @@
                         <div class="form-group">
                             <label for="pass2" class="col-lg-4 control-label">Repetir Contraseña: * </label>
                             <div class="col-lg-4">
-                                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="De 6 a 15 caracteres" required data-match="#pass1" data-error=" Las contraseñas no coinciden!" pattern="[\s\S]{6,15}">
+                                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="De 6 a 15 caracteres" required data-match="#pass1" data-error=" Las contraseñas no coinciden o no respetan la cantidad de caracteres solicitados." pattern="[\s\S]{6,15}">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
