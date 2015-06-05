@@ -1,5 +1,5 @@
 <div class="list-group">
-    <a href="#" class="list-group-item "></span><strong>CATEGORIAS</strong></a>
+    <a href="#" class="list-group-item " onclick="window.location.href='index.php'"></span><strong>CATEGORIAS</strong></a>
     <?php
     		require 'conexion.php';
             require 'sql/getCategoria.php';
