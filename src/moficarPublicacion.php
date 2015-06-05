@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include 'head.php';?>
+<?php include 'head.php'; require 'validarSesion.php';?>
 <body>
 <?php include 'navegacion.php';?>
   <div style=" padding: 0 200px;">
