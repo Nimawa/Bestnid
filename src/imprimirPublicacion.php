@@ -5,6 +5,10 @@
  function imprimirPublicacion($v1,$v2){    
       require 'acomodarFecha.php';
       require 'sql/getFoto.php';
+      $totalFilas=mysql_num_rows($v1);  
+      if($totalFilas==0){
+                  echo("No existen publicaciones");
+              }
       while($r=mysql_fetch_array($v1)){
         if(( $r ['baja'] == false )or ($r ['baja'] =='false')){ 
           ?>
@@ -15,6 +19,7 @@
                     <img class="media-object"  ><?php getFoto($r['id'], $v2); ?> </img>
                   </div>
               </a>
+           
               <div class="media-body">
                 <h4 class="media-heading"  ><?php echo $r['titulo'];?> </h4>
                 <?php echo $r['descripcion']. "<br>"; ?> 
