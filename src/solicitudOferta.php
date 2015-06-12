@@ -55,7 +55,7 @@
                               </div>
                           </a>
                           <div class="media-body">
-                            <h4 class="media-heading" style="margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" ><?php echo $r['titulo'];?> </h4>
+                            <h4 class="media-heading"  ><?php echo $r['titulo'];?> </h4>
                             <?php echo $r['descripcion']. "<br>"; ?>
                             <?php echo 'Fecha de inicio: '.acomodarFecha($r['fecha_inicio']). "<br>"; ?> 
                             <?php echo 'Fecha de fin: '.acomodarFecha($r['fecha_fin'])."<br>"; ?> 
