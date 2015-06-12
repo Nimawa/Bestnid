@@ -109,9 +109,18 @@
                       }else{
                         ?>
                           <a class="pull-right" >
-                            <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="PREGUNTAR" onclick="window.location.href='#'">  
                             <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onclick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $publicacion['id'];?>'">
-                          </a> 
+                          </a>
+                          <a class="pull-left" >
+                            <form method="post"  action="pregunta.php" data-toggle="validator">
+                              <input  type="submit" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="PREGUNTAR" onclick="window.location.href='#'">  
+                              <div class="col-lg-8">
+                                <textarea type="text" class="form-control"  rows= "2" id="pregunta" name="pregunta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>
+                                <div class="help-block with-errors"></div>   
+                              </div>
+                            </form>  
+                          </a>
+
 
                         <?php
                       }?>
