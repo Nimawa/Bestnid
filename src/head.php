@@ -29,7 +29,8 @@
     <script src="../js/validator.js"></script>
     <script src="../js/validator.min.js"></script>
     <script src="../js/fotos.js"></script>
-    
+    <script src="../js/ajax.js"></script>
+
        <!-- Custom CSS -->
     <style>
     body {
