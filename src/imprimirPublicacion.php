@@ -6,7 +6,7 @@
 
       $totalFilas=mysql_num_rows($v1);  
       if($totalFilas==0){
-                  echo("No existen Result");
+                  echo("No existen resultados");
               }
       while($r=mysql_fetch_array($v1)){
         if(( $r ['baja'] == false )or ($r ['baja'] =='false')){ 
