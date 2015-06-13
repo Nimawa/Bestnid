@@ -31,6 +31,13 @@
                             <label for="nombre" class="col-lg-2 control-label">Nombre: </label>
                             <div class="col-lg-4">
                               <input  class="form-control" id="nombre" name="nombre" required placeholder="Nombre" pattern="[a-zA-Z]+" data-error="Complete correctamente este campo">
+							  <font color="red">
+							  <?php
+							     if(isset ($_REQUEST['c']))
+								     if($_REQUEST['c']==2)
+									    echo 'ya existe la categoria';
+							  ?>
+							  </font>
                               <div class="help-block with-errors"></div>   
                             </div>
                   </div>
