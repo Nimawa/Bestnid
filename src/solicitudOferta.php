@@ -38,8 +38,6 @@
                         $idpublicacion=$_REQUEST['idPublicacion'];
                         require 'conexion.php';
                         require 'imprimirPublicacion.php';
-                        require 'acomodarFecha.php';
-                        require 'sql/getFoto.php';
                         $aux= conectar();
                         $reg=mysql_query(" Select * from publicacion where id=$idpublicacion ",$aux)or die("problema de select".mysql_error());
                         $r=mysql_fetch_array($reg);
