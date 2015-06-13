@@ -95,9 +95,13 @@
                       }else{
                         $comp=1;
                       }
-                      
-
-                      if(isset($_SESSION['id']) && ($_SESSION['id']==$publicacion['id_usuario'])){
+                      if(( $publicacion ['baja'] == 'true' ) ){ 
+                        ?>
+                        <div>
+                          <strong><font color="red">Publicación finalizada</font></strong>
+                        </div>
+                        <?php
+                      }else if(isset($_SESSION['id']) && ($_SESSION['id']==$publicacion['id_usuario'])){
                         ?>
                         <a class="pull-right" >
                           <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="modificarPublicacion(<?php echo $comp; ?>, <?php echo $publicacion['id'];?>);"> 

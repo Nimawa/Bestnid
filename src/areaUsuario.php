@@ -10,5 +10,5 @@
                       <a href="#" class="list-group-item " ><span class="badge"></span>- Preguntas Realizadas</a>
                       <a href="#" class="list-group-item " ><span class="badge"></span><strong>Mis Ofertas</strong></a>
                       <a href="#" class="list-group-item " onclick="mostrarResultados('ofertasActivas.php'); " ><span class="badge"></span>- Ofertas Activas</a>       
-                      <a href="#" class="list-group-item" ><span class="badge"></span>- Ofertas Finalizadas</a>       
+                      <a href="#" class="list-group-item " onclick="mostrarResultados('ofertasTerminadas.php'); " ><span class="badge"></span>- Ofertas Finalizadas</a>       
 </div>
