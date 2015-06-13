@@ -5,8 +5,6 @@
         <?php include 'head.php';?>
         <?php include 'navegacion.php';?>
         <?php include 'busqueda.php';?>  
-        <?php require 'acomodarFecha.php';?>
-        <?php require 'sql/getFoto.php';?>
         <?php require 'conexion.php';?>
         <?php
                    

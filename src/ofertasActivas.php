@@ -1,6 +1,5 @@
 <?php
 
-	
 	include 'head.php';
 	require 'conexion.php';
 	require 'validarSesion.php';

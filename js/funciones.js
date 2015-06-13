@@ -60,5 +60,16 @@ function borrarPublicacion(idpublicacion) {
 	}); 
 }
 
+function mostrarResultados(datos){
+	divResultado = document.getElementById('resultado');
+	ajax=objetoAjax();
+	ajax.open("GET", datos);
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			divResultado.innerHTML = ajax.responseText
+		}
+	}
+	ajax.send(null)
+}
 
 

@@ -1,5 +1,12 @@
 <!-- header y scripts -->  
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    require 'acomodarFecha.php';
+    require 'sql/getFoto.php';
+
+
+
+?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +36,6 @@
     <script src="../js/validator.js"></script>
     <script src="../js/validator.min.js"></script>
     <script src="../js/fotos.js"></script>
-    <script src="../js/ajax.js"></script>
 
        <!-- Custom CSS -->
     <style>

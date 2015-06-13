@@ -3,11 +3,10 @@
  
 //primero recibe el registro de consulta y en el segundo la coneccion a la base
  function imprimirPublicacion($v1,$v2){    
-      require 'acomodarFecha.php';
-      require 'sql/getFoto.php';
+
       $totalFilas=mysql_num_rows($v1);  
       if($totalFilas==0){
-                  echo("No existen publicaciones");
+                  echo("No existen Result");
               }
       while($r=mysql_fetch_array($v1)){
         if(( $r ['baja'] == false )or ($r ['baja'] =='false')){ 
