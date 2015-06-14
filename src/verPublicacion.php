@@ -108,8 +108,12 @@
                           <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onclick="borrarPublicacion(<?php echo $publicacion['id'];?>)">
                         </a>
                         <?php
-                      }else{
+                      }else if ($comp ==1){
                         ?>
+                         <a class="pull-right" >
+                            <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="MODIFICAR OFERTA" onclick="">
+                          </a>
+                          <?php }else{?>
                           <a class="pull-right" >
                             <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onclick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $publicacion['id'];?>'">
                           </a>
