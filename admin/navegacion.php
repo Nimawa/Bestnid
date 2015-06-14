@@ -20,7 +20,7 @@
                             <a style="color: #c0c0c0;" > BIENVENIDO</a>
                         </li>    
                         <li>                         
-                              <a href="usuarioMisPublicaciones.php"> <?php echo $_SESSION['nombre']," ", $_SESSION['apellido']; ?></span></a>
+                              <a href="usuarioMisPublicaciones.php"> <?php echo $_SESSION['admin_nombre']," ", $_SESSION['admin_apellido']; ?></span></a>
                         </li>
                         <li>
                         <input type="submit" class="btn btn-danger btn-sm" style=" margin-top: 10px; margin-right: 80px" value="Cerrar Sesion">

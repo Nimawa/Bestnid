@@ -58,4 +58,13 @@
           <?php 
           }
         }
+        if (isset($_REQUEST['u'])){
+          if ($_REQUEST['u']==4) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("Debe iniciar sesion.",null);
+            </script>
+          <?php 
+          }
+        }
 

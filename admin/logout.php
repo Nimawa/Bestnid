@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-unset($_SESSION['user']);
-unset($_SESSION['pass']);
-unset($_SESSION['id']);
-unset($_SESSION['nombnre']);
-unset($_SESSION['apellido']);
-unset($_SESSION['estado']);
+unset($_SESSION['admin_user']);
+unset($_SESSION['admin_pass']);
+unset($_SESSION['admin_id']);
+unset($_SESSION['admin_nombnre']);
+unset($_SESSION['admin_apellido']);
+unset($_SESSION['admin_estado']);
 
 header("Location: index.php");
 
