@@ -21,7 +21,6 @@
         </div>
         <?php
       
-        require 'acomodarFecha.php';
         require 'conexion.php';
         $conexion=conectar();
         $idpublicacion=$_REQUEST['idPublicacion'];
