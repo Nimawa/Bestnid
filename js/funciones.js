@@ -72,4 +72,26 @@ function mostrarResultados(datos){
 	ajax.send(null)
 }
 
+function usuariosRegistrados(datos){
+	divResultado = document.getElementById('resultado');
+	fecha1=document.getElementById('fecha1');
+	fecha2=document.getElementById('fecha2');
+	ajax=objetoAjax();
+	ajax.open("POST", datos);
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			divResultado.innerHTML = ajax.responseText
+		}
+	}
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	ajax.send("fecha1="+fecha1.value +"&fecha2="+ fecha2.value )
+}
+
+
+
+
+
+
+
+
 
