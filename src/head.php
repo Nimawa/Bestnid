@@ -15,7 +15,7 @@
  
     <!-- CSS de Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
- 
+    <link rel="stylesheet" href="../css/datepicker.css">
     <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -36,6 +36,8 @@
     <script src="../js/validator.js"></script>
     <script src="../js/validator.min.js"></script>
     <script src="../js/fotos.js"></script>
+    <script src="../js/bootstrap-datepicker.js"></script>
+
 
        <!-- Custom CSS -->
     <style>
