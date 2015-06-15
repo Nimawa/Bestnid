@@ -11,7 +11,11 @@
 	
 	      $totalFilas=mysql_num_rows($reg);  
       if($totalFilas==0){
-                  echo("No existen resultados");
+                  ?>
+                    <div class="row" style="margin: 20px; background-color: #EEEEEE">
+                          <h4 class="col-xs-10 col-md-10">No existen resultados</h4>
+                      </div><br>
+                  <?php
               }
       while($r=mysql_fetch_array($reg)){
         if(( $r ['baja'] == true )or ($r ['baja'] =='true')){ 
