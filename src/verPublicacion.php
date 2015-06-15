@@ -110,9 +110,9 @@
                         <?php
                       }else if ($comp ==1){
                         ?>
-                         <a class="pull-right" >
-                            <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="MODIFICAR OFERTA" onclick="">
-                          </a>
+                       <div>
+                          <strong><font color="red">Usted ya ofertó en esta publicación</font></strong>
+                        </div>
                           <?php }else{?>
                           <a class="pull-right" >
                             <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onclick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $publicacion['id'];?>'">
