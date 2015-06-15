@@ -16,8 +16,12 @@
 	or die("problema de select".mysql_error());
 
 	if (mysql_num_rows($oferta)==0) {
-		  echo("No existen resultados");
-	}
+			?>
+    		<div class="row" style="margin: 20px; background-color: #EEEEEE">
+	            <h4 class="col-xs-10 col-md-10">No existen resultados</h4>
+	        </div><br>
+	    <?php
+    }
 	while($registros=mysql_fetch_array($reg)){
 			$id_publicacion_actual=$registros['id_publicacion'];
 			$publicacion=mysql_query(" select * from publicacion where id=$id_publicacion_actual " ,$conexion)
