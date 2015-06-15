@@ -104,8 +104,8 @@
                       }else if(isset($_SESSION['id']) && ($_SESSION['id']==$publicacion['id_usuario'])){
                         ?>
                         <a class="pull-right" >
-                          <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="modificarPublicacion(<?php echo $comp; ?>, <?php echo $publicacion['id'];?>);"> 
-                          <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onclick="borrarPublicacion(<?php echo $publicacion['id'];?>)">
+                          <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onClick="modificarPublicacion(<?php echo $comp; ?>, <?php echo $publicacion['id'];?>);"> 
+                          <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onClick="borrarPublicacion(<?php echo $publicacion['id'];?>)">
                         </a>
                         <?php
                       }else if ($comp ==1){
@@ -115,11 +115,12 @@
                         </div>
                           <?php }else{?>
                           <a class="pull-right" >
-                            <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onclick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $publicacion['id'];?>'">
+                            <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onClick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $publicacion['id'];?>'">
                           </a>
                           <a class="pull-left" >
-                            <form method="post"  action="pregunta.php" data-toggle="validator">
-                              <input  type="submit" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="PREGUNTAR" onclick="window.location.href='#'">  
+						  
+                            <form method="post"  action="altaPregunta.php?idPublicacion=<?php echo "$idPublicacion";?>'" data-toggle="validator">
+                              <input  type="submit" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="PREGUNTAR" onClick="window.location.href='#'">  
                               <div class="col-lg-8">
                                 <textarea type="text" class="form-control"  rows= "2" id="pregunta" name="pregunta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>
                                 <div class="help-block with-errors"></div>   
@@ -139,19 +140,44 @@
             <div class="row">
                 <div class="col-xs-12 col-md-12" style="margin-top: 20px;">
                   <h4>Descripcion:</h4>
-                  <?php echo $publicacion['descripcion']; ?> 
+                  <?php
+				       echo $publicacion['descripcion'];
+				       ?> 
                 </div>
             </div> 
-            <div class="row">
+         <?php
+		 
+		     /// el listado de consultas////
+	$idPublicacion= $_REQUEST['idPublicacion'];
+    $listado=mysql_query(" SELECT *
+	                          from consulta
+							  where id_publicacion=$idPublicacion
+	                          ",$conexion) or die("Problemas en el select:".mysql_error());
+
+?>
+
+
+              <div class="row">
                 <div class="col-xs-12 col-md-12" style="margin-top: 20px; background-color: #EEEEEE">
                  
                       <h4>Preguntas realizadas </h4>
-
-                      <h5>Pregunta:</h5><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua.</p>
-                      <h5>Respuesta:</h5><p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      
-                 
+                       <?php 
+					     while ($listaDeConsultas=mysql_fetch_array($listado))
+						 { 
+					   ?>
+                      <h5>Pregunta:</h5><p>
+					    <?php 
+						    echo $listaDeConsultas['pregunta']; 
+						    ?> </p>
+                      <h5>Respuesta:</h5><p>
+					   <?php if($listaDeConsultas['respuesta']<> null) 
+					         echo $listaDeConsultas['respuesta'];
+							 else
+							   echo '';
+							    
+						    ?></p>
+                              <hr>
+                     <?php  }?>
                 </div>
             </div>
                      
