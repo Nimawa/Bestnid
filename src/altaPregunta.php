@@ -1,5 +1,6 @@
 <?php
     require 'conexion.php';
+	require 'head.php';
 	$conexion=conectar();
 	$idPublicacion= $_REQUEST['idPublicacion'];
 	$pregunta=$_REQUEST['pregunta'];
