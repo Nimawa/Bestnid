@@ -21,7 +21,15 @@
             </div>
         </div>
     </diV>
-
+           <?php
+        if (isset($_REQUEST['c'])){
+          if ($_REQUEST['c']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("La categoria se ha dado de alta correctamente.",null);
+            </script>
+          <?php 
+          } }?>
 
    
   </body>
