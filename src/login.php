@@ -14,7 +14,7 @@ if(($user_ok = mysql_fetch_array($usuarios)) and ($user_ok['pass']==$_REQUEST['p
     $_SESSION['nombre'] = $user_ok["nombre"];
     $_SESSION['apellido'] = $user_ok["apellido"]; 
     $_SESSION['estado'] = true;
-      
+
          header("location: index.php");
 
 

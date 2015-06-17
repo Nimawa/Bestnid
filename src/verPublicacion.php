@@ -86,9 +86,15 @@
                       </h4>
                       
                       <?php  
-                      $id_publicacion=$publicacion['id'];             //controla si hay ofertas, habilita y desabilita el boton
-                      $reg=mysql_query(" Select * from oferta where id_publicacion='$id_publicacion'  ",$conexion)
+                        $id_publicacion=$publicacion['id'];   
+                      
+                     
+                        $reg=mysql_query(" Select * from oferta where id_publicacion='$id_publicacion' ",$conexion)
                       or die("problema de select".mysql_error());
+                     
+                              //controla si hay ofertas, habilita y desabilita el boton
+
+
                      $comp=mysql_fetch_array($reg);
                      if ($comp==0) {  //tuve que hacer esto si no me tiraba error en js
                         $comp=0;
@@ -108,7 +114,7 @@
                           <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onClick="borrarPublicacion(<?php echo $publicacion['id'];?>)">
                         </a>
                         <?php
-                      }else if ($comp ==1){
+                      }else if ($comp==1 && isset($_SESSION['id']) ){
                         ?>
                        <div>
                           <strong><font color="red">Usted ya ofertó en esta publicación</font></strong>
