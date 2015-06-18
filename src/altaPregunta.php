@@ -8,12 +8,10 @@
 	if (isset($_SESSION["id"]))
 	{
 	     $idPreguntador=$_SESSION["id"];
-	     $altaPregunta=mysql_query(" INSERT INTO consulta(id, id_usuario, id_publicacion, pregunta, respuesta,fecha) 
-		 VALUES (null,'$idPreguntador','$idPublicacion[0]','$pregunta',null,'$date')  ",$conexion)or die("problema de select".mysql_error());
-   header("location: verPublicacion.php?idPublicacion=$idPublicacion[0]");
-   }
-   else
-   {
-    header("location: index.php?u=4");
 	}
+	    
+		 $altaPregunta=mysql_query(" INSERT INTO consulta(id, id_usuario, id_publicacion, pregunta, respuesta,fecha) 
+		 VALUES (null,'$idPreguntador','$idPublicacion','$pregunta',null,'$date')  ",$conexion)or die("problema de select".mysql_error());
+		  
+  header("location: verPublicacion.php?idPublicacion=$idPublicacion");
 ?>
