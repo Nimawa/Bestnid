@@ -6,6 +6,7 @@
         <?php include 'navegacion.php';?>
         <?php include 'busqueda.php';?>  
         <?php require 'conexion.php';?>
+        <?php require 'comprobarOferta.php';?>
         <?php
                    
         $conexion= conectar();
@@ -114,7 +115,7 @@
                           <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onClick="borrarPublicacion(<?php echo $publicacion['id'];?>)">
                         </a>
                         <?php
-                      }else if ($comp==1 && isset($_SESSION['id']) ){
+                      }else if (isset($_SESSION['id']) && comprobarOferta($_SESSION['id'], $id_publicacion, $conexion) ){
                         ?>
                        <div>
                           <strong><font color="red">Usted ya ofertó en esta publicación</font></strong>
