@@ -5,7 +5,7 @@
         <?php include 'head.php';?>
         <?php include 'navegacion.php';?>
         <?php include 'busqueda.php';?>  
-  
+        
 
     <div style=" padding: 0 200px;">
         
@@ -21,6 +21,16 @@
             </div>
         </div>
     </diV>
+	<?php if(isset($_REQUEST['r'])){ 
+		         if($_REQUEST['r']==1)
+				   { ?>  
+				   <script language="javascript">
+				   bootbox.alert=("La respuesta a sido enviada",null);
+				   </script>
+				   <?php
+				   }
+				   }
+				   ?>
   </body>
 </html>
 

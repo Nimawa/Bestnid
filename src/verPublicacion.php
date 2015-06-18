@@ -125,7 +125,7 @@
                           </a>
                           <a class="pull-left" >
 						  
-                            <form method="post"  action="altaPregunta.php?idPublicacion=<?php echo "$idPublicacion";?>'" data-toggle="validator">
+                            <form method="post"  action="altaPregunta.php?idPublicacion=<?php echo "$idPublicacion";?>" data-toggle="validator">
                               <input  type="submit" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="PREGUNTAR" onClick="window.location.href='#'">  
                               <div class="col-lg-8">
                                 <textarea type="text" class="form-control"  rows= "2" id="pregunta" name="pregunta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>
