@@ -19,9 +19,31 @@
                 </div>
                <div  class="col-xs-12 col-sm-6 col-md-8">
 
-      
+
                      <h3>
-                        <strong style="">  Solicitud de Alta de Categoria </strong>
+                        <strong style=""> Categorias existentes</strong>
+                    </h3>   
+
+                    <?php
+
+                      require '../src/conexion.php';
+                      $conexion=conectar();
+                      $registros=mysql_query("SELECT * FROM categoria ORDER BY nombre asc" ,$conexion) or die("Problemas en el select:".mysql_error($conexion));
+                      
+                      while ($reg=mysql_fetch_array($registros)){
+                      ?> 
+                       <div class="row-fluid">
+                       <div class="col-md-4 col-xs-8" style="">   
+                      <h4> <?php echo $reg['nombre'];?></h4>  
+                      </div>
+                      </div>  
+
+                      <?php   
+                      }?>
+                    
+                   
+                    <h3 style=""> 
+                       <strong style=""> Solicitud de Alta de Categoria </strong>
                     </h3>
                 
                 
