@@ -22,7 +22,7 @@
 
                      <h3>
                         <strong style=""> Categorias existentes</strong>
-                    </h3>   
+                    </h3> 
 
                     <?php
 
@@ -31,17 +31,17 @@
                       $registros=mysql_query("SELECT * FROM categoria ORDER BY nombre asc" ,$conexion) or die("Problemas en el select:".mysql_error($conexion));
                       
                       while ($reg=mysql_fetch_array($registros)){
-                      ?> 
-                       <div class="row-fluid">
-                       <div class="col-md-4 col-xs-8" style="">   
-                      <h4> <?php echo $reg['nombre'];?></h4>  
-                      </div>
-                      </div>  
+                        ?> 
+                           <div class="row-fluid">
+                             <div class="col-md-12 col-xs-12" style="">   
+                              <h4> <?php echo $reg['nombre'];?></h4>  
+                            </div>
+                          </div>
 
-                      <?php   
+                        <?php   
                       }?>
                     
-                   
+                    
                     <h3 style=""> 
                        <strong style=""> Solicitud de Alta de Categoria </strong>
                     </h3>
