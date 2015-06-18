@@ -21,16 +21,38 @@
 				$id_publicacion_actual=$registros['id'];
 				$publicacion=mysql_query(" select * from publicacion where id=$id_publicacion_actual " ,$conexion)or die("problema de select".mysql_error());
 				imprimirPublicacion($publicacion,$conexion);
+				$ganadora=mysql_query(" select * from oferta where id_publicacion=$id_publicacion_actual and ganador='true' " ,$conexion)or die("problema de select".mysql_error());
+				$totalfilas=mysql_num_rows($ganadora);
 				$of=mysql_query(" select * from oferta where id_publicacion=$id_publicacion_actual " ,$conexion)or die("problema de select".mysql_error());
-				while($oferta=mysql_fetch_array($of)){
-					?><div class="row" style="margin-top: 20px; background-color: #EEEEEE">
-		                 	<h4 class="col-xs-10 col-md-10"><?php echo $oferta['descripcion']?></h4>
-		                 	<a class="pull-right" >  
-		                    <input  type="button" class="btn btn-primary btn-sm" style=" margin: 10px;" value="ADJUDICAR" onclick="window.location.href='adjudicarPublicacion.php?idPublicacion=<?php echo $oferta['id'];?>'">
-		              		</a> 
-		             </div><br>
-		             <?php
-				}echo '<hr>';
+				if($totalfilas==0){
+					while($oferta=mysql_fetch_array($of)){
+						?><div class="row" style="margin-top: 20px; background-color: #EEEEEE">
+			                 	<h4 class="col-xs-10 col-md-10"><?php echo $oferta['descripcion']?></h4>
+			                 	<a class="pull-right" >  
+			                    <input  type="button" class="btn btn-primary btn-sm" style=" margin: 10px;" value="ADJUDICAR" onClick="adjudicarPublicacion(<?php echo $oferta['id'];?>)">
+			              		</a> 
+			             </div><br>
+			             <?php
+					}echo '<hr>';
+				}else{
+					while($oferta=mysql_fetch_array($of)){
+						if($oferta['ganador']=="false"){
+							?><div class="row" style="margin-top: 20px; background-color: #EEEEEE">
+			                 	<h4 class="col-xs-10 col-md-10"><?php echo $oferta['descripcion']?></h4>
+			                 	<a class="pull-right" >  
+			              		</a> 
+			             </div><br>
+			             <?php
+						}else{
+							?><div class="row" style="margin-top: 20px; background-color: #EEEEEE">
+			                 	<h4 class="col-xs-10 col-md-10"><?php echo $oferta['descripcion']?><a style=" float: right; color:red; "> Oferta Ganadora </a></h4>
+			             </div><br>
+			             <?php
+						}
+					}echo '<hr>';
+
+				}
+				
 		};
 	};	
 	mysql_close($conexion);

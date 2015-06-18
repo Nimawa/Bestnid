@@ -21,16 +21,27 @@
             </div>
         </div>
     </diV>
-	<?php if(isset($_REQUEST['r'])){ 
-		         if($_REQUEST['r']==1)
-				   { ?>  
-				   <script language="javascript">
-				   bootbox.alert=("La respuesta a sido enviada",null);
-				   </script>
-				   <?php
-				   }
-				   }
-				   ?>
+	<?php
+        if (isset($_REQUEST['r'])){
+          if ($_REQUEST['r']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("La respuesta a sido enviada",null);
+            </script>
+          <?php 
+          }
+        }
+        if (isset($_REQUEST['o'])){
+          if ($_REQUEST['o']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("La publicacion ha sido adjudicada correctamente",null);
+            </script>
+          <?php 
+          }
+        }         
+                       
+	?>
   </body>
 </html>
 

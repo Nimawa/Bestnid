@@ -87,6 +87,14 @@ function usuariosRegistrados(datos){
 	ajax.send("fecha1="+fecha1.value +"&fecha2="+ fecha2.value )
 }
 
+function adjudicarPublicacion(idOferta) {
+	bootbox.confirm("Esta seguro que desea adjudicar la publicacion a esta oferta?", function(result) {
+		if(result==true){
+   		window.location='../src/adjudicarPublicacion.php?idOferta='+idOferta;
+   		}	
+	}); 
+}
+
 
 
 
