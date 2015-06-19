@@ -47,7 +47,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="motivos" class="col-lg-2 control-label">Motivos: <?php echo $reg["descripcion"]?></label>
+                            <label for="motivos" class="col-lg-2 control-label"> Motivos: </label>
+                           <?php echo $reg["descripcion"]?>
                         </div>
                         <div class="form-group" >
                             <div class="col-lg-10">
