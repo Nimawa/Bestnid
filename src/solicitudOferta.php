@@ -79,7 +79,7 @@
                         <div class="form-group">
                             <label for="monto" class="col-lg-2 control-label">Monto: * $</label>
                             <div class="col-lg-2">
-                              <input  class="form-control" id="monto" name="monto" required placeholder="$ 50,50" pattern="(?:\d*\,)?\d+" data-error="Complete correctamente este campo" >
+                              <input  class="form-control" id="monto" name="monto" required placeholder="$ 50.50" pattern="(?:\d*\.)?\d+" data-error="Complete correctamente este campo" >
                               <div class="help-block with-errors"></div>   
                             </div>
                         </div>
