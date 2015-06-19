@@ -46,9 +46,9 @@
                                         while($fotos2=mysql_fetch_array($fot2)){
                                           
                                             if($i>0){
-                                                ?><div class="item" style="width: 550px; height: 300px; margin: auto auto"> <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $fotos2['foto'] ).'"/>' ?></div><?php
+                                                ?><div class="item" style="width: 550px; height: 300px; margin: auto auto"> <?php echo '<img style="width: 100%; max-width: 100%;  height: 330px; margin: auto auto" src="data:image/jpeg;base64,'.base64_encode( $fotos2['foto'] ).'"/>' ?></div><?php
                                             }else{
-                                                ?><div class="active item" style="width: 550px; height: 300px; margin: auto auto"> <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $fotos2['foto'] ).'"/>' ?></div><?php
+                                                ?><div class="active item" style="width: 550px; height: 300px; margin: auto auto"> <?php echo '<img style="width: 100%; max-width: 100%; height: 330px; margin: auto auto" src="data:image/jpeg;base64,'.base64_encode( $fotos2['foto'] ).'"/>' ?></div><?php
                                             }
                                           $i=$i+1;
                                         } 
