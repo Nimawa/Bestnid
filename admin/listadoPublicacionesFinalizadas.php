@@ -23,7 +23,7 @@
 		    <?php
 	    }
 	    else{
-		    echo 'mierda';
+	
 			imprimirPublicacion($reg,$conexion);
 		
 			
