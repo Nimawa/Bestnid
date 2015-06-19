@@ -7,7 +7,7 @@
 	$id_usuario=$_SESSION["id"]; 
 	$_SESSION['$a']=(" Select * from publicacion a ");
 
-	$reg=mysql_query(" Select * FROM oferta AS ofer INNER JOIN publicacion AS publi WHERE ofer.id_usuario=$id_usuario AND ofer.ganador='true' AND publi.baja='true' AND ofer.id_publicacion=publi.id" ,$conexion)or die("problema de select".mysql_error());
+	$reg=mysql_query(" Select * FROM oferta AS ofer INNER JOIN publicacion AS publi WHERE ofer.id_usuario=$id_usuario AND publi.baja='true' AND ofer.id_publicacion=publi.id ORDER BY ofer.ganador desc" ,$conexion)or die("problema de select".mysql_error());
 	
 	      $totalFilas=mysql_num_rows($reg);  
       if($totalFilas==0){
@@ -39,6 +39,12 @@
                    if($x=mysql_fetch_array($regi)){
                       echo $x['nombre'];  
                    }
+                if ($r['ganador']=='true') {
+                  ?><div>
+                      <strong><h3><font color="red">Usted ganó esta subasta.</font></h3></strong>
+                    </div>
+                  <?php
+                }
                     ?> 
               </div>
               <a class="pull-right" >  
