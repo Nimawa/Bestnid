@@ -120,6 +120,13 @@
                        <div>
                           <strong><font color="red">Usted ya ofertó en esta publicación</font></strong>
                         </div>
+                         <form method="post"  action="altaPregunta.php?idPublicacion=<?php echo "$idPublicacion";?>" data-toggle="validator">
+                              <input  type="submit" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="PREGUNTAR" onClick="window.location.href='#'">  
+                              <div class="col-lg-8">
+                                <textarea type="text" class="form-control"  rows= "2" id="pregunta" name="pregunta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>
+                                <div class="help-block with-errors"></div>   
+                              </div>
+                            </form>  
                           <?php }else{?>
                           <a class="pull-right" >
                             <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onClick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $publicacion['id'];?>'">
