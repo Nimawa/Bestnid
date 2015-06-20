@@ -7,7 +7,7 @@
     if ($fecha2 < $fecha1) {
     	?>
     		<div class="row" style="margin: 20px; background-color: #EEEEEE">
-	            <h4 class="col-xs-10 col-md-10" style="color: red">ERROR! la segunda fecha debe ser mayor que la prtimera</h4>
+	            <h4 class="col-xs-10 col-md-10" style="color: red">ERROR! la segunda fecha debe ser mayor que la primera</h4>
 	        </div><br>
 	    <?php  
     }else{
