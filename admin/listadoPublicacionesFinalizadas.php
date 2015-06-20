@@ -5,11 +5,11 @@
 	$conexion=conectar();
 	$fecha1=$_REQUEST['fecha1'];
 	$fecha2=$_REQUEST['fecha2'];
-	
-    if ($fecha2 < $fecha1) {
+	$date=date("Y-m-d");
+    if (($fecha2 < $fecha1)||($fecha2 > $date)){
     	?>
     		<div class="row" style="margin: 20px; background-color: #EEEEEE">
-	            <h4 class="col-xs-10 col-md-10" style="color: red">ERROR! la segunda fecha debe ser mayor que la prtimera</h4>
+	            <h4 class="col-xs-10 col-md-10" style="color: red">ERROR! la segunda fecha debe ser mayor que la primera y la segunda fecha no debe superar la fecha actual</h4>
 	        </div><br>
 	    <?php  
     }else{
