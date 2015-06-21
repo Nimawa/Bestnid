@@ -31,36 +31,32 @@
 			$preguntas=mysql_query("  SELECT * from consulta where id_publicacion=$id_publicacion_actual
             ",$conexion)or die("problema de select".mysql_error());
 			?>
-			<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
 			<?php
 		    while($reg=mysql_fetch_array($preguntas))
 			{
 			 ?>
-				       	<h4 class="col-xs-10 col-md-10">Pregunta: <?php echo $reg['pregunta']?></h4>
+			 			<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
+				       		<h4 class="col-xs-10 col-md-10">Pregunta: <?php echo $reg['pregunta']?></h4>
+				       	</div>
 						<?php if($reg['respuesta']<> null) {?>
-	                 	<h4 class="col-xs-8 col-md-8">respuesta: <?php echo $reg["respuesta"]?>
-						<br />
-                    <hr /></h4>
-                   
+			 			<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
+	                 		<h4 class="col-xs-10 col-md-10">respuesta: <?php echo $reg["respuesta"]?></h4>
+                  		</div>
 
 
                         <?php }else {
 						      ?>
-							  <h4 class="col-xs-10 col-md-10">respuesta:
-							  
-					<form method="post"  action="altaRespuesta.php?idConsulta=<?php echo $reg["id"];?>" data-toggle="validator">		  
-							  <textarea type="text" class="form-control"  rows= "1" id="respuesta" name="respuesta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>
-							
-
-						<a class="pull-right" >  
-	                    <input  type="submit" class="btn btn-primary btn-sm" style=" margin: 8px;" value=" RESPONDER" onclick="window.location.href='#'">
-	              		</a> 
-						 </form> 
-						<br />
-                    <hr />
-						</h4>
+	      				<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
+							<h4 class="col-xs-10 col-md-10">respuesta:  
+							<form method="post"  action="altaRespuesta.php?idConsulta=<?php echo $reg["id"];?>" data-toggle="validator">		  
+							<textarea type="text" class="form-control"  rows= "1" id="respuesta" name="respuesta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>						
+							<a class="pull-right" >  
+	                   		<input  type="submit" class="btn btn-primary btn-sm" style=" margin: 8px;" value=" RESPONDER" onclick="window.location.href='#'">
+	              			</a> 
+							</form> 
+				       		</h4>
 	             
-				 
+				 	</div><br>
 	             <?php
 	         	}//fin del else
 				
@@ -69,8 +65,9 @@
 		} //fin de el principal while
 		echo '<hr>';
 
+
 	mysql_close($conexion);
 	
 	
 	
-	?></div><br>
+	?>

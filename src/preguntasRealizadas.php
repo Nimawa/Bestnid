@@ -32,24 +32,16 @@
 			and id_usuario=$id_usuario
             ",$conexion)or die("problema de select".mysql_error());
 			?>
-			<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
 			<?php
-		    while($reg=mysql_fetch_array($preguntas))
-			{
+		    while($reg=mysql_fetch_array($preguntas)){
 			 ?>
-				       	<h4 class="col-xs-10 col-md-10">Pregunta: <?php echo $reg['pregunta']?></h4>
-	                 	<h4 class="col-xs-8 col-md-8">respuesta: <?php echo $reg["respuesta"]?>
-						<br />
-                    <hr /></h4>
-                   
-
-
-                        <?php 
-				
-				}// fin del segundo while
-				
+			<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
+				<h4 class="col-xs-10 col-md-10">Pregunta: <?php echo $reg['pregunta']?></h4>
+	  	     	<h4 class="col-xs-10 col-md-10">respuesta: <?php echo $reg["respuesta"]?></h4>
+			</div><br>
+            <?php 
+			}// fin del segundo while
 		} //fin de el principal while
 		echo '<hr>';
-        
 	mysql_close($conexion);
-?></div><br>
+?>
