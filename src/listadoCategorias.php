@@ -4,7 +4,14 @@
     		require 'conexion.php';
             require 'sql/getCategoria.php';
             $conexion= conectar();
-          $cat=mysql_query(" SELECT cat.nombre, cat.id, count( pub.id ) as cantidad FROM categoria AS cat JOIN publicacion AS pub WHERE cat.id = pub.id_categoria AND pub.baja = 'false' GROUP BY cat.nombre",$conexion)or die("problema de select".mysql_error());
+			$date=date("Y-m-d");
+          $cat=mysql_query(" SELECT cat.nombre, cat.id, count( pub.id ) AS cantidad
+FROM categoria AS cat
+JOIN publicacion AS pub
+WHERE cat.id = pub.id_categoria
+AND pub.baja = 'false'
+AND pub.fecha_fin > '$date'
+GROUP BY cat.nombre",$conexion)or die("problema de select".mysql_error());
           while($categoria=mysql_fetch_array($cat)){
               if(isset($_REQUEST['categoria']) and $_REQUEST['categoria']==$categoria['id']){
                 ?><a href="#" class="list-group-item active" onclick="window.location.href='filtrador.php?categoria=<?php echo $categoria['id'];?>'"><span class="badge"><?php echo $categoria['cantidad']; ?> </span><?php echo $categoria['nombre']; ?> </a><?php        

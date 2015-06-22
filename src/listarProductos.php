@@ -6,6 +6,6 @@
 	require 'imprimirPublicacion.php';
 	imprimirPublicacion($reg,$conexion);
 	mysql_close($conexion);
-	$_SESSION['$a']=(" Select * from publicacion a ");
+	$_SESSION['$a']=(" Select * from publicacion a where fecha_fin >'$date'");
 ?>
                   
