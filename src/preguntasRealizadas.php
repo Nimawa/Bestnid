@@ -37,7 +37,7 @@
 			 ?>
 			<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
 				<h4 class="col-xs-10 col-md-10">Pregunta: <?php echo $reg['pregunta']?></h4>
-	  	     	<h4 class="col-xs-10 col-md-10">respuesta: <?php echo $reg["respuesta"]?></h4>
+	  	     	<h4 class="col-xs-10 col-md-10">Respuesta: <?php echo $reg["respuesta"]?></h4>
 			</div><br>
             <?php 
 			}// fin del segundo while
