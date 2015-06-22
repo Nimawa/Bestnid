@@ -56,7 +56,7 @@
 							</form> 
 				       		</h4>
 	             
-				 	</div><br>
+					 	</div><br>
 	             <?php
 	         	}//fin del else
 				
