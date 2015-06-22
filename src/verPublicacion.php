@@ -8,7 +8,7 @@
         <?php require 'conexion.php';?>
         <?php require 'comprobarOferta.php';?>
         <?php
-                   
+        $fec_act=date("Y-m-d");           
         $conexion= conectar();
         $idPublicacion=$_REQUEST['idPublicacion']; 
         $pub=mysql_query(" Select * from publicacion where id=$idPublicacion  ",$conexion)or die("problema de select".mysql_error());
@@ -19,6 +19,18 @@
     <div style=" padding: 0 200px;">
         
         <div class="container-fluid">
+            <?php
+            
+            if($publicacion['fecha_fin']<$fec_act){?>
+              <div class="row">
+                  <div class="col-xs-12 col-md-12" style="margin-top: 20px; background-color: #EEEEEE">
+                    <h4 class="col-xs-5 col-md-5"></h4>
+                    <h4 class="col-xs-4 col-md-4" style="color:red; align:center ">Publicacion Finalizada</h4>
+                    <h4 class="col-xs-3 col-md-3"></h4>
+                  </div>
+              </div> <br><?php
+            }  
+            ?>    
             <div class="row">
                 <div class="col-xs-6 col-md-6">
 
