@@ -99,64 +99,70 @@
                       </h4>
                       
                       <?php  
-                        $id_publicacion=$publicacion['id'];   
-                      
-                     
-                        $reg=mysql_query(" Select * from oferta where id_publicacion='$id_publicacion' ",$conexion)
-                      or die("problema de select".mysql_error());
-                     
-                              //controla si hay ofertas, habilita y desabilita el boton
+                        
+           
+                      if($publicacion['fecha_fin']>$fec_act){
+
+                                              $id_publicacion=$publicacion['id'];   
+                                            
+                                           
+                                              $reg=mysql_query(" Select * from oferta where id_publicacion='$id_publicacion' ",$conexion)
+                                            or die("problema de select".mysql_error());
+                                           
+                                                    //controla si hay ofertas, habilita y desabilita el boton
 
 
-                     $comp=mysql_fetch_array($reg);
-                     if ($comp==0) {  //tuve que hacer esto si no me tiraba error en js
-                        $comp=0;
-                      }else{
-                        $comp=1;
-                      }
-                      if(( $publicacion ['baja'] == 'true' ) ){ 
-                        ?>
-                        <div>
-                          <strong><font color="red">Publicación finalizada</font></strong>
-                        </div>
-                        <?php
-                      }else if(isset($_SESSION['id']) && ($_SESSION['id']==$publicacion['id_usuario'])){
-                        ?>
-                        <a class="pull-right" >
-                          <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onClick="modificarPublicacion(<?php echo $comp; ?>, <?php echo $publicacion['id'];?>);"> 
-                          <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onClick="borrarPublicacion(<?php echo $publicacion['id'];?>)">
-                        </a>
-                        <?php
-                      }else if (isset($_SESSION['id']) && comprobarOferta($_SESSION['id'], $id_publicacion, $conexion) ){
-                        ?>
-                       <div>
-                          <strong><font color="red">Usted ya ofertó en esta publicación</font></strong>
-                        </div>
-                         <form method="post"  action="altaPregunta.php?idPublicacion=<?php echo "$idPublicacion";?>" data-toggle="validator">
-                              <input  type="submit" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="PREGUNTAR" onClick="window.location.href='#'">  
-                              <div class="col-lg-8">
-                                <textarea type="text" class="form-control"  rows= "2" id="pregunta" name="pregunta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>
-                                <div class="help-block with-errors"></div>   
-                              </div>
-                            </form>  
-                          <?php }else{?>
-                          <a class="pull-right" >
-                            <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onClick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $publicacion['id'];?>'">
-                          </a>
-                          <a class="pull-left" >
-						  
-                            <form method="post"  action="altaPregunta.php?idPublicacion=<?php echo "$idPublicacion";?>" data-toggle="validator">
-                              <input  type="submit" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="PREGUNTAR" onClick="window.location.href='#'">  
-                              <div class="col-lg-8">
-                                <textarea type="text" class="form-control"  rows= "2" id="pregunta" name="pregunta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>
-                                <div class="help-block with-errors"></div>   
-                              </div>
-                            </form>  
-                          </a>
+                                           $comp=mysql_fetch_array($reg);
+                                           if ($comp==0) {  //tuve que hacer esto si no me tiraba error en js
+                                              $comp=0;
+                                            }else{
+                                              $comp=1;
+                                            }
+                                            if(( $publicacion ['baja'] == 'true' ) ){ 
+                                              ?>
+                                              <div>
+                                                <strong><font color="red">Publicación finalizada</font></strong>
+                                              </div>
+                                              <?php
+                                            }else if(isset($_SESSION['id']) && ($_SESSION['id']==$publicacion['id_usuario'])){
+                                              ?>
+                                              <a class="pull-right" >
+                                                <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onClick="modificarPublicacion(<?php echo $comp; ?>, <?php echo $publicacion['id'];?>);"> 
+                                                <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="BORRAR" onClick="borrarPublicacion(<?php echo $publicacion['id'];?>)">
+                                              </a>
+                                              <?php
+                                            }else if (isset($_SESSION['id']) && comprobarOferta($_SESSION['id'], $id_publicacion, $conexion) ){
+                                              ?>
+                                             <div>
+                                                <strong><font color="red">Usted ya ofertó en esta publicación</font></strong>
+                                              </div>
+                                               <form method="post"  action="altaPregunta.php?idPublicacion=<?php echo "$idPublicacion";?>" data-toggle="validator">
+                                                    <input  type="submit" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="PREGUNTAR" onClick="window.location.href='#'">  
+                                                    <div class="col-lg-8">
+                                                      <textarea type="text" class="form-control"  rows= "2" id="pregunta" name="pregunta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>
+                                                      <div class="help-block with-errors"></div>   
+                                                    </div>
+                                                  </form>  
+                                                <?php }else{?>
+                                                <a class="pull-right" >
+                                                  <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="OFERTAR" onClick="window.location.href='solicitudOferta.php?idPublicacion=<?php echo $publicacion['id'];?>'">
+                                                </a>
+                                                <a class="pull-left" >
+                      						  
+                                                  <form method="post"  action="altaPregunta.php?idPublicacion=<?php echo "$idPublicacion";?>" data-toggle="validator">
+                                                    <input  type="submit" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="PREGUNTAR" onClick="window.location.href='#'">  
+                                                    <div class="col-lg-8">
+                                                      <textarea type="text" class="form-control"  rows= "2" id="pregunta" name="pregunta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>
+                                                      <div class="help-block with-errors"></div>   
+                                                    </div>
+                                                  </form>  
+                                                </a><?php
+                                            }
+                     }
 
 
-                        <?php
-                      }?>
+
+                      ?>
 
                     </div>
                   </div>
