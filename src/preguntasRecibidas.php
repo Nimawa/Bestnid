@@ -36,23 +36,25 @@
 			{
 			 ?>
 			 			<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
-				       		<h4 class="col-xs-10 col-md-10">Pregunta: <?php echo $reg['pregunta']?></h4>
-				       	</div>
+				       		<h4 class="col-xs-12 col-md-12">Pregunta: <?php echo $reg['pregunta']?></h4>
+				       	
 						<?php if($reg['respuesta']<> null) {?>
-			 			<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
-	                 		<h4 class="col-xs-10 col-md-10">respuesta: <?php echo $reg["respuesta"]?></h4>
+			 			
+	                 		<h4 class="col-xs-12 col-md-12">respuesta: <?php echo $reg["respuesta"]?></h4>
                   		</div>
 
 
                         <?php }else {
 						      ?>
-	      				<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
-							<h4 class="col-xs-10 col-md-10">respuesta:  
+	      				
+							<h4 class="col-xs-12 col-md-12">Respuesta:<br><br>  
 							<form method="post"  action="altaRespuesta.php?idConsulta=<?php echo $reg["id"];?>" data-toggle="validator">		  
-							<textarea type="text" class="form-control"  rows= "1" id="respuesta" name="respuesta" required placeholder="Realize una pregunta al subastador"  data-error="Complete correctamente este campo" ></textarea>						
-							<a class="pull-right" >  
-	                   		<input  type="submit" class="btn btn-primary btn-sm" style=" margin: 8px;" value=" RESPONDER" onclick="window.location.href='#'">
-	              			</a> 
+								<div class="row col-xs-10 col-md-10">
+									<textarea type="text" class="form-control  "  rows= "1" id="respuesta" name="respuesta" required placeholder="Escriba aqui su respuesta"  data-error="Complete correctamente este campo" ></textarea>						
+								</div>
+								<a class="pull-right" >  
+			                   			<input  type="submit" class="btn btn-primary btn-sm" style="" value=" RESPONDER" onclick="window.location.href='#'">
+			              		</a>
 							</form> 
 				       		</h4>
 	             
