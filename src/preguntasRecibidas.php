@@ -40,7 +40,7 @@
 				       	
 						<?php if($reg['respuesta']<> null) {?>
 			 			
-	                 		<h4 class="col-xs-12 col-md-12">respuesta: <?php echo $reg["respuesta"]?></h4>
+	                 		<h4 class="col-xs-12 col-md-12">Respuesta: <?php echo $reg["respuesta"]?></h4>
                   		</div>
 
 
