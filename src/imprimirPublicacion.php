@@ -3,7 +3,7 @@
  
 //primero recibe el registro de consulta y en el segundo la coneccion a la base
  function imprimirPublicacion($v1,$v2){    
-
+      $fecha_hoy=date("Y-m-d");
       $totalFilas=mysql_num_rows($v1);  
       if($totalFilas==0){
                   echo("No existen resultados");
@@ -23,7 +23,7 @@
                 <h4 class="media-heading"  ><?php echo $r['titulo'];?> </h4>
                 <?php echo $r['descripcion']. "<br>"; ?> 
                 <?php echo 'Fecha de inicio: '.acomodarFecha($r['fecha_inicio']). "<br>"; ?> 
-                <?php echo 'Fecha de fin: '.acomodarFecha($r['fecha_fin'])."<br>"; ?> 
+                <?php echo 'Fecha de fin: '.acomodarFecha($r['fecha_fin'])."<br>"; if($r['fecha_fin']<$fecha_hoy){ echo '<a style="color:red"> Publicacion Finalizada </a>'; echo '<br>';};?> 
                 Categoria: <?php $a= $r['id_categoria'];
                 $reg=mysql_query(" Select nombre from categoria where id= $a ",$v2)or die("problema de select".mysql_error());
                    if($x=mysql_fetch_array($reg)){
