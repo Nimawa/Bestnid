@@ -8,6 +8,7 @@
 
 	$conexion=conectar();
 	$id_usuario=$_SESSION["id"]; 
+	$date=date("Y-m-d");
 	$lista=mysql_query("  SELECT distinct id_publicacion, p.id_usuario
        FROM  publicacion p
            INNER JOIN 
@@ -27,18 +28,25 @@
 			$id_publicacion_actual=$registros['id_publicacion'];
 			$publicacion=mysql_query(" select * from publicacion where id=$id_publicacion_actual " ,$conexion)
 			or die("problema de select".mysql_error());
+			//por alguna razon no puedo copiar de $publicacion por eso hago la consulta de vuelta y dentro del while utilizo publi tranformado en array
+			$publi=mysql_query(" select * from publicacion where id=$id_publicacion_actual " ,$conexion)
+			or die("problema de select".mysql_error());
+			
 			imprimirPublicacion($publicacion,$conexion);
+			
 			$preguntas=mysql_query("  SELECT * from consulta where id_publicacion=$id_publicacion_actual
             ",$conexion)or die("problema de select".mysql_error());
-			?>
-			<?php
-		    while($reg=mysql_fetch_array($preguntas))
+		      $p=mysql_fetch_array($publi);
+			  while($reg=mysql_fetch_array($preguntas))
 			{
 			 ?>
 			 			<div class="row" style="margin-top: 20px; background-color: #EEEEEE">
 				       		<h4 class="col-xs-12 col-md-12">Pregunta: <?php echo $reg['pregunta']?></h4>
 				       	
-						<?php if($reg['respuesta']<> null) {?>
+						<?php 
+					
+						
+						if(($reg['respuesta']<> null)or($p['fecha_fin']< $date)) {?>
 			 			
 	                 		<h4 class="col-xs-12 col-md-12">Respuesta: <?php echo $reg["respuesta"]?></h4>
                   		</div>
@@ -58,7 +66,7 @@
 							</form> 
 				       		</h4>
 	             
-					 	</div><br>
+				 	</div><br>
 	             <?php
 	         	}//fin del else
 				
@@ -69,7 +77,8 @@
 
 
 	mysql_close($conexion);
-	
+     
+          
 	
 	
 	?>
