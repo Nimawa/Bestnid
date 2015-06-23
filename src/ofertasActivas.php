@@ -27,6 +27,7 @@
 			$id_publicacion_actual=$registros['id_publicacion'];
 			$publicacion=mysql_query(" select * from publicacion where id=$id_publicacion_actual " ,$conexion)
 			or die("problema de select".mysql_error());
+			if ($registros['fecha_fin'] > $fec_act) {
 			imprimirPublicacion($publicacion,$conexion);
 				if ( $ofer=mysql_fetch_array($oferta)){
 				
@@ -34,13 +35,12 @@
 				       	<h4 class="col-xs-10 col-md-10">Monto: $<?php echo $ofer['monto']?></h4>
 	                 	<h4 class="col-xs-10 col-md-10">Comentario: <?php echo $ofer["descripciono"]?></h4>
 	                 	<a class="pull-right" >  
-	                 	<?php if ($registros['fecha_fin'] > $fec_act) {?>
-	                 		<input  type="button" class="btn btn-primary btn-sm" style=" margin: 10px;" value="MODIFICAR OFERTA" onClick="window.location.href='modificarOferta.php?id=<?php echo $ofer['ido'];?>&idpubli=<?php echo $ofer['id_publicacion'];?>'">
-	              		<?php } ?>
-	              		</a> 
+	               		<input  type="button" class="btn btn-primary btn-sm" style=" margin: 10px;" value="MODIFICAR OFERTA" onClick="window.location.href='modificarOferta.php?id=<?php echo $ofer['ido'];?>&idpubli=<?php echo $ofer['id_publicacion'];?>'">
+	               		</a> 
 	             </div><br>
 	             <?php
 	         	}
+	         }
 			}echo '<hr>';
 	}
 	mysql_close($conexion);
