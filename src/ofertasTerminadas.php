@@ -5,9 +5,10 @@
 	require 'validarSesion.php';
 	$conexion=conectar();
 	$id_usuario=$_SESSION["id"]; 
+  $fec_act=date("Y-m-d");  
 	$_SESSION['$a']=(" Select * from publicacion a ");
 
-	$reg=mysql_query(" Select * FROM oferta AS ofer INNER JOIN publicacion AS publi WHERE ofer.id_usuario=$id_usuario AND publi.baja='true' AND ofer.id_publicacion=publi.id ORDER BY ofer.ganador desc" ,$conexion)or die("problema de select".mysql_error());
+	$reg=mysql_query(" Select * FROM oferta AS ofer INNER JOIN publicacion AS publi WHERE ofer.id_usuario=$id_usuario  AND ofer.id_publicacion=publi.id ORDER BY ofer.ganador desc" ,$conexion)or die("problema de select".mysql_error());
 	
 	      $totalFilas=mysql_num_rows($reg);  
       if($totalFilas==0){
@@ -18,7 +19,7 @@
                   <?php
               }
       while($r=mysql_fetch_array($reg)){
-        if(( $r ['baja'] == true )or ($r ['baja'] =='true')){ 
+        if( $r['fecha_fin'] < $fec_act){ 
           ?>
           <ul class="media-list" >
             <li class="media" >
