@@ -7,7 +7,7 @@ $conexion=conectar();
 
 
 $usuarios=mysql_query("SELECT * FROM usuario WHERE mail='$_REQUEST[user]'", $conexion);
-if(($user_ok = mysql_fetch_array($usuarios)) and ($user_ok['pass']==$_REQUEST['pass'])){
+if(($user_ok = mysql_fetch_array($usuarios)) and ($user_ok['pass']==$_REQUEST['pass'])and ($user_ok['baja']=="false")){
     $_SESSION['user'] = $user_ok["mail"]; 
     $_SESSION['pass'] = $user_ok["pass"];
     $_SESSION['id'] = $user_ok["id"]; 
