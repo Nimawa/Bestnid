@@ -32,7 +32,7 @@
                     ?> 
               </div>
               <a class="pull-right" >  
-                    <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="VER PUBLICACION" onclick="window.location.href='verPublicacion.php?idPublicacion=<?php echo $r['id'];?>'">
+                    <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="VER PUBLICACION" onclick="window.location.href='../src/verPublicacion.php?idPublicacion=<?php echo $r['id'];?>'">
               </a>                              
             </li><hr>
           </ul>
