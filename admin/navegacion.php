@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <p class="navbar-text">ADMINISTRACION - Plataforma de Subastas Online</p>
+                <p class="navbar-text">Plataforma de Subastas Online</p>
                 
             </div>
             <form method="post"  action="logout.php">  
