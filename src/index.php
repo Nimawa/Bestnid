@@ -36,6 +36,7 @@
             ?> <!-- Si retorna Codigo=2, el mail esta utilizado por otro usuario--> 
             <script language="javascript">
             bootbox.alert("El email ingresado se encuentra registrado! Ingrese nuevamente sus datos",null);
+            
             </script>
           <?php
           }

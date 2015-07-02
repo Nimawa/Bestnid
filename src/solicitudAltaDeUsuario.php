@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <body> 
+  <body onload="verificarCorreo()"> 
     
     <?php include 'head.php';?>
     <?php include 'navegacion.php';?>
