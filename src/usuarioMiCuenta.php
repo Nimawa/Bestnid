@@ -26,7 +26,7 @@
           if ($_REQUEST['r']==1) {
             ?>  
             <script language="javascript">
-            bootbox.alert("La respuesta a sido enviada",null);
+            bootbox.alert("La respuesta ha sido enviada",null);
             </script>
           <?php 
           }
