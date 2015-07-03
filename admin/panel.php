@@ -14,7 +14,7 @@
                 <div class="col-xs-6 col-md-4">
                     <?php include 'areaAdministracion.php';?>  
                 </div>
-                <div  class="col-xs-12 col-sm-6 col-md-8">
+                <div id="resultado" class="col-xs-12 col-sm-6 col-md-8">
                   
                   
                 </div>
