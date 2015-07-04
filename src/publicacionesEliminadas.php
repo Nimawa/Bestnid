@@ -1,10 +1,21 @@
 <?php
 
- 
-//primero recibe el registro de consulta y en el segundo la coneccion a la base
- function imprimirPublicacion($v1,$v2){    
-      $fecha_hoy=date("Y-m-d");
-      $totalFilas=mysql_num_rows($v1);  
+	include 'head.php';
+	require 'conexion.php';
+	require 'validarSesion.php';
+	require 'imprimirPublicacion.php';
+	$conexion=conectar();
+	$id_usuario=$_SESSION["id"]; 
+    
+	$reg=mysql_query(" Select * 
+	FROM  publicacion p
+	 WHERE    p.id_usuario = '$id_usuario' 
+	 and p.baja ='true'
+	 " ,$conexion)or die("problema de select".mysql_error());
+	
+	
+	  $fecha_hoy=date("Y-m-d");
+      $totalFilas=mysql_num_rows($reg);  
       if($totalFilas==0){
                  ?>
                     <div class="row" style="margin: 20px; background-color: #EEEEEE">
@@ -12,14 +23,15 @@
                       </div><br>
                   <?php
               }
-      while($r=mysql_fetch_array($v1)){
-        if(( $r ['baja'] == false )or ($r ['baja'] =='false')){ 
+			  
+      while($r=mysql_fetch_array($reg)){
+        
           ?>
           <ul class="media-list" >
             <li class="media" >
               <a class="pull-left" href="#" >
                   <div class="thumbnail" style=" border: 3px #333; float: left; height: 10em; margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" >
-                    <img class="media-object"  ><?php getFoto($r['id'], $v2); ?> </img>
+                    <img class="media-object"  ><?php getFoto($r['id'], $conexion); ?> </img>
                   </div>
               </a>
            
@@ -27,9 +39,14 @@
                 <h4 class="media-heading"  ><?php echo $r['titulo'];?> </h4>
                 <?php echo $r['descripcion']. "<br>"; ?> 
                 <?php echo 'Fecha de inicio: '.acomodarFecha($r['fecha_inicio']). "<br>"; ?> 
-                <?php echo 'Fecha de fin: '.acomodarFecha($r['fecha_fin'])."<br>"; if($r['fecha_fin']<$fecha_hoy){ echo '<a style="color:red"> Publicacion Finalizada </a>'; echo '<br>';};?> 
+                <?php echo 'Fecha de fin: '.acomodarFecha($r['fecha_fin'])."<br>"; 
+				
+				if($r['baja']='true')
+				{ 
+				echo '<a style="color:red">      Publicacion Eliminada </a>'; echo '<br>';};
+			  ?> 
                 Categoria: <?php $a= $r['id_categoria'];
-                $reg=mysql_query(" Select nombre from categoria where id= $a ",$v2)or die("problema de select".mysql_error());
+                $reg=mysql_query(" Select nombre from categoria where id= $a ",$conexion)or die("problema de select".mysql_error());
                    if($x=mysql_fetch_array($reg)){
                       echo $x['nombre'];  
                    }
@@ -41,7 +58,7 @@
             </li><hr>
           </ul>
          
-      <?php  }
+      <?php  
       }?>
 	  <div>
 
@@ -52,6 +69,10 @@
 	   </div>
 	   
 	   
-  <?php }
-
+  <?php 
+mysql_close($conexion);
 ?>
+	   
+	   
+
+	
