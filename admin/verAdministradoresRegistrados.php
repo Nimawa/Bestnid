@@ -78,7 +78,18 @@
                   
        	</div>
    	</div>
- 
+ <?php
+  if (isset($_REQUEST['t'])){
+          if ($_REQUEST['t']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("La publicacion se ha borrado con exito!",null);
+            </script>
+          <?php  
+          }
+        }
+  ?>
+
   </body>
 </html>
 
