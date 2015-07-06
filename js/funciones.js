@@ -107,3 +107,11 @@ function mostrarResultado(datos){
 	}
 	ajax.send(null)
 }
+
+function borrarUsuario(idpusuario) {
+	bootbox.confirm("Esta seguro que desea borrar el usuario?", function(result) {
+		if(result==true){
+   		window.location='borrarUsuario.php?idusuario='+idpusuario;
+   		}	
+	}); 
+}
