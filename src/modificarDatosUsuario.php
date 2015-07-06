@@ -1,5 +1,7 @@
 
-<?php   
+<?php
+session_start();
+$id=$_SESSION['id'];   
 $nombre=$_REQUEST['nombre'];
 $apellido=$_REQUEST['apellido'];
 $dni=$_REQUEST['dni'];
@@ -15,7 +17,7 @@ $pcia=$_REQUEST['pcia'];
 require 'conexion.php';
 $conexion=conectar();
 
-mysql_query("update usuario set dni='$dni',nombre='$nombre',apellido='$apellido',telefono='$telefono',calle='$calle',nro='$nro',piso='$piso',depto='$depto',ciudad='$ciudad',pcia='$pcia'",$conexion) or die("Problemas en el select:".mysql_error());
+mysql_query("update usuario set dni='$dni',nombre='$nombre',apellido='$apellido',telefono='$telefono',calle='$calle',nro='$nro',piso='$piso',depto='$depto',ciudad='$ciudad',pcia='$pcia' where id=$id",$conexion) or die("Problemas en el select:".mysql_error());
 
 header("location: index.php?u=5");
 ?>
