@@ -69,6 +69,15 @@
             <?php 
             }
         } 
+         if (isset($_REQUEST['c'])){
+            if ($_REQUEST['c']==1) {
+              ?>  
+              <script language="javascript">
+              bootbox.alert("El mensaje ha sido enviado exitosamente!",null);
+              </script>
+            <?php 
+            }
+        } 
 
         if (isset($_REQUEST['p'])){
           if ($_REQUEST['p']==1) {

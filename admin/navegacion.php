@@ -25,6 +25,9 @@
                         <li>
                         <input type="submit" class="btn btn-danger btn-sm" style=" margin-top: 10px; margin-right: 80px" value="Cerrar Sesion">
                         </li>
+                        <li>
+                            <a href="correo.php" target="blank"> Correo <span class="glyphicon glyphicon-envelope" ></span></a>
+                        </li>
                        
                     </ul>
                 </div>

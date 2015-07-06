@@ -18,7 +18,7 @@
                 <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
             </li>
             <li>
-                <a href="#"> Contacto <span class="glyphicon glyphicon-envelope"></span></a>
+                <a href="contacto.php"> Contacto <span class="glyphicon glyphicon-envelope"></span></a>
             </li>
             <li>
                 <a href="correo.php" target="blank"> Correo <span class="glyphicon glyphicon-envelope" ></span></a>
