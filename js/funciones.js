@@ -96,4 +96,14 @@ function adjudicarPublicacion(idOferta) {
 }
 
 
-
+function mostrarResultado(datos){
+	divResultado = document.getElementById('resulta');
+	ajax=objetoAjax();
+	ajax.open("GET", datos);
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			divResultado.innerHTML = ajax.responseText
+		}
+	}
+	ajax.send(null)
+}
