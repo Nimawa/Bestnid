@@ -6,11 +6,7 @@
       $fecha_hoy=date("Y-m-d");
       $totalFilas=mysql_num_rows($v1);  
       if($totalFilas==0){
-                 ?>
-                    <div class="row" style="margin: 20px; background-color: #EEEEEE">
-                          <h4 class="col-xs-10 col-md-10">No existen resultados</h4>
-                      </div><br>
-                  <?php
+                  echo("No existen resultados");
               }
       while($r=mysql_fetch_array($v1)){
         if(( $r ['baja'] == false )or ($r ['baja'] =='false')){ 
