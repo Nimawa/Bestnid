@@ -1,11 +1,10 @@
 <?php
-	 include '../src/head.php';
+	include '../src/head.php';
 	require 'validarSesionAdmin.php';
 	require '../src/conexion.php';
 	require 'imprimirPublicacionAdministrador.php';
-
 	$conexion=conectar();
-	$id_usuario=$_SESSION["id"]; 
+	//$id_usuario=$_SESSION["id"]; 
 	$fec_act=date("Y-m-d");  
 
 	$reg=mysql_query(" Select * FROM publicacion WHERE fecha_fin > $fec_act" ,$conexion)

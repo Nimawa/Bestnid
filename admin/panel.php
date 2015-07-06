@@ -4,9 +4,17 @@
   <body> 
         <?php include '../src/head.php';?>
         <?php include 'navegacion.php';?>
- 
-  
-
+<?php
+  if (isset($_REQUEST['t'])){
+          if ($_REQUEST['t']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("La publicacion se ha borrado con exito!",null);
+            </script>
+          <?php  
+          }
+        }
+?>
     <div style=" padding: 0 200px;">
         
         <div class="container-fluid">

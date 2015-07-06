@@ -2,7 +2,8 @@
 
  
 //primero recibe el registro de consulta y en el segundo la coneccion a la base
- function imprimirPublicacion($v1,$v2){    
+ function imprimirPublicacion($v1,$v2){ 
+
       $fecha_hoy=date("Y-m-d");
       $totalFilas=mysql_num_rows($v1);  
       if($totalFilas==0){
@@ -29,10 +30,10 @@
                    if($x=mysql_fetch_array($reg)){
                       echo $x['nombre'];  
                    }
-                    ?> 
+                    ?>   
               </div>
               <a class="pull-right" >  
-                     <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="ELIMINAR PUBLICACION" onclick="borrarPublicacion(<?php echo $publicacion['id'];?>)">
+                    <a  class="btn btn-danger btn-sm" style=" margin-top: 10px;" onclick="return confirm('Seguro quiere eliminar la publicacion?')" href="borrarPublicacionAdministrador.php?idPublicacion=<?php echo $r['id'];?>">ELIMINAR</a>
                     <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="VER PUBLICACION" onclick="window.location.href='../src/verPublicacion.php?idPublicacion=<?php echo $r['id'];?>'">
               </a>                              
             </li><hr>
