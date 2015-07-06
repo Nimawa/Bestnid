@@ -36,7 +36,7 @@
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <?php include 'areaAdministracion.php';?>  
                 </div>
-	            <div id="resultado" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+	            <div  class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 	            	<div  class="row">
 	                    <h3>
 	                        <strong style=""> Publicaciones Finalizadas  </strong> 
