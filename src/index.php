@@ -39,6 +39,13 @@
             
             </script>
           <?php
+          }else if ($_REQUEST['u']==5) {
+            ?> <!-- Si retorna Codigo=2, el mail esta utilizado por otro usuario--> 
+            <script language="javascript">
+            bootbox.alert("La modificacion de los datos ha sido exitosa!",null);
+            
+            </script>
+          <?php
           }
 
           if ($_REQUEST['u']==3) {
