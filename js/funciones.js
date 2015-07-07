@@ -43,6 +43,23 @@ function verificarCorreo() {
 	ajax.send("email="+email.value);
 }
 
+function verificarCorreo2() {
+   	email = document.getElementById('email');
+   	resp = document.getElementById('respuesta');
+   	ajax=objetoAjax();
+   	ajax.open("POST","../src/verificarCorreo2.php",true);
+   	ajax.onreadystatechange=function(){
+
+	 if (ajax.readyState===4) {
+	      //mostrar resultados en esta capa
+		  	    resp.innerHTML = ajax.responseText;
+                           
+		};
+	};
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	ajax.send("email="+email.value);
+}
+
 function modificarPublicacion(valor,idpublicacion) {
 	if (valor != "0") {
 		bootbox.alert("La publicación tiene ofertas no se puede modificar",null);

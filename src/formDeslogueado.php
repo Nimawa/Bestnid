@@ -8,7 +8,7 @@
                         <a href="solicitudAltaDeUsuario.php" style="color: #c0c0c0;"> No estas registrado?</a>
                     </h6>
                     <h6>
-                        <a href="#" style="color: #c0c0c0;" > Olvidaste tu contraseña?</a>
+                        <a href="olvidoContrasena.php" style="color: #c0c0c0;" > Olvidaste tu contraseña?</a>
                     </h6>                            
                 </div>
             </li>    
@@ -28,6 +28,9 @@
             </li>
             <li>
                 <a href="contacto.php"> Contacto <span class="glyphicon glyphicon-envelope"></span></a>
+            </li>
+            <li>
+                <a href="correocont.php" target="blank"> Correo <span class="glyphicon glyphicon-envelope" ></span></a>
             </li>
             
             
