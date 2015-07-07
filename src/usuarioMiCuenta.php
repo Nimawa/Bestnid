@@ -5,7 +5,6 @@
         <?php include 'head.php';?>
         <?php include 'navegacion.php';?>
         <?php include 'busqueda.php';?>  
-        
 
     <div style=" padding: 0 200px;">
         
@@ -40,7 +39,21 @@
           <?php 
           }
         }         
-                       
+        if (isset($_REQUEST['s'])){
+          if ($_REQUEST['s']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("Tiene ofertas realizadas, debe esperar a que finalicen para poder cerrar su cuenta!",null);
+            </script>
+          <?php 
+          }else if ($_REQUEST['s']==2) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("Tiene publicaciones activas, debe eliminarlas para poder cerrar su cuenta!",null);
+            </script>
+          <?php 
+          }
+          }                  
 	?>
   </body>
 </html>

@@ -5,7 +5,8 @@
         <?php include 'head.php';?>
         <?php include 'navegacion.php';?>
         <?php include 'busqueda.php';?>  
-  
+        <?php include 'validarSesion.php';?>  
+
 
     <div style=" padding: 0 200px;">
         
@@ -107,7 +108,7 @@
             </script>
           <?php 
           }
-        
+           
         } 
          if (isset($_REQUEST['cont'])){
           if ($_REQUEST['cont']==1) {
@@ -117,9 +118,16 @@
             </script>
           <?php 
           }
-        }     
-        
-        
+        }  
+      if (isset($_REQUEST['s'])){   
+        if ($_REQUEST['s']==3) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("Se ha cerrado su cuenta con exito!",null);
+            </script>
+          <?php 
+          }
+        }   
     ?>
     
     
