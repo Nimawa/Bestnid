@@ -9,5 +9,6 @@
                       <a href="#" class="list-group-item " ><span class="badge"></span>- Baja Categoria</a>
                       <a href="#" class="list-group-item" ><span class="badge"></span><strong>Usuarios</strong></a>
                       <a href="verUsuariosRegistrados.php" class="list-group-item " ><span class="badge"></span>- Usuarios Registrados</a>
-                      <a href="verAdministradoresRegistrados.php" class="list-group-item " ><span class="badge"></span>- Administradores Registrados</a>    
+                      <a href="verAdministradoresRegistrados.php" class="list-group-item " ><span class="badge"></span>- Administradores Registrados</a>   
+                      <a href="solicitudAltaAdministrador.php" class="list-group-item " ><span class="badge"></span>- Alta de Administrador</a> 
 </div>

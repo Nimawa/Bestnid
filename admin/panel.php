@@ -19,7 +19,17 @@
             </div>
         </div>
     </diV>
- 
+    <?php
+        if (isset($_REQUEST['u'])){
+            if ($_REQUEST['u']==1) {
+                    ?>  
+                    <script language="javascript">
+                    bootbox.alert("La cuenta de administrador ha sido creada exitosamente",null);
+                    </script>
+                  <?php 
+            }
+        }    
+    ?>    
  
    
   </body>
