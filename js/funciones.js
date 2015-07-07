@@ -132,3 +132,11 @@ function borrarUsuario(idusuario, admin) {
    		}	
 	}); 
 }
+
+function cerrarCuenta() {
+	bootbox.confirm("Esta seguro que desea cerrar su cuenta?", function(result) {
+		if(result==true){
+   		window.location='cerrarCuenta.php';
+   		}	
+	}); 
+}
