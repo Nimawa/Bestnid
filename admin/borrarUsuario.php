@@ -3,6 +3,9 @@ require '../src/conexion.php';
 $idusuario=$_REQUEST['idusuario'];
 $conexion= conectar();
 echo ($conexion);
+
+
+
 $sql="UPDATE usuario SET baja='true' WHERE id=$idusuario";
 mysql_query($sql) or die ("Problemas en el select:".mysql_error($conexion));
 
