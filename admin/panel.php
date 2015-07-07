@@ -30,6 +30,17 @@
             }
         }    
     ?>    
+	<?php
+ if (isset($_REQUEST['c'])){
+          if ($_REQUEST['c']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("La categoria se ha modificado con exito.",null);
+            </script>
+			<?php
+			}
+			}
+			?>
    </body>
 </html>
 
