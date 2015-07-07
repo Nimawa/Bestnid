@@ -32,22 +32,16 @@
                    }
                     ?>   
               </div>
-              <a class="pull-right" >  
+              <div class="pull-right" >  
                     <a  class="btn btn-danger btn-sm" style=" margin-top: 10px;" onclick="return confirm('Seguro quiere eliminar la publicacion?')" href="borrarPublicacionAdministrador.php?idPublicacion=<?php echo $r['id'];?>">ELIMINAR</a>
                     <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="VER PUBLICACION" onclick="window.location.href='../src/verPublicacion.php?idPublicacion=<?php echo $r['id'];?>'">
-              </a>                              
+              </div>                              
             </li><hr>
           </ul>
          
       <?php  }
       }?>
-	  <div>
 
-	   
-	   
-	   
-	   
-	   </div>
 	   
 	   
   <?php }

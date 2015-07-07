@@ -83,7 +83,7 @@
           if ($_REQUEST['t']==1) {
             ?>  
             <script language="javascript">
-            bootbox.alert("La publicacion se ha borrado con exito!",null);
+            bootbox.alert("El usuario ha sido eliminado con exito!",null);
             </script>
           <?php  
           }

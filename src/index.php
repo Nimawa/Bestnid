@@ -108,7 +108,16 @@
           <?php 
           }
         
-        }  
+        } 
+         if (isset($_REQUEST['cont'])){
+          if ($_REQUEST['cont']==1) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("Se ha enviado un correo electronico a su casilla de correo ingresada para terminar con el reestablecimiento de la contraseña",null);
+            </script>
+          <?php 
+          }
+        }     
         
         
     ?>
