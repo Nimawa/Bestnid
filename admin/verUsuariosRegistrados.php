@@ -79,7 +79,30 @@
                   
        	</div>
    	</div>
- 
+ <?php
+  if (isset($_REQUEST['t'])){
+  		  if ($_REQUEST['t']==1) {
+  		   ?>  
+            <script language="javascript">
+            bootbox.alert("El usuario ha sido eliminado con exito!",null);
+            </script>
+          <?php  
+  		  }else if ($_REQUEST['t']==2) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("El usuario tiene ofertas realizadas, borre las ofertas y elimine al ususario!",null);
+            </script>
+          <?php  
+          }else if ($_REQUEST['t']==3) {
+            ?> 
+            <script language="javascript">
+            bootbox.alert("El usuario tiene publicaciones vigentes, borre las publicaciones y elimine al ususario!",null);
+            
+            </script>
+          <?php
+          }
+        }
+  ?>
   </body>
 </html>
 
