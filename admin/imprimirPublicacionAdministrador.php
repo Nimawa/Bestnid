@@ -12,11 +12,11 @@
       while($r=mysql_fetch_array($v1)){
         if(( $r ['baja'] == false )or ($r ['baja'] =='false')){ 
           ?>
-          <ul class="media-list">
+          <ul class="media-list" >
             <li class="media" >
               <a class="pull-left" href="#" >
                   <div class="thumbnail" style=" border: 3px #333; float: left; height: 10em; margin: .2em 1em 1em 0; overflow: hidden;  width: 10em;" >
-                    <img class="media-object"> <?php getFoto($r['id'],$v2) ?> </img>
+                    <img class="media-object"  ><?php getFoto($r['id'], $v2); ?> </img>
                   </div>
               </a>
            
@@ -32,15 +32,16 @@
                    }
                     ?>   
               </div>
-              <a class="pull-right" >  
-                    <input  type="button" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="ELIMINAR" onclick="return confirm('Seguro quiere eliminar la publicacion?')" href="borrarPublicacionAdministrador.php?idPublicacion=<?php echo $r['id'];?>">
+              <div class="pull-right" >  
+                    <a  class="btn btn-danger btn-sm" style=" margin-top: 10px;" onclick="return confirm('Seguro quiere eliminar la publicacion?')" href="borrarPublicacionAdministrador.php?idPublicacion=<?php echo $r['id'];?>">ELIMINAR</a>
                     <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="VER PUBLICACION" onclick="window.location.href='../src/verPublicacion.php?idPublicacion=<?php echo $r['id'];?>'">
-              </a>                              
+              </div>                              
             </li><hr>
           </ul>
          
       <?php  }
       }?>
+
 	   
 	   
   <?php }
