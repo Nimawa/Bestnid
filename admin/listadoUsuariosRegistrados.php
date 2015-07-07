@@ -11,7 +11,7 @@
 	        </div><br>
 	    <?php  
     }else{
-    	$reg=mysql_query(" Select * FROM usuario where fecha_alta BETWEEN '$fecha1' and '$fecha2'  and admin='false'  " ,$conexion)or die("problema de select".mysql_error());
+    	$reg=mysql_query(" Select * FROM usuario where fecha_alta BETWEEN '$fecha1' and '$fecha2'  and admin='false' and baja='false'  " ,$conexion)or die("problema de select".mysql_error());
 		$totalFilas=mysql_num_rows($reg);  
 	    if($totalFilas==0){
 	    	?>
