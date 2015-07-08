@@ -37,7 +37,8 @@
     <script src="../js/validator.min.js"></script>
     <script src="../js/fotos.js"></script>
     <script src="../js/bootstrap-datepicker.js"></script>
-
+    <script src="../Keypress/keypress-2.1.0.min.js"></script>
+    <script src="../Keypress/keypress.js"></script>
 
        <!-- Custom CSS -->
     <style>
@@ -47,3 +48,10 @@
     }
     </style> 
 </head>
+    <script type="text/javascript">
+    var listener = new window.keypress.Listener();
+    listener.simple_combo("ctrl b", function() {
+        console.log("You pressed shift and s");
+        document.getElementById('campoBusqueda').focus();
+    });
+    </script>

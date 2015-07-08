@@ -140,3 +140,9 @@ function cerrarCuenta() {
    		}	
 	}); 
 }
+
+function focoBusqueda() {
+	document.getElementById('campoBusqueda').focus();
+}
+
+

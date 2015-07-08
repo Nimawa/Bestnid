@@ -42,7 +42,7 @@
                         <div class="form-group" >
                             <div class="col-lg-10">
                               <button type="button" class="btn btn-default" style=" margin-left: 100px;" onclick="window.location.href='index.php'">Cancelar</button>
-                              <input type="submit" class="btn btn-danger" style=" margin-left: 20px;" value="Aceptar" ">
+                              <input type="submit" class="btn btn-danger" style=" margin-left: 20px;" value="Aceptar">
                             </div>
                         </div>
 
@@ -62,5 +62,11 @@
   </body>
 </html>
 
-
+<script type="text/javascript">
+var listener = new window.keypress.Listener();
+listener.simple_combo("ctrl b", function() {
+    console.log("You pressed shift and s");
+    window.location='index.php';
+});
+</script>
 

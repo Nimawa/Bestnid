@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <body> 
+  <body onload="focoBusqueda()"> 
         <?php include 'head.php';?>
         <?php include 'navegacion.php';?>
         <?php include 'busqueda.php';?>  

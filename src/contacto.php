@@ -78,3 +78,10 @@
   </div>
 </body>
 </html>
+        <script type="text/javascript">
+        var listener = new window.keypress.Listener();
+        listener.simple_combo("ctrl b", function() {
+            console.log("You pressed shift and s");
+            window.location='index.php';
+        });
+        </script>
