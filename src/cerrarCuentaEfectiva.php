@@ -13,6 +13,7 @@ $date=date("Y-m-d");
 			?> <script language="javascript">
 			window.location='usuarioMiCuenta.php?s=1';
 			</script>  <?php
+			return false;
 		}
 	$publi=mysql_query(" Select * FROM publicacion WHERE id_usuario='$idusuario' AND fecha_fin >= '$date' AND baja='false'" ,$conexion)
 		or die("problema de select".mysql_error());	
@@ -20,6 +21,7 @@ $date=date("Y-m-d");
 			?> <script language="javascript">
 			window.location='usuarioMiCuenta.php?s=2';
 			</script>  <?php
+			return false;
 		}
 
 
