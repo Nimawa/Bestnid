@@ -5,7 +5,7 @@
         <?php include 'head.php';?>
         <?php include 'navegacion.php';?>
         <?php include 'busqueda.php';?>  
-        <?php include 'validarSesion.php';?>  
+ 
 
 
     <div style=" padding: 0 200px;">
