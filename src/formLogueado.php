@@ -15,7 +15,7 @@
             <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px; margin-right: 80px" value="PUBLICAR" onclick="window.location.href='altaPublicacion.php'">
             </li>
             <li>
-                <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
+                <a href="ayuda.php"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
             </li>
             <li>
                 <a href="contacto.php"> Contacto <span class="glyphicon glyphicon-envelope"></span></a>

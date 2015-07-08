@@ -24,7 +24,7 @@
             <input type="submit" class="btn btn-danger btn-sm" style=" margin-top: 10px;" value="Iniciar Sesion">
             </li>
             <li>
-                <a href="#"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
+                <a href="ayuda.php"> Ayuda <span class="glyphicon glyphicon-user"></span></a>
             </li>
             <li>
                 <a href="contacto.php"> Contacto <span class="glyphicon glyphicon-envelope"></span></a>
