@@ -11,6 +11,7 @@ if ($admin=='false') {
 			?> <script language="javascript">
 			window.location='verUsuariosRegistrados.php?t=2';
 			</script>  <?php
+			return false;
 		}
 	$publi=mysql_query(" Select * FROM publicacion WHERE id_usuario='$idusuario' AND fecha_fin >= '$date' AND baja='false'" ,$conexion)
 		or die("problema de select".mysql_error());	
@@ -18,6 +19,7 @@ if ($admin=='false') {
 			?> <script language="javascript">
 			window.location='verUsuariosRegistrados.php?t=3';
 			</script>  <?php
+			return false;
 		}
 }
 
