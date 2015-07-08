@@ -13,7 +13,7 @@
        FROM  publicacion p
            INNER JOIN 
 		  consulta c ON (p.id = c.id_publicacion) 
-		  where p.id_usuario= $id_usuario and baja = false
+		  where p.id_usuario= $id_usuario and baja = 'false'
 		 
 		  ",$conexion)or die("problema de select".mysql_error());
 		  
