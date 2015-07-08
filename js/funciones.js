@@ -77,6 +77,14 @@ function borrarPublicacion(idpublicacion) {
 	}); 
 }
 
+function borrarCategoria(idCategoria) {
+	bootbox.confirm("Esta seguro que desea borrar la categoria?", function(result) {
+		if(result==true){
+   		window.location='../admin/borrarCategoria.php?idCategoria='+idCategoria;
+   		}	
+	}); 
+}
+
 function mostrarResultados(datos){
 	divResultado = document.getElementById('resultado');
 	ajax=objetoAjax();

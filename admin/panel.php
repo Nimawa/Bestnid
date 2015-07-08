@@ -39,6 +39,22 @@
             </script>
 			<?php
 			}
+	
+          if ($_REQUEST['c']==3) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("la categoria ha sido eliminada.",null);
+            </script>
+          <?php 
+          }
+		   if ($_REQUEST['c']==2) {
+            ?>  
+            <script language="javascript">
+            bootbox.alert("la categoria esta siendo usada, no puede eliminarse.",null);
+            </script>
+          <?php 
+          }
+        
 			}
 			?>
    </body>
