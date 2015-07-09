@@ -121,7 +121,7 @@
                                             if(( $publicacion ['baja'] == 'true' ) ){ 
                                               ?>
                                               <div>
-                                                <strong><font color="red">Publicación finalizada</font></strong>
+                                                <strong><font color="red">Publicación Eliminada</font></strong>
                                               </div>
                                               <?php
                                             }else if(isset($_SESSION['id']) && ($_SESSION['id']==$publicacion['id_usuario'])){
