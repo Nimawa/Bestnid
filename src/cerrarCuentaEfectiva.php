@@ -8,7 +8,7 @@ $date=date("Y-m-d");
 
 
 
-	$ofer=mysql_query(" Select * FROM oferta WHERE id_usuario='$idusuario' AND ganador='false' AND baja='false'" ,$conexion) or die("problema de select".mysql_error());
+	$ofer=mysql_query(" Select * FROM oferta as ofer INNER JOIN publicacion as publi WHERE publi.fecha_fin >= '$date' AND ofer.id_usuario='$idusuario' AND ofer.baja='false' AND ofer.id_publicacion=publi.id" ,$conexion) or die("problema de select".mysql_error());
 		if (mysql_num_rows($ofer)!=0) {
 			?> <script language="javascript">
 			window.location='usuarioMiCuenta.php?s=1';

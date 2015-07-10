@@ -8,11 +8,12 @@
 	$conexion=conectar();
 	$id_usuario=$_SESSION["id"]; 
 	$fec_act=date("Y-m-d");  
-
-	$reg=mysql_query(" Select * FROM publicacion AS publi INNER JOIN oferta AS ofer WHERE ofer.id_usuario=$id_usuario AND ofer.id_publicacion=publi.id AND publi.fecha_fin > $fec_act" ,$conexion)
+	echo ($fec_act);
+	$reg=mysql_query(" Select * FROM publicacion AS publi INNER JOIN oferta AS ofer WHERE ofer.id_usuario='$id_usuario' AND ofer.id_publicacion=publi.id AND publi.fecha_fin > '$fec_act'" ,$conexion)
 	or die("problema de select".mysql_error());
 	
-	if (mysql_num_rows($reg)==0) {
+	$totalFilas=mysql_num_rows($reg);  
+	if($totalFilas==0){
 			?>
     		<div class="row" style="margin: 20px; background-color: #EEEEEE">
 	            <h4 class="col-xs-10 col-md-10">No existen resultados</h4>
