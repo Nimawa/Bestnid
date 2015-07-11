@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <label for="actual" class="col-lg-4 control-label">Contraseña Actual: * </label>
                             <div class="col-lg-4">
-                                <input type="password" class="form-control" id="actual" name="actual"  placeholder="De 6 a 15 caracteres" required pattern="[\s\S]{6,15}" value="<?php echo $usuario['pass']?>" >
+                                <input type="password" class="form-control" id="actual" name="actual"  placeholder="De 6 a 15 caracteres" required pattern="[\s\S]{6,15}"  >
                             </div>
                         </div>
                         <div class="form-group">
