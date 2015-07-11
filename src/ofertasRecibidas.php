@@ -8,7 +8,7 @@
 	$conexion=conectar();
 	$id_usuario=$_SESSION["id"]; 
 	$fec_act=date("Y-m-d");
-	$reg=mysql_query(" select p.id from publicacion p join oferta o on p.id=o.id_publicacion where p.fecha_fin > $fec_act and p.baja='false' and p.id_usuario=$id_usuario  group by p.id order by p.fecha_fin Asc " ,$conexion)or die("problema de select".mysql_error());
+	$reg=mysql_query(" select p.id from publicacion p join oferta o on p.id=o.id_publicacion where p.fecha_fin > $fec_act and p.baja='false' and o.baja='false' and p.id_usuario=$id_usuario  group by p.id order by p.fecha_fin Asc " ,$conexion)or die("problema de select".mysql_error());
 	$totalFilas=mysql_num_rows($reg);  
 	if($totalFilas==0){
     	?>
