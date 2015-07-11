@@ -134,7 +134,7 @@ function mostrarResultado(datos){
 }
 
 function borrarUsuario(idusuario, admin) {
-	bootbox.confirm("Esta seguro que desea borrar el usuario?", function(result) {
+	bootbox.confirm("Esta seguro que desea borrar el usuario, si lo hace se borraran todas sus ofertas y publicaciones?", function(result) {
 		if(result==true){
    		window.location='borrarUsuario.php?idusuario='+idusuario+'&admin='+admin;
    		}	
