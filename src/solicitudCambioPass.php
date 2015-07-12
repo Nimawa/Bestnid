@@ -65,7 +65,7 @@
 
                         <div class="form-group" >
                             <div class="col-lg-10">
-                              <button type="button" class="btn btn-default" style=" margin-left: 100px;" onclick="window.location.href='index.php'">Cancelar</button>
+                              <button type="button" class="btn btn-default" style=" margin-left: 100px;" onclick="window.location.href='usuarioMiCuenta.php'">Cancelar</button>
                               <input type="submit" class="btn btn-danger" style=" margin-left: 20px;" value="Modificar">
                             </div>
                         </div>
