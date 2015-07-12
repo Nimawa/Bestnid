@@ -6,7 +6,7 @@ $telefono=$_REQUEST['telefono'];
 $email=$_REQUEST['email'];
 $comentario=$_REQUEST['comentario'];
 $asunto='Nuevo mensaje de '.$nombre.'';
-$cuerpo='Nombre:'.$nombre.'<br> Apellido: '.$apellido.' <br> Telefono:'.$telefono.' <br> Mail: '.$mail.'<br> Comentarios: '.$comentario.''; 
+$cuerpo='Nombre:'.$nombre.'<br> Apellido: '.$apellido.' <br> Telefono:'.$telefono.' <br> Mail: '.$email.'<br> Comentarios: '.$comentario.''; 
 
 
 require 'conexion.php';
