@@ -29,18 +29,32 @@
 	$r=mysql_fetch_array($reg);
 	?>         
 				
-				<div class="row" style="margin: 20px; background-color: #EEEEEE">
-		            <h4 class="col-xs-10 col-md-10" > 
-					<?php echo $r['nombre'];
-					?>
-					 <form action="modificarCategoriaValidacion.php?idC=<?php echo $r['id'];
-					 ?>" method="post" data-toggle="validator" class="form-horizontal"  id="formularioAltaCategoria" >
-					<input  class="form-control" id="nombre" name="nombre" required placeholder="Nombre (solo letras)" pattern="[a-zA-Z]+" data-error="Complete correctamente este campo">
-					 <button type="button" class="btn btn-default" style=" margin-left: 100px;" onClick="window.location.href='panel.php'">Cancelar</button>
+				<div class="row" >
+		             <h3 style=""> 
+                       <strong style=""> Modificar Categoria </strong>
+                    </h3> 
+					
+					<form action="modificarCategoriaValidacion.php?idC=<?php echo $r['id'];?>" method="post" data-toggle="validator" class="form-horizontal"  id="formularioAltaCategoria" >
+                       
+                      <div class="form-group">
+                            <label for="nombre" class="col-lg-2 control-label">Nombre: </label>
+                            <div class="col-lg-4">
+                              <input  class="form-control" id="nombre" name="nombre" required placeholder="Nombre" pattern="[a-zA-Z ]+" data-error="Complete correctamente este campo" value="<?php echo $r['nombre'];?>">
+							  
+                              <div class="help-block with-errors"></div>   
+                            </div>
+                      </div>
+
+
+                        <div class="form-group" >
+                            <div class="col-lg-10">
+                              <button type="button" class="btn btn-default" style=" margin-left: 100px;" onClick="window.location.href='panel.php'">Cancelar</button>
                               <input type="submit" class="btn btn-danger" style=" margin-left: 20px;" value="Aceptar">
-					</h4>
-		        </div>
-				<br>
+                            </div>
+                        </div>
+                      
+                    </form>    
+
 		    
 <?php
         if (isset($_REQUEST['c'])){
