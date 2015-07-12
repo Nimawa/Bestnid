@@ -14,7 +14,7 @@ if($cantEmail['cantidad']==0){
             </script><?php
 
 }else{	
-		$enlace='http://localhost/Bestnid/src/cambioContrasena.php?u='.$email;
+		$enlace='cambioContrasena.php?u='.$email;
 		$asunto='Reestablecer contraseña - Bestnid';
 		$cuerpo='Usted ha solicitado reestablecer su contraseña para modificarla haga click en el sigiente enlace <a href="'.$enlace.'" target="blank">Restablecer Contraseña </a><br> Si usted no solicito el cambio pongase en contacto a la brevedad con los administradores del sitio'; 
 
