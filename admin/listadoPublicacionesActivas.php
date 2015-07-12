@@ -7,7 +7,7 @@
 	//$id_usuario=$_SESSION["id"]; 
 	$fec_act=date("Y-m-d");  
 
-	$reg=mysql_query(" Select * FROM publicacion WHERE fecha_fin > $fec_act" ,$conexion)
+	$reg=mysql_query(" Select * FROM publicacion WHERE fecha_fin > '$fec_act' AND baja='false'" ,$conexion)
 	or die("problema de select".mysql_error());
 	
 	if (mysql_num_rows($reg)==0) {
