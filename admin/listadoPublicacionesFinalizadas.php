@@ -2,6 +2,7 @@
 	require '../src/conexion.php';
 	require '../src/imprimirPublicacion.php';
 	include '../src/head.php';
+	require 'validarSesionAdmin.php';
 	$conexion=conectar();
 	$fecha1=$_REQUEST['fecha1'];
 	$fecha2=$_REQUEST['fecha2'];

@@ -3,6 +3,7 @@
 	include '../src/head.php';
     require '../src/conexion.php';
 	require '../src/imprimirPublicacion.php';
+	require 'validarSesionAdmin.php';
 	$conexion=conectar();
     
 	$reg=mysql_query(" Select * 

@@ -6,7 +6,8 @@
   <body> 
     
    <?php include '../src/head.php';?>
-        <?php include 'navegacion.php';?>
+        <?php include 'navegacion.php';
+		require 'validarSesionAdmin.php';?>
  
   
 
