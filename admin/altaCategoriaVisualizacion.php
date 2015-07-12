@@ -19,7 +19,7 @@
                     <?php include 'areaAdministracion.php';?>  
                 </div>
                <div id="resulta" class="col-xs-12 col-sm-6 col-md-8">
-                <h3 style=""> 
+                    <h3 style=""> 
                        <strong style=""> Solicitud de Alta de Categoria </strong>
                     </h3>
                 
@@ -29,11 +29,11 @@
                       <div class="form-group">
                             <label for="nombre" class="col-lg-2 control-label">Nombre: </label>
                             <div class="col-lg-4">
-                              <input  class="form-control" id="nombre" name="nombre" required placeholder="Nombre" pattern="[a-zA-Z]+" data-error="Complete correctamente este campo">
+                              <input  class="form-control" id="nombre" name="nombre" required placeholder="Nombre" pattern="[a-zA-Z ]+" data-error="Complete correctamente este campo">
 							  
                               <div class="help-block with-errors"></div>   
                             </div>
-                  </div>
+                      </div>
 
 
                         <div class="form-group" >
