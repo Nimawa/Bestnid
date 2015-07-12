@@ -7,7 +7,18 @@
                     <a style=" color: #000; font-style:italic; font-size: 20px; ">
                         <strong> BESTNID </strong>
                     </a>
-                    <a href="../index.php"> <img src="../Img/logo.png" > </a>
+                    <?php
+                        if (isset($_SESSION['admin_id'])) {
+                    ?>
+                    <a href="../admin/panel.php"> <img src="../Img/logo.png" > </a>
+                    <?php
+                    }else {
+                    ?>
+                     <a href="../index.php"> <img src="../Img/logo.png" > </a>
+                     <?php
+                    }
+                    ?>
+                    
                 </div>
 
                 <div  class="col-xs-12 col-sm-6 col-md-8">
