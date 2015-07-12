@@ -153,4 +153,16 @@ function focoBusqueda() {
 	document.getElementById('campoBusqueda').focus();
 }
 
+function modificarAdmin(idusuario) {
+		
+   		window.location='modificarDatosAdmin.php?idusuario='+idusuario;
+   		
+}
 
+function borrarAdmin(idusuario, admin) {
+	bootbox.confirm("Esta seguro que desea borrar el Administrador?", function(result) {
+		if(result==true){
+   		window.location='borrarUsuario.php?idusuario='+idusuario+'&admin='+admin;
+   		}	
+	}); 
+}

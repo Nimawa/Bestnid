@@ -3,14 +3,15 @@
 
   <body > 
     
-    <?php include 'head.php';?>
+    <?php include '../src/head.php';?>
+    <?php require '../src/conexion.php';?>
     <?php include 'navegacion.php';?>
 
 <?php
 
-    require 'conexion.php';
+ 
     $conexion=conectar();
-    $idUsuario=$_SESSION['id'];
+    $idUsuario=$_REQUEST['idusuario'];
     $registros=mysql_query("Select * from usuario where id=$idUsuario", $conexion) 
          or die("Problemas en el select:".mysql_error($conexion));
         $usuario=mysql_fetch_array($registros);
@@ -39,7 +40,7 @@
                     
                 </div>
                 <div class="col-xs-6 col-md-8">
-                    <form action="modificarDatosUsuario.php" method="post" data-toggle="validator" class="form-horizontal"  id="formularioAltaUsuario" >
+                    <form action="modificarDatosAdminEfectivo.php" method="post" data-toggle="validator" class="form-horizontal"  id="formularioAltaUsuario" >
                         Aclaracion: Los campos con (*) son obligatorios <br><br>
                         <div class="form-group">
                             <label for="nombre" class="col-lg-2 control-label">Nombre: *</label>
@@ -159,7 +160,8 @@
 
                         <div class="form-group" >
                             <div class="col-lg-10">
-                              <button type="button" class="btn btn-default" style=" margin-left: 100px;" onclick="window.location.href='index.php'">Cancelar</button>
+                              <input type="hidden" name="ida" id="ida" value="<?php echo ($idUsuario)?>">    
+                              <button type="button" class="btn btn-default" style=" margin-left: 100px;" onclick="window.location.href='verAdministradoresRegistrados.php'">Cancelar</button>
                               <input type="submit" class="btn btn-danger" style=" margin-left: 20px;" value="Modificar">
                             </div>
                         </div>

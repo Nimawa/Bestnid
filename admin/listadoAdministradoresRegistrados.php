@@ -32,7 +32,7 @@
 			while($registros=mysql_fetch_array($reg)){
 				?>
 						<tr>
-							<td><?php echo $registros['fecha_alta'] ?></td><td><?php echo $registros['mail'] ?></td><td><?php echo $registros['nombre'] ?></td><td><?php echo $registros['apellido'] ?></td><td><input type="button" class="btn btn-danger col-lg-12  btn-sm"  value="Eliminar" onClick="borrarUsuario(<?php echo $registros['id'] ?>)"></td><td><input type="button" class="btn btn-primary col-lg-12 btn-sm"  value="Modificar" onClick="modificarAdmin(<?php echo $registros['id'] ?>)"></td>
+							<td><?php echo $registros['fecha_alta'] ?></td><td><?php echo $registros['mail'] ?></td><td><?php echo $registros['nombre'] ?></td><td><?php echo $registros['apellido'] ?></td><td><input type="button" class="btn btn-danger col-lg-12  btn-sm"  value="Eliminar" onClick="borrarAdmin(<?php echo $registros['id'] ?>)"></td><td><input type="button" class="btn btn-primary col-lg-12 btn-sm"  value="Modificar" onClick="modificarAdmin(<?php echo $registros['id'] ?>)"></td>
 						</tr>
 				<?php
 			}
