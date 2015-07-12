@@ -25,7 +25,7 @@
 						
                         <a class="pull-right" >
                                                 <input  type="button" class="btn btn-primary btn-sm" style=" margin-top: 10px;" value="MODIFICAR" onclick="window.location.href= 'modificarCategoria.php?idC=<?php echo $r['id'] ?>'"> 
-                                                <input  type="button" class="btn btn-danger" style=" margin-top: 10px;" value="BORRAR" onClick="">
+                                                <input  type="button" class="btn btn-danger" style=" margin-top: 10px;" value="BORRAR" onclick="borrarCategoria(<?php echo $r['id'] ?>)">
                                               </a>
 											  </div>
 						<?php }
