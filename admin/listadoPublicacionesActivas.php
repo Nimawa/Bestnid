@@ -22,7 +22,7 @@
 			$publicacion=mysql_query(" select * from publicacion where id=$id_publicacion_actual " ,$conexion)
 			or die("problema de select".mysql_error());
 			if ($registros['fecha_fin'] > $fec_act) {
-			imprimirPublicacion($publicacion,$conexion);
+			imprimirPublicacionAdmin($publicacion,$conexion);
 	        }
 	}
 	}echo '<hr>';

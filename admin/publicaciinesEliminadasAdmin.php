@@ -10,7 +10,7 @@
 	FROM  publicacion p
 	 WHERE  p.baja ='true'
 	 " ,$conexion)or die("problema de select".mysql_error());
-	imprimirPublicacionFinalizada($reg,$conexion)
+	imprimirPublicacionFinalizadaAdmin($reg,$conexion)
 	
 	
 ?>

@@ -2,7 +2,7 @@
 
  
 //primero recibe el registro de consulta y en el segundo la coneccion a la base
- function imprimirPublicacion($v1,$v2){ 
+ function imprimirPublicacionAdmin($v1,$v2){ 
 
       $fecha_hoy=date("Y-m-d");
       $totalFilas=mysql_num_rows($v1);  
@@ -45,7 +45,7 @@
 
 
 
-function imprimirPublicacionFinalizada($v1,$v2){    
+function imprimirPublicacionFinalizadaAdmin($v1,$v2){    
       $fecha_hoy=date("Y-m-d");
       $totalFilas=mysql_num_rows($v1);  
       if($totalFilas==0){

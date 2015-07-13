@@ -1,6 +1,6 @@
 <?php
 	require '../src/conexion.php';
-	require '../src/imprimirPublicacion.php';
+	require 'imprimirPublicacionAdministrador.php';
 	include '../src/head.php';
 	require 'validarSesionAdmin.php';
 	$conexion=conectar();
@@ -25,7 +25,7 @@
 	    }
 	    else{
 	
-			imprimirPublicacion($reg,$conexion);
+			imprimirPublicacionAdmin($reg,$conexion);
 		
 			
 			}
