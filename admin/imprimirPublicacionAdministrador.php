@@ -40,16 +40,12 @@
           </ul>
          
       <?php  }
-      }?>
-
-	   
-	   
-  <?php }
-
-?>
+      }
+   }
 
 
- function imprimirPublicacionFinalizada($v1,$v2){    
+
+function imprimirPublicacionFinalizada($v1,$v2){    
       $fecha_hoy=date("Y-m-d");
       $totalFilas=mysql_num_rows($v1);  
       if($totalFilas==0){
@@ -107,3 +103,4 @@
 
 
 ?>
+
