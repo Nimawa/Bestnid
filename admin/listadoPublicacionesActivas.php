@@ -6,7 +6,11 @@
 	$conexion=conectar();
 	//$id_usuario=$_SESSION["id"]; 
 	$fec_act=date("Y-m-d");  
-
+	?>
+						<h3>
+	                        <strong style=""> Publicaciones Activas  </strong> 
+	                    </h3><br>
+	<?php
 	$reg=mysql_query(" Select * FROM publicacion WHERE fecha_fin > '$fec_act' AND baja='false'" ,$conexion)
 	or die("problema de select".mysql_error());
 	

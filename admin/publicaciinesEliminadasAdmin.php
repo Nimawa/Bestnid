@@ -5,7 +5,11 @@
 	require 'imprimirPublicacionAdministrador.php';
 	require 'validarSesionAdmin.php';
 	$conexion=conectar();
-    
+    ?>
+						<h3>
+	                        <strong style=""> Publicaciones Eliminadas  </strong> 
+	                    </h3><br>
+	<?php
 	$reg=mysql_query(" Select * 
 	FROM  publicacion p
 	 WHERE  p.baja ='true'
