@@ -2,7 +2,7 @@
 
 	include '../src/head.php';
     require '../src/conexion.php';
-	require '../src/imprimirPublicacion.php';
+	require 'imprimirPublicacionAdministrador.php';
 	require 'validarSesionAdmin.php';
 	$conexion=conectar();
     
