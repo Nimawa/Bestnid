@@ -47,7 +47,7 @@ function verificarCorreo2() {
    	email = document.getElementById('email');
    	resp = document.getElementById('respuesta');
    	ajax=objetoAjax();
-   	ajax.open("POST","../src/verificarCorreo2.php",true);
+   	ajax.open("POST","../src/verificarCorreoRecuperar.php",true);
    	ajax.onreadystatechange=function(){
 
 	 if (ajax.readyState===4) {
