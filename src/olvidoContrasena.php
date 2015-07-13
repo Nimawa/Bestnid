@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <body onload="verificarCorreo2()"> 
+  <body > 
     
     <?php include 'head.php';?>
     <?php include 'navegacion.php';?>
