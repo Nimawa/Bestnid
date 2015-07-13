@@ -3,7 +3,7 @@
 
   <body onload="verificarCorreo2()"> 
     
-    <?php include '../src/head.php';?>
+    <?php include 'head.php';?>
     <?php include 'navegacion.php';?>
 
     
