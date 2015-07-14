@@ -8,8 +8,7 @@
 	$conexion=conectar();
 	$id_usuario=$_SESSION["id"]; 
 	$fec_act=date("Y-m-d");  
-	echo ($fec_act);
-	$reg=mysql_query(" Select * FROM publicacion AS publi INNER JOIN oferta AS ofer WHERE ofer.id_usuario='$id_usuario' AND ofer.id_publicacion=publi.id AND publi.fecha_fin > '$fec_act'" ,$conexion)
+	$reg=mysql_query(" Select * FROM publicacion AS publi INNER JOIN oferta AS ofer WHERE ofer.id_usuario='$id_usuario' AND ofer.id_publicacion=publi.id AND publi.fecha_fin > '$fec_act' AND publi.baja='false' AND ofer.baja='false'" ,$conexion)
 	or die("problema de select".mysql_error());
 	
 	$totalFilas=mysql_num_rows($reg);  
